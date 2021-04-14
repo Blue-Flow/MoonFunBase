@@ -12,8 +12,13 @@ public class UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI energyValue;
     [SerializeField] TextMeshProUGUI materialsValue;
     [SerializeField] Image funBar;
-    [SerializeField] Image endScreen;
-    [SerializeField] TextMeshProUGUI scoreText;
+
+    [SerializeField] Image endScreenBG;
+    [SerializeField] TextMeshProUGUI endText;
+    [SerializeField] Sprite victorySprite;
+
+    [SerializeField] Image notificationBG;
+    [SerializeField] TextMeshProUGUI notificationText;
 
     [SerializeField] TextMeshProUGUI curTurnText;
 
@@ -45,7 +50,10 @@ public class UI : MonoBehaviour
             GameManager.instance.currentMaterials--;
         }
         else
-            Debug.Log("You don't have the materials to do that !");
+        {
+            notificationBG.gameObject.SetActive(true);
+            notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
+        }
         
     }
 
@@ -58,7 +66,10 @@ public class UI : MonoBehaviour
             GameManager.instance.currentMaterials--;
         }
         else
-            Debug.Log("You don't have the materials to do that !");
+        {
+            notificationBG.gameObject.SetActive(true);
+            notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
+        }
     }
 
     // called when we click the mine button
@@ -70,7 +81,10 @@ public class UI : MonoBehaviour
             GameManager.instance.currentMaterials--;
         }
         else
-            Debug.Log("You don't have the materials to do that !");
+        {
+            notificationBG.gameObject.SetActive(true);
+            notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
+        }
     }
 
     // called when we place a building or the turn has ended
@@ -90,13 +104,14 @@ public class UI : MonoBehaviour
     // called when the fun amount reaches the goal
     public void DisplayVictoryScreen(int currentTurn)
     {
-        endScreen.gameObject.SetActive(true);
-        scoreText.text = ("You won in " + currentTurn + " turns !");
+        endScreenBG.gameObject.SetActive(true);
+        endScreenBG.sprite = victorySprite;
+        endText.text = ("You won in " + currentTurn + " turns !");
     }
 
     public void DisplayGameOverScreen()
     {
-        endScreen.gameObject.SetActive(true);
-        scoreText.text = ("You lost ! You run out of oxygen...");
+        endScreenBG.gameObject.SetActive(true);
+        endText.text = ("You lost ! You run out of oxygen...");
     }
 }
