@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public List<Tile> tiles = new List<Tile>();
-    public List<Building> buildings = new List<Building>();
+    [SerializeField] List<Tile> tiles = new List<Tile>();
+    [SerializeField] List<Building> buildings = new List<Building>();
 
-    public float tileSize;
+    private float tileSize = 1;
 
-    public List<Building> buildingPrefabs = new List<Building>();
+    [SerializeField] List<Building> buildingPrefabs = new List<Building>();
 
     public static Map instance;
 

@@ -72,8 +72,17 @@ public class GameManager : MonoBehaviour
     // called when we click on a building button to place it
     public void SetPlacingBuilding (BuildingType buildingType)
     {
-        placingBuilding = true;
-        curSelectedBuilding = buildingType;
+        if (currentMaterials >= 1)
+        {
+            currentMaterials -= 1;
+            placingBuilding = true;
+            curSelectedBuilding = buildingType;
+        }
+        else
+        {
+            // Display a notification screen with the appropriate error : not enough materials to build
+            UI.instance.DisplayNotification(0);
+        }
     }
 
     // called when a new building has been created and placed down

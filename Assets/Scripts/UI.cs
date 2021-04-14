@@ -44,47 +44,20 @@ public class UI : MonoBehaviour
     // called when we click the solar panel button
     public void OnClickSolarPanelButton ()
     {
-        if (GameManager.instance.currentMaterials >= 1)
-        {
-            GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
-            GameManager.instance.currentMaterials--;
-        }
-        else
-        {
-            notificationBG.gameObject.SetActive(true);
-            notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
-        }
-        
+        GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
+
     }
 
     // called when we click the greenhouse button
     public void OnClickGreenhouseButton()
     {
-        if (GameManager.instance.currentMaterials >= 1)
-        {
-            GameManager.instance.SetPlacingBuilding(BuildingType.Greenhouse);
-            GameManager.instance.currentMaterials--;
-        }
-        else
-        {
-            notificationBG.gameObject.SetActive(true);
-            notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
-        }
+        GameManager.instance.SetPlacingBuilding(BuildingType.Greenhouse);
     }
 
     // called when we click the mine button
     public void OnClickFunhouseButton()
-    {
-        if (GameManager.instance.currentMaterials >= 1)
-        {
-            GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
-            GameManager.instance.currentMaterials--;
-        }
-        else
-        {
-            notificationBG.gameObject.SetActive(true);
-            notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
-        }
+    { 
+         GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
     }
 
     // called when we place a building or the turn has ended
@@ -113,5 +86,20 @@ public class UI : MonoBehaviour
     {
         endScreenBG.gameObject.SetActive(true);
         endText.text = ("You lost ! You run out of oxygen...");
+    }
+
+    public void DisplayNotification(int errorNumber)
+    {
+        notificationBG.gameObject.SetActive(true);
+        switch (errorNumber)
+        {
+            // error 0 : not enough materials to build
+            case 0:
+                notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
+                break;
+        }
+            
+            
+        
     }
 }
