@@ -36,10 +36,7 @@ public class Map : MonoBehaviour
                 Tile westTile = GetTileAtPosition(tile.transform.position + new Vector3(-tileSize, 0, 0));
 
                 if (northTile != null)
-                {
-                    Debug.Log(northTile.transform.position);
                     northTile.ToggleHighlight(true);
-                }
                 if (eastTile != null)
                     eastTile.ToggleHighlight(true);
                 if (southTile != null)

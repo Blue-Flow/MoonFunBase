@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -45,6 +46,11 @@ public class GameManager : MonoBehaviour
 
         // update the resource UI
         UI.instance.UpdateResourceText();
+
+        if(currentFun >= maxFun)
+        {
+            UI.instance.DisplayVictoryScreen(currentTurn);
+        }
 
         currentTurn++;
 
@@ -108,5 +114,10 @@ public class GameManager : MonoBehaviour
         placingBuilding = false;
         // update the resource UI
         UI.instance.UpdateResourceText();
+    }
+    
+    public void ReloadScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

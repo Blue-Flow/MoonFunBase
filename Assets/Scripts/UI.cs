@@ -6,14 +6,16 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
-    public GameObject buildingButtons;
+    [SerializeField] GameObject buildingButtons;
 
-    public TextMeshProUGUI oxygenValue;
-    public TextMeshProUGUI energyValue;
-    public TextMeshProUGUI materialsValue;
-    public Image funBar;
+    [SerializeField] TextMeshProUGUI oxygenValue;
+    [SerializeField] TextMeshProUGUI energyValue;
+    [SerializeField] TextMeshProUGUI materialsValue;
+    [SerializeField] Image funBar;
+    [SerializeField] Image victoryScreen;
+    [SerializeField] TextMeshProUGUI scoreText;
 
-    public TextMeshProUGUI curTurnText;
+    [SerializeField] TextMeshProUGUI curTurnText;
 
     public static UI instance;
 
@@ -73,5 +75,12 @@ public class UI : MonoBehaviour
         materialsValue.text = materials;
 
         funBar.fillAmount = ((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun);
+    }
+
+    // called when the fun amount reaches the goal
+    public void DisplayVictoryScreen(int currentTurn)
+    {
+        victoryScreen.gameObject.SetActive(true);
+        scoreText.text = ("You won in " + currentTurn + " turns !");
     }
 }
