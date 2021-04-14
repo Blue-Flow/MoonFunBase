@@ -6,14 +6,14 @@ public enum BuildingType
 {
     Base,
     Greenhouse,
-    Mine,
+    Fun,
     SolarPanel
 }
 
 public enum ResourceType
 {
-    Food,
-    Metal,
+    Materials,
+    Fun,
     Oxygen,
     Energy
 }

@@ -55,9 +55,9 @@ public class UI : MonoBehaviour
     }
 
     // called when we click the mine button
-    public void OnClickMineButton()
+    public void OnClickFunhouseButton()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.Mine);
+        GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
         ToggleBuildingButtons(false);
     }
 
@@ -72,6 +72,6 @@ public class UI : MonoBehaviour
         energyValue.text = energy;
         materialsValue.text = materials;
 
-        funBar.fillAmount = (GameManager.instance.currentFun / GameManager.instance.maxFun);
+        funBar.fillAmount = ((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun);
     }
 }

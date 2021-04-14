@@ -6,7 +6,7 @@ public class Tile : MonoBehaviour
 {
     public GameObject highlight;
     public bool hasBuilding;
-    private bool isEnabled = false;
+    public bool isEnabled = false;
 
     // toggles the tile highlight to show where we can place a building
     public void ToggleHighlight (bool toggle)

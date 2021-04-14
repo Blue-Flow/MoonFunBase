@@ -26,17 +26,27 @@ public class Map : MonoBehaviour
     // displays the tiles which we can place a building on
     public void EnableUsableTiles ()
     {
-        foreach(Building building in buildings)
+        foreach(Tile tile in tiles)
         {
-            Tile northTile = GetTileAtPosition(building.transform.position + new Vector3(0, tileSize, 0));
-            Tile eastTile = GetTileAtPosition(building.transform.position + new Vector3(tileSize, 0, 0));
-            Tile southTile = GetTileAtPosition(building.transform.position + new Vector3(0, -tileSize, 0));
-            Tile westTile = GetTileAtPosition(building.transform.position + new Vector3(-tileSize, 0, 0));
+            if (tile.hasBuilding && !tile.isEnabled)
+            {
+                Tile northTile = GetTileAtPosition(tile.transform.position + new Vector3(0, tileSize, 0));
+                Tile eastTile = GetTileAtPosition(tile.transform.position + new Vector3(tileSize, 0, 0));
+                Tile southTile = GetTileAtPosition(tile.transform.position + new Vector3(0, -tileSize, 0));
+                Tile westTile = GetTileAtPosition(tile.transform.position + new Vector3(-tileSize, 0, 0));
 
-            northTile?.ToggleHighlight(true);
-            eastTile?.ToggleHighlight(true);
-            southTile?.ToggleHighlight(true);
-            westTile?.ToggleHighlight(true);
+                if (northTile != null)
+                {
+                    Debug.Log(northTile.transform.position);
+                    northTile.ToggleHighlight(true);
+                }
+                if (eastTile != null)
+                    eastTile.ToggleHighlight(true);
+                if (southTile != null)
+                    southTile.ToggleHighlight(true);
+                if (westTile != null)
+                    westTile.ToggleHighlight(true);
+            }
         }
     }
 

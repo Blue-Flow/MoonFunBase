@@ -70,11 +70,11 @@ public class GameManager : MonoBehaviour
         {
             switch(building.productionResource)
             {
-                case ResourceType.Food:
-                    funPerTurn += building.productionResourcePerTurn;
-                    break;
-                case ResourceType.Metal:
+                case ResourceType.Materials:
                     materialsPerTurn += building.productionResourcePerTurn;
+                    break;
+                case ResourceType.Fun:
+                    funPerTurn += building.productionResourcePerTurn;
                     break;
                 case ResourceType.Oxygen:
                     oxygenPerTurn += building.productionResourcePerTurn;
@@ -90,10 +90,10 @@ public class GameManager : MonoBehaviour
         {
             switch(building.maintenanceResource)
             {
-                case ResourceType.Food:
+                case ResourceType.Fun:
                     funPerTurn -= building.maintenanceResourcePerTurn;
                     break;
-                case ResourceType.Metal:
+                case ResourceType.Materials:
                     materialsPerTurn -= building.maintenanceResourcePerTurn;
                     break;
                 case ResourceType.Oxygen:
