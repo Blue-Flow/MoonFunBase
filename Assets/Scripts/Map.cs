@@ -66,6 +66,7 @@ public class Map : MonoBehaviour
         DisableUsableTiles();
 
         GameManager.instance.OnCreatedNewBuilding(prefabToSpawn);
+
     }
 
     // returns the tile that's at the given position

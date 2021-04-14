@@ -12,7 +12,7 @@ public class UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI energyValue;
     [SerializeField] TextMeshProUGUI materialsValue;
     [SerializeField] Image funBar;
-    [SerializeField] Image victoryScreen;
+    [SerializeField] Image endScreen;
     [SerializeField] TextMeshProUGUI scoreText;
 
     [SerializeField] TextMeshProUGUI curTurnText;
@@ -36,31 +36,41 @@ public class UI : MonoBehaviour
         curTurnText.text = "Turn " + GameManager.instance.currentTurn;
     }
 
-    // called when we select a building (disables the buttons)
-    public void ToggleBuildingButtons (bool toggle)
-    {
-        buildingButtons.SetActive(toggle);
-    }
-
     // called when we click the solar panel button
     public void OnClickSolarPanelButton ()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
-        ToggleBuildingButtons(false);
+        if (GameManager.instance.currentMaterials >= 1)
+        {
+            GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
+            GameManager.instance.currentMaterials--;
+        }
+        else
+            Debug.Log("You don't have the materials to do that !");
+        
     }
 
     // called when we click the greenhouse button
     public void OnClickGreenhouseButton()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.Greenhouse);
-        ToggleBuildingButtons(false);
+        if (GameManager.instance.currentMaterials >= 1)
+        {
+            GameManager.instance.SetPlacingBuilding(BuildingType.Greenhouse);
+            GameManager.instance.currentMaterials--;
+        }
+        else
+            Debug.Log("You don't have the materials to do that !");
     }
 
     // called when we click the mine button
     public void OnClickFunhouseButton()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
-        ToggleBuildingButtons(false);
+        if (GameManager.instance.currentMaterials >= 1)
+        {
+            GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
+            GameManager.instance.currentMaterials--;
+        }
+        else
+            Debug.Log("You don't have the materials to do that !");
     }
 
     // called when we place a building or the turn has ended
@@ -80,7 +90,13 @@ public class UI : MonoBehaviour
     // called when the fun amount reaches the goal
     public void DisplayVictoryScreen(int currentTurn)
     {
-        victoryScreen.gameObject.SetActive(true);
+        endScreen.gameObject.SetActive(true);
         scoreText.text = ("You won in " + currentTurn + " turns !");
+    }
+
+    public void DisplayGameOverScreen()
+    {
+        endScreen.gameObject.SetActive(true);
+        scoreText.text = ("You lost ! You run out of oxygen...");
     }
 }

@@ -1401,7 +1401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1204741655282086974, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.193
+      value: -0.008
       objectReference: {fileID: 0}
     - target: {fileID: 1204741655282086974, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4361,12 +4361,12 @@ GameObject:
   - component: {fileID: 595537673}
   - component: {fileID: 595537672}
   m_Layer: 5
-  m_Name: VictoryScreen
+  m_Name: EndScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &595537671
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4697,7 +4697,7 @@ GameObject:
   - component: {fileID: 643077697}
   - component: {fileID: 643077696}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RestartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4766,7 +4766,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 643077697}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1399649831}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: ReloadScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &643077697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8747,13 +8759,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21cdabe118013bb479ba8e912eeea6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baseBuilding: {fileID: 1204741655282086968, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
   currentTurn: 0
   maxFun: 20
   placingBuilding: 0
   curSelectedBuilding: 0
   currentFun: 0
-  currentMaterials: 0
-  currentOxygen: 0
+  currentMaterials: 1
+  currentOxygen: 1
   currentEnergy: 0
   funPerTurn: 0
   materialsPerTurn: 0
@@ -8790,7 +8803,7 @@ MonoBehaviour:
   energyValue: {fileID: 617739938}
   materialsValue: {fileID: 1569631106}
   funBar: {fileID: 1358529561}
-  victoryScreen: {fileID: 595537672}
+  endScreen: {fileID: 595537672}
   scoreText: {fileID: 1672479954}
   curTurnText: {fileID: 1223302464}
 --- !u!114 &1399649834

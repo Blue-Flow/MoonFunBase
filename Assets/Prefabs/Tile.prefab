@@ -100,6 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlight: {fileID: 5028185756046163657}
   hasBuilding: 0
+  isEnabled: 0
 --- !u!61 &5028185755893826958
 BoxCollider2D:
   m_ObjectHideFlags: 0

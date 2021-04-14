@@ -29,6 +29,6 @@ public class Building : MonoBehaviour
 
     [Header("Maintenance")]
     public bool hasMaintenanceCost;
-    public ResourceType maintenanceResource;
-    public int maintenanceResourcePerTurn;
+    public ResourceType[] maintenanceResources;
+    public int[] maintenanceResourcePerTurn;
 }

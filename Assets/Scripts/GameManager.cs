@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] Building baseBuilding;
     public int currentTurn;
     public int maxFun = 20;
     public bool placingBuilding;
@@ -31,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
+        OnCreatedNewBuilding(baseBuilding);
         // updating the resource UI
         UI.instance.UpdateResourceText();
     }
@@ -47,18 +49,24 @@ public class GameManager : MonoBehaviour
         // update the resource UI
         UI.instance.UpdateResourceText();
 
-        if(currentFun >= maxFun)
-        {
-            UI.instance.DisplayVictoryScreen(currentTurn);
-        }
+        CheckEndGame();
 
         currentTurn++;
 
-        // enable the building buttons
-        UI.instance.ToggleBuildingButtons(true);
-
         // enable usable tiles
         Map.instance.EnableUsableTiles();
+    }
+
+    private void CheckEndGame()
+    {
+        if (currentFun >= maxFun)
+        {
+            UI.instance.DisplayVictoryScreen(currentTurn);
+        }
+        else if (currentOxygen < 1)
+        {
+            UI.instance.DisplayGameOverScreen();
+        }
     }
 
     // called when we click on a building button to place it
@@ -94,20 +102,20 @@ public class GameManager : MonoBehaviour
         // resource the building may cost
         if(building.hasMaintenanceCost)
         {
-            switch(building.maintenanceResource)
+            foreach(ResourceType resource in building.maintenanceResources)
             {
-                case ResourceType.Fun:
-                    funPerTurn -= building.maintenanceResourcePerTurn;
-                    break;
-                case ResourceType.Materials:
-                    materialsPerTurn -= building.maintenanceResourcePerTurn;
-                    break;
-                case ResourceType.Oxygen:
-                    oxygenPerTurn -= building.maintenanceResourcePerTurn;
-                    break;
-                case ResourceType.Energy:
-                    energyPerTurn -= building.maintenanceResourcePerTurn;
-                    break;
+                int index = 0;
+                switch (resource)
+                {
+                    case ResourceType.Oxygen:
+                        oxygenPerTurn -= building.maintenanceResourcePerTurn[index];
+                        index++;
+                        break;
+                    case ResourceType.Energy:
+                        energyPerTurn -= building.maintenanceResourcePerTurn[index];
+                        index++;
+                        break;
+                }
             }
         }
 
