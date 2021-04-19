@@ -101,5 +101,5 @@ MonoBehaviour:
   productionResource: 1
   productionResourcePerTurn: 1
   hasMaintenanceCost: 1
-  maintenanceResources: 0200000003000000
-  maintenanceResourcePerTurn: 01000000
+  maintenanceResource: 0200000003000000
+  maintenanceResourcePerTurn: 0100000001000000

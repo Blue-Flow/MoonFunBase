@@ -13,9 +13,10 @@ public class UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI materialsValue;
     [SerializeField] Image funBar;
 
-    [SerializeField] Image endScreenBG;
-    [SerializeField] TextMeshProUGUI endText;
-    [SerializeField] Sprite victorySprite;
+    [SerializeField] Image deathScreenBG;
+    [SerializeField] TextMeshProUGUI deathEndText;
+    [SerializeField] Image victoryScreenBG;
+    [SerializeField] TextMeshProUGUI victoryEndText;
 
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
@@ -77,15 +78,17 @@ public class UI : MonoBehaviour
     // called when the fun amount reaches the goal
     public void DisplayVictoryScreen(int currentTurn)
     {
-        endScreenBG.gameObject.SetActive(true);
-        endScreenBG.sprite = victorySprite;
-        endText.text = ("You won in " + currentTurn + " turns !");
+        victoryScreenBG.gameObject.SetActive(true);
+        victoryEndText.text = ("You won in " + currentTurn + " turns !");
     }
 
-    public void DisplayGameOverScreen()
+    public void DisplayGameOverScreen(ResourceType resource)
     {
-        endScreenBG.gameObject.SetActive(true);
-        endText.text = ("You lost ! You run out of oxygen...");
+        deathScreenBG.gameObject.SetActive(true);
+        if(resource == ResourceType.Oxygen)
+        deathEndText.text = ("You lost ! You ran out of oxygen..." +"\n" +"Your people slowly died of suffocation");
+        if(resource == ResourceType.Energy)
+        deathEndText.text = ("You lost ! You ran out of energy..." +"\n" +"Your life support systems shut off and your people froze to death");
     }
 
     public void DisplayNotification(int errorNumber)

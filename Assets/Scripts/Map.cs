@@ -4,29 +4,72 @@ using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    [SerializeField] List<Tile> tiles = new List<Tile>();
-    [SerializeField] List<Building> buildings = new List<Building>();
-
     private float tileSize = 1;
+    [SerializeField] int height = 10;
+    [SerializeField] int width = 10;
+    [SerializeField] float xOffset = 10;
+    [SerializeField] float yOffset = 10;
+    private List<Tile> tilesList = new List<Tile>();
+    private List<Tile> startTilesList = new List<Tile>();
+    [SerializeField] GameObject mapHolder;
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
+    [SerializeField] List<Tile> tilesPrefab = new List<Tile>();
+
+    [SerializeField] List<Building> buildings = new List<Building>();
+
 
     public static Map instance;
 
-    void Awake ()
+    void Awake()
     {
         instance = this;
     }
 
-    void Start ()
+    void Start()
     {
+        GenerateMap();
         EnableUsableTiles();
+    }
+
+    private void GenerateMap()
+    {
+        List<float> rotations = new List<float>() { 0, 90, 180, 270 };
+        for (int y = 0; y < height; y++)
+        {
+            for (int x = 0; x < width; x++)
+            {
+                Tile tile = Instantiate(tilesPrefab[Random.Range(0, tilesPrefab.Count)], mapHolder.transform);
+                tilesList.Add(tile);
+                if (x != 0 && y !=0 && x != (width-1) && y != (height-1))
+                { startTilesList.Add(tile); }
+                tile.transform.position = new Vector2(x + xOffset, y + yOffset);
+                // set a random rotation for the tile -------------------------------- /!\ Pb rotation ? Liée à chaque prefab ?
+                float tilerotation = rotations[Random.Range(0, rotations.Count)];
+                Debug.Log(tilerotation);
+                tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
+            }
+        }
+        DetermineStartingTile();
+    }
+
+    private void DetermineStartingTile()
+    {
+        // determines the starting tile
+        int randomNumber = Random.Range(0, startTilesList.Count);
+        Tile startingTile = startTilesList[randomNumber];
+        // sets the starting building
+        startingTile.hasBuilding = true;
+        startTilesList[randomNumber + 1].hasBuilding = true;
+        startingTile.transform.rotation = new Quaternion(0, 0, 0, 0); // sets back the rotation of the first tile to keep building straight
+        Building startBuilding = Instantiate(buildingPrefabs[0], startingTile.transform);
+        startBuilding.transform.position = new Vector2(startingTile.transform.position.x + (tileSize / 2), startingTile.transform.position.y);
     }
 
     // displays the tiles which we can place a building on
     public void EnableUsableTiles ()
     {
-        foreach(Tile tile in tiles)
+        foreach(Tile tile in tilesList)
         {
             if (tile.hasBuilding && !tile.isEnabled)
             {
@@ -50,7 +93,7 @@ public class Map : MonoBehaviour
     // disables the tiles we can place a building on
     public void DisableUsableTiles ()
     {
-        foreach(Tile tile in tiles)
+        foreach(Tile tile in tilesList)
             tile.ToggleHighlight(false);
     }
 
@@ -72,6 +115,6 @@ public class Map : MonoBehaviour
     // returns the tile that's at the given position
     Tile GetTileAtPosition (Vector3 pos)
     {
-        return tiles.Find(x => x.CanBeHighlighted(pos));
+        return tilesList.Find(x => x.CanBeHighlighted(pos));
     }
 }
