@@ -148,9 +148,4 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
-    public void ReloadScene()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
 }

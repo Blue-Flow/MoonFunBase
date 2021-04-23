@@ -46,7 +46,6 @@ public class Map : MonoBehaviour
                 tile.transform.position = new Vector2(x + xOffset, y + yOffset);
                 // set a random rotation for the tile -------------------------------- /!\ Pb rotation ? Liée à chaque prefab ?
                 float tilerotation = rotations[Random.Range(0, rotations.Count)];
-                Debug.Log(tilerotation);
                 tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
             }
         }
@@ -60,7 +59,8 @@ public class Map : MonoBehaviour
         Tile startingTile = startTilesList[randomNumber];
         // sets the starting building
         startingTile.hasBuilding = true;
-        startTilesList[randomNumber + 1].hasBuilding = true;
+        Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);
+        GetTileAtPosition(otherStartingPosition).hasBuilding = true;
         startingTile.transform.rotation = new Quaternion(0, 0, 0, 0); // sets back the rotation of the first tile to keep building straight
         Building startBuilding = Instantiate(buildingPrefabs[0], startingTile.transform);
         startBuilding.transform.position = new Vector2(startingTile.transform.position.x + (tileSize / 2), startingTile.transform.position.y);
@@ -103,6 +103,8 @@ public class Map : MonoBehaviour
         Building prefabToSpawn = buildingPrefabs.Find(x => x.type == buildingType);
         GameObject buildingObj = Instantiate(prefabToSpawn.gameObject, position, Quaternion.identity);
         buildings.Add(buildingObj.GetComponent<Building>());
+        
+        UI.instance.PlayConstructionSound(buildingType);
 
         GetTileAtPosition(position).hasBuilding = true;
 
@@ -112,8 +114,15 @@ public class Map : MonoBehaviour
 
     }
 
+
+
     // returns the tile that's at the given position
     Tile GetTileAtPosition (Vector3 pos)
+    {
+        return tilesList.Find(x => x.CanBeHighlighted(pos));
+    }
+
+    Tile GetTileAtPosition(Vector2 pos)
     {
         return tilesList.Find(x => x.CanBeHighlighted(pos));
     }

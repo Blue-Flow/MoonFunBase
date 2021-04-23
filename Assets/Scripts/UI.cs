@@ -6,6 +6,7 @@ using TMPro;
 
 public class UI : MonoBehaviour
 {
+    [Header("Graphismes")]
     [SerializeField] GameObject buildingButtons;
 
     [SerializeField] TextMeshProUGUI oxygenValue;
@@ -23,6 +24,13 @@ public class UI : MonoBehaviour
 
     [SerializeField] TextMeshProUGUI curTurnText;
 
+    [Header("Audio")]
+    private AudioSource audioSource;
+    [SerializeField] AudioClip[] gHConstructionSounds;
+    [SerializeField] AudioClip[] sPConstructionSounds;
+    [SerializeField] AudioClip[] fHConstructionSounds;
+
+
     public static UI instance;
 
     void Awake ()
@@ -33,6 +41,26 @@ public class UI : MonoBehaviour
     void Start ()
     {
         curTurnText.text = "Turn " + GameManager.instance.currentTurn;
+        audioSource = GetComponent<AudioSource>();
+    }
+    public void PlayConstructionSound(BuildingType buildingType)
+    {
+        //play building sound depending on the constructed building
+        switch (buildingType)
+        {
+            case (BuildingType.Greenhouse):
+                AudioClip gHClip = gHConstructionSounds[Random.Range(0, gHConstructionSounds.Length)];
+                audioSource.PlayOneShot(gHClip);
+                break;
+            case (BuildingType.Fun):
+                AudioClip fHClip = fHConstructionSounds[Random.Range(0, fHConstructionSounds.Length)];
+                audioSource.PlayOneShot(fHClip);
+                break;
+            case (BuildingType.SolarPanel):
+                AudioClip sPClip = sPConstructionSounds[Random.Range(0, sPConstructionSounds.Length)];
+                audioSource.PlayOneShot(sPClip);
+                break;
+        }
     }
 
     // called when the "End Turn" button is pressed
@@ -101,8 +129,5 @@ public class UI : MonoBehaviour
                 notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
                 break;
         }
-            
-            
-        
     }
 }
