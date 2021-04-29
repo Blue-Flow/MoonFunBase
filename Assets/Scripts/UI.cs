@@ -12,7 +12,14 @@ public class UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI oxygenValue;
     [SerializeField] TextMeshProUGUI energyValue;
     [SerializeField] TextMeshProUGUI materialsValue;
+    [SerializeField] TextMeshProUGUI funValue;
     [SerializeField] Image funBar;
+    [SerializeField] TextMeshProUGUI curTurnText;
+    [SerializeField] TextMeshProUGUI baseName;
+
+    [SerializeField] GameObject oxygenBuildingButtonHighlight;
+    [SerializeField] GameObject energyBuildingButtonHighlight;
+    [SerializeField] GameObject funBuildingButtonHighlight;
 
     [SerializeField] Image deathScreenBG;
     [SerializeField] TextMeshProUGUI deathEndText;
@@ -21,8 +28,6 @@ public class UI : MonoBehaviour
 
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
-
-    [SerializeField] TextMeshProUGUI curTurnText;
 
     [Header("Audio")]
     private AudioSource audioSource;
@@ -42,6 +47,7 @@ public class UI : MonoBehaviour
     {
         curTurnText.text = "Turn " + GameManager.instance.currentTurn;
         audioSource = GetComponent<AudioSource>();
+        baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
     public void PlayConstructionSound(BuildingType buildingType)
     {
@@ -63,6 +69,22 @@ public class UI : MonoBehaviour
         }
     }
 
+    public void ToggleBuildingButtonHighlight(BuildingType buildingType, bool toggle)
+    {
+        switch (buildingType)
+            {
+            case BuildingType.Fun:
+                funBuildingButtonHighlight.SetActive(toggle);
+                break;
+            case BuildingType.SolarPanel:
+                energyBuildingButtonHighlight.SetActive(toggle);
+                break;
+            case BuildingType.Greenhouse:
+                oxygenBuildingButtonHighlight.SetActive(toggle);
+                break;
+        }
+    }
+
     // called when the "End Turn" button is pressed
     public void OnEndTurnButton ()
     {
@@ -74,7 +96,6 @@ public class UI : MonoBehaviour
     public void OnClickSolarPanelButton ()
     {
         GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
-
     }
 
     // called when we click the greenhouse button
@@ -86,7 +107,7 @@ public class UI : MonoBehaviour
     // called when we click the mine button
     public void OnClickFunhouseButton()
     { 
-         GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
+        GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
     }
 
     // called when we place a building or the turn has ended
@@ -95,10 +116,12 @@ public class UI : MonoBehaviour
         string materials = string.Format("{0} ({1}{2})", GameManager.instance.currentMaterials, GameManager.instance.materialsPerTurn < 0 ? "" : "+", GameManager.instance.materialsPerTurn);
         string oxygen = string.Format("{0} ({1}{2})", GameManager.instance.currentOxygen, GameManager.instance.oxygenPerTurn < 0 ? "" : "+", GameManager.instance.oxygenPerTurn);
         string energy = string.Format("{0} ({1}{2})", GameManager.instance.currentEnergy, GameManager.instance.energyPerTurn < 0 ? "" : "+", GameManager.instance.energyPerTurn);
+        string fun = string.Format("{0} ({1}{2})", GameManager.instance.currentFun, GameManager.instance.funPerTurn < 0 ? "" : "+", GameManager.instance.funPerTurn);
 
         oxygenValue.text = oxygen;
         energyValue.text = energy;
         materialsValue.text = materials;
+        funValue.text = fun;
 
         funBar.fillAmount = ((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun);
     }
@@ -107,13 +130,15 @@ public class UI : MonoBehaviour
     public void DisplayVictoryScreen(int currentTurn)
     {
         victoryScreenBG.gameObject.SetActive(true);
+        victoryScreenBG.gameObject.GetComponent<AudioSource>().Play();
         victoryEndText.text = ("You won in " + currentTurn + " turns !");
     }
 
     public void DisplayGameOverScreen(ResourceType resource)
     {
         deathScreenBG.gameObject.SetActive(true);
-        if(resource == ResourceType.Oxygen)
+        deathScreenBG.gameObject.GetComponent<AudioSource>().Play();
+        if (resource == ResourceType.Oxygen)
         deathEndText.text = ("You lost ! You ran out of oxygen..." +"\n" +"Your people slowly died of suffocation");
         if(resource == ResourceType.Energy)
         deathEndText.text = ("You lost ! You ran out of energy..." +"\n" +"Your life support systems shut off and your people froze to death");

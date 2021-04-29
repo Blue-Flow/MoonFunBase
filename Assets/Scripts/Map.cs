@@ -14,7 +14,7 @@ public class Map : MonoBehaviour
     [SerializeField] GameObject mapHolder;
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
-    [SerializeField] List<Tile> tilesPrefab = new List<Tile>();
+    [SerializeField] Tile tilesPrefab;
 
     [SerializeField] List<Building> buildings = new List<Building>();
 
@@ -29,24 +29,26 @@ public class Map : MonoBehaviour
     void Start()
     {
         GenerateMap();
-        EnableUsableTiles();
     }
 
     private void GenerateMap()
     {
-        List<float> rotations = new List<float>() { 0, 90, 180, 270 };
+        //List<float> rotations = new List<float>() { 0, 90, 180, 270 };
         for (int y = 0; y < height; y++)
         {
             for (int x = 0; x < width; x++)
             {
-                Tile tile = Instantiate(tilesPrefab[Random.Range(0, tilesPrefab.Count)], mapHolder.transform);
+                Tile tile = Instantiate(tilesPrefab, mapHolder.transform);
                 tilesList.Add(tile);
-                if (x != 0 && y !=0 && x != (width-1) && y != (height-1))
-                { startTilesList.Add(tile); }
                 tile.transform.position = new Vector2(x + xOffset, y + yOffset);
+
+                if (x != 0 && y !=0 && x != (width-1) && y != (height-1))
+                { 
+                    startTilesList.Add(tile); 
+                }
                 // set a random rotation for the tile -------------------------------- /!\ Pb rotation ? Liée à chaque prefab ?
-                float tilerotation = rotations[Random.Range(0, rotations.Count)];
-                tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
+               // float tilerotation = rotations[Random.Range(0, rotations.Count)];
+               // tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
             }
         }
         DetermineStartingTile();
@@ -61,7 +63,7 @@ public class Map : MonoBehaviour
         startingTile.hasBuilding = true;
         Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);
         GetTileAtPosition(otherStartingPosition).hasBuilding = true;
-        startingTile.transform.rotation = new Quaternion(0, 0, 0, 0); // sets back the rotation of the first tile to keep building straight
+        //startingTile.transform.rotation = new Quaternion(0, 0, 0, 0); // sets back the rotation of the first tile to keep building straight
         Building startBuilding = Instantiate(buildingPrefabs[0], startingTile.transform);
         startBuilding.transform.position = new Vector2(startingTile.transform.position.x + (tileSize / 2), startingTile.transform.position.y);
     }
@@ -105,24 +107,23 @@ public class Map : MonoBehaviour
         buildings.Add(buildingObj.GetComponent<Building>());
         
         UI.instance.PlayConstructionSound(buildingType);
+        UI.instance.ToggleBuildingButtonHighlight(buildingType, false);
 
         GetTileAtPosition(position).hasBuilding = true;
 
         DisableUsableTiles();
 
+
         GameManager.instance.OnCreatedNewBuilding(prefabToSpawn);
 
     }
 
-
-
     // returns the tile that's at the given position
-    Tile GetTileAtPosition (Vector3 pos)
+    private Tile GetTileAtPosition (Vector3 pos)
     {
         return tilesList.Find(x => x.CanBeHighlighted(pos));
     }
-
-    Tile GetTileAtPosition(Vector2 pos)
+    private Tile GetTileAtPosition(Vector2 pos)
     {
         return tilesList.Find(x => x.CanBeHighlighted(pos));
     }

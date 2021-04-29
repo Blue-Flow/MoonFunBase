@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class GameManager : MonoBehaviour
 {
@@ -22,6 +23,9 @@ public class GameManager : MonoBehaviour
     public int oxygenPerTurn;
     public int energyPerTurn;
 
+    [Header("Audio")]
+    [SerializeField] AudioMixer audioMixer;
+
     public static GameManager instance;
 
     void Awake ()
@@ -34,6 +38,9 @@ public class GameManager : MonoBehaviour
         OnCreatedNewBuilding(baseBuilding);
         // updating the resource UI
         UI.instance.UpdateResourceText();
+        float volume = PlayerPrefs.GetFloat("volume");
+        audioMixer.SetFloat("volume", volume);
+
     }
 
     // called when the "End Turn" button is pressed
@@ -51,24 +58,26 @@ public class GameManager : MonoBehaviour
         CheckEndGame();
 
         currentTurn++;
-
-        // enable usable tiles
-        Map.instance.EnableUsableTiles();
     }
 
     private void CheckEndGame()
     {
         if (currentFun >= maxFun)
         {
+            // Stops the theme music from playing
+            GetComponent<AudioSource>().Stop();
             UI.instance.DisplayVictoryScreen(currentTurn);
         }
         else if (currentOxygen < 1)
         {
+            GetComponent<AudioSource>().Stop();
             UI.instance.DisplayGameOverScreen(ResourceType.Oxygen);
         }
         else if (currentEnergy < 1)
         {
+            GetComponent<AudioSource>().Stop();
             UI.instance.DisplayGameOverScreen(ResourceType.Energy);
+            
         }
     }
 
@@ -80,6 +89,8 @@ public class GameManager : MonoBehaviour
             currentMaterials -= 1;
             placingBuilding = true;
             curSelectedBuilding = buildingType;
+            Map.instance.EnableUsableTiles();
+            UI.instance.ToggleBuildingButtonHighlight(buildingType, true);
         }
         else
         {
