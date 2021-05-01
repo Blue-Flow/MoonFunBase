@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class UI : MonoBehaviour
 {
@@ -38,14 +39,18 @@ public class UI : MonoBehaviour
 
     void Start ()
     {
-        curTurnText.text = "Turn " + GameManager.instance.currentTurn;
+        GetBaseName();
+    }
+
+    private void GetBaseName()
+    {
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
 
     public void ToggleBuildingButtonHighlight(BuildingType buildingType, bool toggle)
     {
         switch (buildingType)
-            {
+        {
             case BuildingType.Fun:
                 funBuildingButtonHighlight.SetActive(toggle);
                 break;
@@ -65,19 +70,9 @@ public class UI : MonoBehaviour
     }
 
     // called when we place a building or the turn has ended
-    public void UpdateResourceText ()
+    public void UpdateFunBarAmount (float funBarAmount)
     {
-        string materials = string.Format("{0} ({1}{2})", GameManager.instance.currentMaterials, GameManager.instance.materialsPerTurn < 0 ? "" : "+", GameManager.instance.materialsPerTurn);
-        string oxygen = string.Format("{0} ({1}{2})", GameManager.instance.currentOxygen, GameManager.instance.oxygenPerTurn < 0 ? "" : "+", GameManager.instance.oxygenPerTurn);
-        string energy = string.Format("{0} ({1}{2})", GameManager.instance.currentEnergy, GameManager.instance.energyPerTurn < 0 ? "" : "+", GameManager.instance.energyPerTurn);
-        string fun = string.Format("{0} ({1}{2})", GameManager.instance.currentFun, GameManager.instance.funPerTurn < 0 ? "" : "+", GameManager.instance.funPerTurn);
-
-        oxygenValue.text = oxygen;
-        energyValue.text = energy;
-        materialsValue.text = materials;
-        funValue.text = fun;
-
-        funBar.fillAmount = ((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun);
+        funBar.fillAmount = funBarAmount;
     }
 
     // called when the fun amount reaches the goal
@@ -108,5 +103,28 @@ public class UI : MonoBehaviour
                 notificationText.text = ("You don't have enough materials to keep building !" + "\n" + "A new arrival is scheduled for next turn");
                 break;
         }
+    }
+
+    public void UpdateFunText(int currentFun, int funPerTurn)
+    {
+        string fun = string.Format("{0} ({1}{2})", currentFun, funPerTurn < 0 ? "" : "+", funPerTurn);
+        funValue.text = fun;
+    }
+    public void UpdateMaterialsText(int currentMaterials, int materialsPerTurn)
+    {
+        string materials = string.Format("{0} ({1}{2})", currentMaterials, materialsPerTurn < 0 ? "" : "+", materialsPerTurn);
+        materialsValue.text = materials;
+    }
+
+    internal void UpdateOxygenText(int currentOxygen, int oxygenPerTurn)
+    {
+        string oxygen = string.Format("{0} ({1}{2})", currentOxygen, oxygenPerTurn < 0 ? "" : "+", oxygenPerTurn);
+        oxygenValue.text = oxygen;
+    }
+
+    internal void UpdateEnergyText(int currentEnergy, int energyPerTurn)
+    {
+        string energy = string.Format("{0} ({1}{2})", currentEnergy, energyPerTurn < 0 ? "" : "+", energyPerTurn);
+        energyValue.text = energy;
     }
 }

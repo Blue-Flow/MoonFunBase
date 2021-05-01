@@ -35,11 +35,21 @@ public class GameManager : MonoBehaviour
 
     void Start ()
     {
+        // Finish the implementation of the base building (started in Map.cs)
         OnCreatedNewBuilding(baseBuilding);
-        // updating the resource UI
-        UI.instance.UpdateResourceText();
+
+        // Update the values on the UI
+        UI.instance.UpdateFunBarAmount(((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun));
+        UI.instance.UpdateTurnText(currentTurn);
+        UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
+        UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
+        UI.instance.UpdateFunText(currentFun, funPerTurn);
+        UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
+
+        // Gets the registered settings
         float volume = PlayerPrefs.GetFloat("volume");
         audioMixer.SetFloat("volume", volume);
+
 
     }
 
@@ -52,7 +62,12 @@ public class GameManager : MonoBehaviour
         currentOxygen += oxygenPerTurn;
         currentEnergy += energyPerTurn;
 
-        UI.instance.UpdateResourceText();
+        UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
+        UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
+        UI.instance.UpdateFunText(currentFun, funPerTurn);
+        UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
+
+        UI.instance.UpdateFunBarAmount(((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun));
         CheckEndGame();
         currentTurn++;
         UI.instance.UpdateTurnText(currentTurn);
@@ -115,8 +130,6 @@ public class GameManager : MonoBehaviour
         }
 
         placingBuilding = false;
-        // update the resource UI
-        UI.instance.UpdateResourceText();
     }
 
     private void AddBuildingMaintenance(Building building)
@@ -128,10 +141,12 @@ public class GameManager : MonoBehaviour
             {
                 case ResourceType.Oxygen:
                     oxygenPerTurn -= building.maintenanceResourcePerTurn[index];
+                    UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
                     index++;
                     break;
                 case ResourceType.Energy:
                     energyPerTurn -= building.maintenanceResourcePerTurn[index];
+                    UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
                     index++;
                     break;
             }
@@ -144,15 +159,19 @@ public class GameManager : MonoBehaviour
         {
             case ResourceType.Materials:
                 materialsPerTurn += building.productionResourcePerTurn;
+                UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
                 break;
             case ResourceType.Fun:
                 funPerTurn += building.productionResourcePerTurn;
+                UI.instance.UpdateFunText(currentFun, funPerTurn);
                 break;
             case ResourceType.Oxygen:
                 oxygenPerTurn += building.productionResourcePerTurn;
+                UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
                 break;
             case ResourceType.Energy:
                 energyPerTurn += building.productionResourcePerTurn;
+                UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
                 break;
         }
     }
