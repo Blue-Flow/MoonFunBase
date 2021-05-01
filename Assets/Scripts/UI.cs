@@ -29,13 +29,6 @@ public class UI : MonoBehaviour
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
 
-    [Header("Audio")]
-    private AudioSource audioSource;
-    [SerializeField] AudioClip[] gHConstructionSounds;
-    [SerializeField] AudioClip[] sPConstructionSounds;
-    [SerializeField] AudioClip[] fHConstructionSounds;
-
-
     public static UI instance;
 
     void Awake ()
@@ -46,27 +39,7 @@ public class UI : MonoBehaviour
     void Start ()
     {
         curTurnText.text = "Turn " + GameManager.instance.currentTurn;
-        audioSource = GetComponent<AudioSource>();
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
-    }
-    public void PlayConstructionSound(BuildingType buildingType)
-    {
-        //play building sound depending on the constructed building
-        switch (buildingType)
-        {
-            case (BuildingType.Greenhouse):
-                AudioClip gHClip = gHConstructionSounds[Random.Range(0, gHConstructionSounds.Length)];
-                audioSource.PlayOneShot(gHClip);
-                break;
-            case (BuildingType.Fun):
-                AudioClip fHClip = fHConstructionSounds[Random.Range(0, fHConstructionSounds.Length)];
-                audioSource.PlayOneShot(fHClip);
-                break;
-            case (BuildingType.SolarPanel):
-                AudioClip sPClip = sPConstructionSounds[Random.Range(0, sPConstructionSounds.Length)];
-                audioSource.PlayOneShot(sPClip);
-                break;
-        }
     }
 
     public void ToggleBuildingButtonHighlight(BuildingType buildingType, bool toggle)
@@ -86,28 +59,9 @@ public class UI : MonoBehaviour
     }
 
     // called when the "End Turn" button is pressed
-    public void OnEndTurnButton ()
+    public void UpdateTurnText(int currentTurn)
     {
-        GameManager.instance.EndTurn();
-        curTurnText.text = "Turn " + GameManager.instance.currentTurn;
-    }
-
-    // called when we click the solar panel button
-    public void OnClickSolarPanelButton ()
-    {
-        GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
-    }
-
-    // called when we click the greenhouse button
-    public void OnClickGreenhouseButton()
-    {
-        GameManager.instance.SetPlacingBuilding(BuildingType.Greenhouse);
-    }
-
-    // called when we click the mine button
-    public void OnClickFunhouseButton()
-    { 
-        GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
+        curTurnText.text = "Turn " + currentTurn;
     }
 
     // called when we place a building or the turn has ended

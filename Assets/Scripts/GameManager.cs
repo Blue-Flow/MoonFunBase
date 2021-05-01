@@ -52,12 +52,10 @@ public class GameManager : MonoBehaviour
         currentOxygen += oxygenPerTurn;
         currentEnergy += energyPerTurn;
 
-        // update the resource UI
         UI.instance.UpdateResourceText();
-
         CheckEndGame();
-
         currentTurn++;
+        UI.instance.UpdateTurnText(currentTurn);
     }
 
     private void CheckEndGame()

@@ -106,7 +106,7 @@ public class Map : MonoBehaviour
         GameObject buildingObj = Instantiate(prefabToSpawn.gameObject, position, Quaternion.identity);
         buildings.Add(buildingObj.GetComponent<Building>());
         
-        UI.instance.PlayConstructionSound(buildingType);
+        Audio.instance.PlayConstructionSound(buildingType);
         UI.instance.ToggleBuildingButtonHighlight(buildingType, false);
 
         GetTileAtPosition(position).hasBuilding = true;
