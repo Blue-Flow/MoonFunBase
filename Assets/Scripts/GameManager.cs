@@ -39,12 +39,9 @@ public class GameManager : MonoBehaviour
         OnCreatedNewBuilding(baseBuilding);
 
         // Update the values on the UI
-        UI.instance.UpdateFunBarAmount(((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun));
         UI.instance.UpdateTurnText(currentTurn);
-        UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
-        UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
-        UI.instance.UpdateFunText(currentFun, funPerTurn);
-        UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
+
+        UpdateResourcesTexts();
 
         // Gets the registered settings
         float volume = PlayerPrefs.GetFloat("volume");
@@ -61,16 +58,21 @@ public class GameManager : MonoBehaviour
         currentMaterials += materialsPerTurn;
         currentOxygen += oxygenPerTurn;
         currentEnergy += energyPerTurn;
+        
+        UpdateResourcesTexts();
 
+        CheckEndGame();
+        currentTurn++;
+        UI.instance.UpdateTurnText(currentTurn);
+    }
+
+    private void UpdateResourcesTexts()
+    {
         UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
         UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
         UI.instance.UpdateFunText(currentFun, funPerTurn);
         UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
-
         UI.instance.UpdateFunBarAmount(((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun));
-        CheckEndGame();
-        currentTurn++;
-        UI.instance.UpdateTurnText(currentTurn);
     }
 
     private void CheckEndGame()
@@ -90,7 +92,6 @@ public class GameManager : MonoBehaviour
         {
             GetComponent<AudioSource>().Stop();
             UI.instance.DisplayGameOverScreen(ResourceType.Energy);
-            
         }
     }
 

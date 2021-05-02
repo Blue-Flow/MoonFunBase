@@ -33,6 +33,12 @@ public class Map : MonoBehaviour
 
     private void GenerateMap()
     {
+        GenerateTilesinGrid();
+        DetermineStartingTile();
+    }
+
+    private void GenerateTilesinGrid()
+    {
         //List<float> rotations = new List<float>() { 0, 90, 180, 270 };
         for (int y = 0; y < height; y++)
         {
@@ -42,16 +48,15 @@ public class Map : MonoBehaviour
                 tilesList.Add(tile);
                 tile.transform.position = new Vector2(x + xOffset, y + yOffset);
 
-                if (x != 0 && y !=0 && x != (width-1) && y != (height-1))
-                { 
-                    startTilesList.Add(tile); 
+                if (x != 0 && y != 0 && x != (width - 1) && y != (height - 1))
+                {
+                    startTilesList.Add(tile);
                 }
                 // set a random rotation for the tile -------------------------------- /!\ Pb rotation ? Liée à chaque prefab ?
-               // float tilerotation = rotations[Random.Range(0, rotations.Count)];
-               // tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
+                // float tilerotation = rotations[Random.Range(0, rotations.Count)];
+                // tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
             }
         }
-        DetermineStartingTile();
     }
 
     private void DetermineStartingTile()
@@ -112,7 +117,6 @@ public class Map : MonoBehaviour
         GetTileAtPosition(position).hasBuilding = true;
 
         DisableUsableTiles();
-
 
         GameManager.instance.OnCreatedNewBuilding(prefabToSpawn);
 

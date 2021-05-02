@@ -1650,8 +1650,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1399649833}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
         m_MethodName: OnClickGreenhouseButton
         m_Mode: 1
         m_Arguments:
@@ -3670,8 +3670,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1399649833}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
         m_MethodName: OnClickFunhouseButton
         m_Mode: 1
         m_Arguments:
@@ -3819,8 +3819,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1399649833}
-        m_TargetAssemblyTypeName: UI, Assembly-CSharp
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
         m_MethodName: OnClickSolarPanelButton
         m_Mode: 1
         m_Arguments:
