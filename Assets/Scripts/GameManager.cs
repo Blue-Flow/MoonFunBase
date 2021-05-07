@@ -77,21 +77,21 @@ public class GameManager : MonoBehaviour
 
     private void CheckEndGame()
     {
-        if (currentFun >= maxFun)
+        if (currentEnergy < 1)
         {
-            // Stops the theme music from playing
             GetComponent<AudioSource>().Stop();
-            UI.instance.DisplayVictoryScreen(currentTurn);
+            UI.instance.DisplayGameOverScreen(ResourceType.Energy); 
         }
         else if (currentOxygen < 1)
         {
             GetComponent<AudioSource>().Stop();
             UI.instance.DisplayGameOverScreen(ResourceType.Oxygen);
         }
-        else if (currentEnergy < 1)
+        else if (currentFun >= maxFun)
         {
+            // Stops the theme music from playing
             GetComponent<AudioSource>().Stop();
-            UI.instance.DisplayGameOverScreen(ResourceType.Energy);
+            UI.instance.DisplayVictoryScreen(currentTurn);
         }
     }
 
