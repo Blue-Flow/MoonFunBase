@@ -5,12 +5,9 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     private float tileSize = 1;
-    [SerializeField] int height = 10;
-    [SerializeField] int width = 10;
-    [SerializeField] float xOffset = 10;
-    [SerializeField] float yOffset = 10;
-    private List<Tile> tilesList = new List<Tile>();
-    private List<Tile> startTilesList = new List<Tile>();
+    [SerializeField] List<Tile> tilesList = new List<Tile>();
+    [SerializeField] List<Tile> startTilesList = new List<Tile>();
+    [SerializeField] List<Tile> randomTilesList = new List<Tile>();
     [SerializeField] GameObject mapHolder;
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
@@ -40,23 +37,9 @@ public class Map : MonoBehaviour
     private void GenerateTilesinGrid()
     {
         //List<float> rotations = new List<float>() { 0, 90, 180, 270 };
-        for (int y = 0; y < height; y++)
-        {
-            for (int x = 0; x < width; x++)
-            {
-                Tile tile = Instantiate(tilesPrefab, mapHolder.transform);
-                tilesList.Add(tile);
-                tile.transform.position = new Vector2(x + xOffset, y + yOffset);
-
-                if (x != 0 && y != 0 && x != (width - 1) && y != (height - 1))
-                {
-                    startTilesList.Add(tile);
-                }
                 // set a random rotation for the tile -------------------------------- /!\ Pb rotation ? Liée à chaque prefab ?
                 // float tilerotation = rotations[Random.Range(0, rotations.Count)];
                 // tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
-            }
-        }
     }
 
     private void DetermineStartingTile()
