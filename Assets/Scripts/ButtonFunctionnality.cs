@@ -6,7 +6,7 @@ public class ButtonFunctionnality : MonoBehaviour
 {
     public void OnEndTurnButton()
     {
-        GameManager.instance.EndTurn();
+        EventHandler.EndTurn();
     }
     public void OnClickSolarPanelButton()
     {

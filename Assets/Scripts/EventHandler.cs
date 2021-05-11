@@ -1,18 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class EventHandler : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public static event Action OnEndTurn;
 
-    // Update is called once per frame
-    void Update()
+    public static void EndTurn()
     {
-        
+        OnEndTurn();
     }
 }
