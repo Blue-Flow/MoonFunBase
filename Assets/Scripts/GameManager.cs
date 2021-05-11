@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -46,8 +47,24 @@ public class GameManager : MonoBehaviour
         // Gets the registered settings
         float volume = PlayerPrefs.GetFloat("volume");
         audioMixer.SetFloat("volume", volume);
+        if (PlayerPrefs.GetInt("areTipsactive") == 0)
+            UI.instance.SetTipsActive(false);
 
 
+    }
+    private void Update()
+    {
+        if(placingBuilding && Input.GetKeyDown(KeyCode.Escape))
+        {
+            CancelBuildingConstruction();
+        }
+    }
+
+    private void CancelBuildingConstruction()
+    {
+        placingBuilding = false;
+        Map.instance.DisableUsableTiles();
+        UI.instance.ToggleBuildingButtonHighlight(curSelectedBuilding, false);
     }
 
     // called when the "End Turn" button is pressed
@@ -100,7 +117,6 @@ public class GameManager : MonoBehaviour
     {
         if (currentMaterials >= 1)
         {
-            currentMaterials -= 1;
             placingBuilding = true;
             curSelectedBuilding = buildingType;
             Map.instance.EnableUsableTiles();
@@ -130,6 +146,7 @@ public class GameManager : MonoBehaviour
             AddBuildingMaintenance(building);
         }
 
+        currentMaterials -= 1;
         placingBuilding = false;
     }
 

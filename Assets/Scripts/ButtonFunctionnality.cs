@@ -20,4 +20,12 @@ public class ButtonFunctionnality : MonoBehaviour
     {
         GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
     }
+    public void OnClickCloseTips()
+    {
+        PlayerPrefs.SetInt("areTipsactive", 0);
+    }
+    public void OnClickActivateTips()
+    {
+        UI.instance.SetTipsActive(true);
+    }
 }

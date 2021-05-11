@@ -47,6 +47,7 @@ public class Map : MonoBehaviour
         // determines the starting tile
         int randomNumber = Random.Range(0, startTilesList.Count);
         Tile startingTile = startTilesList[randomNumber];
+        Debug.Log(startingTile);
         // sets the starting building
         startingTile.hasBuilding = true;
         Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);

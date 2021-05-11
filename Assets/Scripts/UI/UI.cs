@@ -29,6 +29,7 @@ public class UI : MonoBehaviour
 
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
+    [SerializeField] Canvas tipsCanvas;
 
     public static UI instance;
 
@@ -126,5 +127,10 @@ public class UI : MonoBehaviour
     {
         string energy = string.Format("{0} ({1}{2})", currentEnergy, energyPerTurn < 0 ? "" : "+", energyPerTurn);
         energyValue.text = energy;
+    }
+
+    public void SetTipsActive(bool toggle)
+    {
+        tipsCanvas.gameObject.SetActive(toggle);
     }
 }

@@ -14,7 +14,7 @@ public class Tile : MonoBehaviour
     {
         highlight.SetActive(toggle);
         isEnabled = toggle;
-        tileHighlightAnim.Play();
+        if(isEnabled) tileHighlightAnim.Play();
     }
 
     // can this tile be highlighted based on a given position
