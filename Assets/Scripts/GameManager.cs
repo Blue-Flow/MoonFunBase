@@ -4,13 +4,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
 
+public enum BuildingType
+{
+    Base,
+    Greenhouse,
+    Fun,
+    SolarPanel
+}
+public enum ResourceType
+{
+    Materials,
+    Fun,
+    Oxygen,
+    Energy
+}
+public enum EndType
+{
+    Victory,
+    DefeatDioxygen,
+    DefeatEnergy
+}
+public enum TileType
+{
+    Neutral,
+    MinusDioxygen,
+    MinusEnergy,
+    MinusFun,
+    PlusDioxygen,
+    PlusEnergy,
+    PlusFun,
+    NotConstructible
+}
+
 public class GameManager : MonoBehaviour
 {
     [SerializeField] Building baseBuilding;
     public int currentTurn;
     public int maxFun = 20;
+
     public bool placingBuilding;
-    public BuildingType curSelectedBuilding;
+    private BuildingType curSelectedBuilding;
+    private int buildingConstructionCost;
+    private Tile currentSelectedTile;
 
     [Header("Current Resources")]
     public int currentFun;
@@ -24,15 +59,12 @@ public class GameManager : MonoBehaviour
     public int oxygenPerTurn;
     public int energyPerTurn;
 
-    [Header("Audio")]
-    [SerializeField] AudioMixer audioMixer;
-
     public static GameManager instance;
 
     void Awake ()
     {
         instance = this;
-        EventHandler.OnEndTurn += EndTurn;
+        EventsSubscribe();
     }
 
     void Start ()
@@ -45,9 +77,7 @@ public class GameManager : MonoBehaviour
 
         UpdateResourcesTexts();
 
-        // Gets the registered settings
-        float volume = PlayerPrefs.GetFloat("volume");
-        audioMixer.SetFloat("volume", volume);
+        // Gets the registered setting
         if (PlayerPrefs.GetInt("areTipsactive") == 0)
             UI.instance.SetTipsActive(false);
 
@@ -55,10 +85,34 @@ public class GameManager : MonoBehaviour
     }
     private void Update()
     {
-        if(placingBuilding && Input.GetKeyDown(KeyCode.Escape))
+        if (placingBuilding && Input.GetMouseButtonDown(0) && (currentMaterials >= buildingConstructionCost))
         {
-            CancelBuildingConstruction();
+            GetSelectedTileInfo();
+            if (currentSelectedTile != null)
+            {
+                EventHandler.BuildCompleted(curSelectedBuilding, currentSelectedTile.tileType, currentSelectedTile.transform.position);
+                Debug.Log("Event triggered, warning, set currentSelectedTile to null again after that !");
+            }
         }
+        else if(placingBuilding && Input.GetKeyDown(KeyCode.Escape) 
+             || placingBuilding && Input.GetMouseButtonDown(1))
+        {
+            EventHandler.BuildCanceled();
+        }
+    }
+
+    private void GetSelectedTileInfo()
+    {
+        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+        if (hit.collider != null)
+        {
+            currentSelectedTile = hit.collider.GetComponent<Tile>();
+            Debug.Log(currentSelectedTile);
+            Debug.Log(currentSelectedTile.tileType);
+            Debug.Log(currentSelectedTile.transform.position);
+        }
+
     }
 
     private void CancelBuildingConstruction()
@@ -69,7 +123,7 @@ public class GameManager : MonoBehaviour
     }
 
     // called when the "End Turn" button is pressed
-    public void EndTurn ()
+    private void EndTurn ()
     {
         // give resources
         currentFun += funPerTurn;
@@ -90,7 +144,7 @@ public class GameManager : MonoBehaviour
         UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
         UI.instance.UpdateFunText(currentFun, funPerTurn);
         UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
-        UI.instance.UpdateFunBarAmount(((float)GameManager.instance.currentFun / (float)GameManager.instance.maxFun));
+        UI.instance.UpdateFunBarAmount(((float)currentFun / (float)maxFun));
     }
 
     private void CheckEndGame()
@@ -98,24 +152,28 @@ public class GameManager : MonoBehaviour
         if (currentEnergy < 1)
         {
             GetComponent<AudioSource>().Stop();
-            UI.instance.DisplayGameOverScreen(ResourceType.Energy); 
+            UI.instance.DisplayGameOverScreen(ResourceType.Energy);
+            EventsClear();
         }
         else if (currentOxygen < 1)
         {
             GetComponent<AudioSource>().Stop();
             UI.instance.DisplayGameOverScreen(ResourceType.Oxygen);
+            EventsClear();
         }
         else if (currentFun >= maxFun)
         {
             // Stops the theme music from playing
             GetComponent<AudioSource>().Stop();
             UI.instance.DisplayVictoryScreen(currentTurn);
+            EventsClear();
         }
     }
 
     // called when we click on a building button to place it
-    public void SetPlacingBuilding (BuildingType buildingType)
+    private void SetPlacingBuilding (BuildingType buildingType)
     {
+        EventHandler.OnBuildCanceled += CancelBuildingConstruction;
         if (currentMaterials >= 1)
         {
             placingBuilding = true;
@@ -149,6 +207,7 @@ public class GameManager : MonoBehaviour
 
         currentMaterials -= 1;
         placingBuilding = false;
+        EventHandler.OnBuildCanceled -= CancelBuildingConstruction;
     }
 
     private void AddBuildingMaintenance(Building building)
@@ -194,4 +253,16 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+    #region Events
+    private void EventsSubscribe()
+    {
+        EventHandler.OnEndTurn += EndTurn;
+        EventHandler.OnBuildStarted += SetPlacingBuilding;
+    }
+    private void EventsClear()
+    {
+        EventHandler.OnEndTurn -= EndTurn;
+        EventHandler.OnBuildStarted -= SetPlacingBuilding;
+    }
+    #endregion
 }

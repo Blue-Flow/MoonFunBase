@@ -2,25 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum BuildingType
-{
-    Base,
-    Greenhouse,
-    Fun,
-    SolarPanel
-}
-
-public enum ResourceType
-{
-    Materials,
-    Fun,
-    Oxygen,
-    Energy
-}
-
 public class Building : MonoBehaviour
 {
     public BuildingType type;
+    public int constructionCost;
 
     [Header("Production")]
     public bool doesProduceResource;

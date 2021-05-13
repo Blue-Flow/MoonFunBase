@@ -21,6 +21,7 @@ public class Map : MonoBehaviour
     void Awake()
     {
         instance = this;
+        EventHandler.OnBuildCompleted += CreateNewBuilding;
     }
 
     void Start()
@@ -47,7 +48,6 @@ public class Map : MonoBehaviour
         // determines the starting tile
         int randomNumber = Random.Range(0, startTilesList.Count);
         Tile startingTile = startTilesList[randomNumber];
-        Debug.Log(startingTile);
         // sets the starting building
         startingTile.hasBuilding = true;
         Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);
@@ -89,7 +89,7 @@ public class Map : MonoBehaviour
     }
 
     // creates a new building on a specific tile
-    public void CreateNewBuilding (BuildingType buildingType, Vector3 position)
+    public void CreateNewBuilding (BuildingType buildingType, TileType tileType, Vector2 position)
     {
         Building prefabToSpawn = buildingPrefabs.Find(x => x.type == buildingType);
         GameObject buildingObj = Instantiate(prefabToSpawn.gameObject, position, Quaternion.identity);

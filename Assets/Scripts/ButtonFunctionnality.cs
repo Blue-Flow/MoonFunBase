@@ -10,15 +10,18 @@ public class ButtonFunctionnality : MonoBehaviour
     }
     public void OnClickSolarPanelButton()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.SolarPanel);
+        EventHandler.BuildCanceled();
+        EventHandler.BuildStarted(BuildingType.SolarPanel);
     }
     public void OnClickGreenhouseButton()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.Greenhouse);
+        EventHandler.BuildCanceled();
+        EventHandler.BuildStarted(BuildingType.Greenhouse);
     }
     public void OnClickFunhouseButton()
     {
-        GameManager.instance.SetPlacingBuilding(BuildingType.Fun);
+        EventHandler.BuildCanceled();
+        EventHandler.BuildStarted(BuildingType.Fun);
     }
     public void OnClickCloseTips()
     {

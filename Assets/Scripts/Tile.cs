@@ -5,6 +5,7 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public GameObject highlight;
+    public TileType tileType;
     public bool hasBuilding;
     public bool isEnabled = false;
     [SerializeField] Animation tileHighlightAnim;
@@ -25,12 +26,5 @@ public class Tile : MonoBehaviour
     public bool CanBeHighlighted(Vector2 potentialPosition)
     {
         return new Vector2(transform.position.x, transform.position.y) == potentialPosition && !hasBuilding;
-    }
-
-    void OnMouseDown ()
-    {
-        // place down a building on this tile
-        if(GameManager.instance.placingBuilding && !hasBuilding && isEnabled)
-            Map.instance.CreateNewBuilding(GameManager.instance.curSelectedBuilding, transform.position);
     }
 }
