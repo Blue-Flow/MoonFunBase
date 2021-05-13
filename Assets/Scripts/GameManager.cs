@@ -2,39 +2,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
-
-public enum BuildingType
-{
-    Base,
-    Greenhouse,
-    Fun,
-    SolarPanel
-}
-public enum ResourceType
-{
-    Materials,
-    Fun,
-    Oxygen,
-    Energy
-}
-public enum EndType
-{
-    Victory,
-    DefeatDioxygen,
-    DefeatEnergy
-}
-public enum TileType
-{
-    Neutral,
-    MinusDioxygen,
-    MinusEnergy,
-    MinusFun,
-    PlusDioxygen,
-    PlusEnergy,
-    PlusFun,
-    NotConstructible
-}
 
 public class GameManager : MonoBehaviour
 {
@@ -61,21 +28,25 @@ public class GameManager : MonoBehaviour
 
     public static GameManager instance;
 
-    void Awake ()
+    private void Awake ()
     {
         instance = this;
         EventsSubscribe();
     }
 
-    void Start ()
+    private void Start ()
     {
+        UI.instance.SetMaxFun(maxFun);
         // Finish the implementation of the base building (started in Map.cs)
         OnCreatedNewBuilding(baseBuilding);
 
         // Update the values on the UI
         UI.instance.UpdateTurnText(currentTurn);
 
-        UpdateResourcesTexts();
+        EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+        EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+        EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
 
         // Gets the registered setting
         if (PlayerPrefs.GetInt("areTipsactive") == 0)
@@ -91,7 +62,6 @@ public class GameManager : MonoBehaviour
             if (currentSelectedTile != null)
             {
                 EventHandler.BuildCompleted(curSelectedBuilding, currentSelectedTile.tileType, currentSelectedTile.transform.position);
-                Debug.Log("Event triggered, warning, set currentSelectedTile to null again after that !");
             }
         }
         else if(placingBuilding && Input.GetKeyDown(KeyCode.Escape) 
@@ -104,7 +74,6 @@ public class GameManager : MonoBehaviour
     private void GetSelectedTileInfo()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-
         if (hit.collider != null)
         {
             currentSelectedTile = hit.collider.GetComponent<Tile>();
@@ -112,61 +81,66 @@ public class GameManager : MonoBehaviour
             Debug.Log(currentSelectedTile.tileType);
             Debug.Log(currentSelectedTile.transform.position);
         }
-
     }
 
     private void CancelBuildingConstruction()
     {
         placingBuilding = false;
-        Map.instance.DisableUsableTiles();
-        UI.instance.ToggleBuildingButtonHighlight(curSelectedBuilding, false);
+        UI.instance.DisableBuildingButtonHighlight(curSelectedBuilding);
     }
 
     // called when the "End Turn" button is pressed
     private void EndTurn ()
     {
-        // give resources
-        currentFun += funPerTurn;
-        currentMaterials += materialsPerTurn;
-        currentOxygen += oxygenPerTurn;
-        currentEnergy += energyPerTurn;
-        
-        UpdateResourcesTexts();
+        GiveResources();
 
         CheckEndGame();
+
         currentTurn++;
         UI.instance.UpdateTurnText(currentTurn);
     }
 
-    private void UpdateResourcesTexts()
+    private void GiveResources()
     {
-        UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
-        UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
-        UI.instance.UpdateFunText(currentFun, funPerTurn);
-        UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
-        UI.instance.UpdateFunBarAmount(((float)currentFun / (float)maxFun));
+        // give resources
+        if (funPerTurn != 0)
+        {
+            currentFun += funPerTurn;
+            EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+        }
+        if (energyPerTurn != 0)
+        {
+            currentEnergy += energyPerTurn;
+            EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+        }
+        if (oxygenPerTurn != 0)
+        {
+            currentOxygen += oxygenPerTurn;
+            EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+        }
+        currentMaterials += materialsPerTurn;
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
     }
 
     private void CheckEndGame()
     {
         if (currentEnergy < 1)
         {
-            GetComponent<AudioSource>().Stop();
-            UI.instance.DisplayGameOverScreen(ResourceType.Energy);
+            EventHandler.EndGame(false, currentTurn, ResourceType.Energy);
             EventsClear();
+            // Clear events on all other components
         }
         else if (currentOxygen < 1)
         {
-            GetComponent<AudioSource>().Stop();
-            UI.instance.DisplayGameOverScreen(ResourceType.Oxygen);
+            EventHandler.EndGame(false, currentTurn, ResourceType.Oxygen);
             EventsClear();
+            // Clear events on all other components
         }
         else if (currentFun >= maxFun)
         {
-            // Stops the theme music from playing
-            GetComponent<AudioSource>().Stop();
-            UI.instance.DisplayVictoryScreen(currentTurn);
+            EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
             EventsClear();
+            // Clear events on all other components
         }
     }
 
@@ -179,7 +153,7 @@ public class GameManager : MonoBehaviour
             placingBuilding = true;
             curSelectedBuilding = buildingType;
             Map.instance.EnableUsableTiles();
-            UI.instance.ToggleBuildingButtonHighlight(buildingType, true);
+            //UI.instance.ToggleBuildingButtonHighlight(buildingType, true);
         }
         else
         {
@@ -219,12 +193,12 @@ public class GameManager : MonoBehaviour
             {
                 case ResourceType.Oxygen:
                     oxygenPerTurn -= building.maintenanceResourcePerTurn[index];
-                    UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
+                    EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
                     index++;
                     break;
                 case ResourceType.Energy:
                     energyPerTurn -= building.maintenanceResourcePerTurn[index];
-                    UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
+                    EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
                     index++;
                     break;
             }
@@ -237,19 +211,19 @@ public class GameManager : MonoBehaviour
         {
             case ResourceType.Materials:
                 materialsPerTurn += building.productionResourcePerTurn;
-                UI.instance.UpdateMaterialsText(currentMaterials, materialsPerTurn);
+                EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
                 break;
             case ResourceType.Fun:
                 funPerTurn += building.productionResourcePerTurn;
-                UI.instance.UpdateFunText(currentFun, funPerTurn);
+                EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
                 break;
             case ResourceType.Oxygen:
                 oxygenPerTurn += building.productionResourcePerTurn;
-                UI.instance.UpdateOxygenText(currentOxygen, oxygenPerTurn);
+                EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
                 break;
             case ResourceType.Energy:
                 energyPerTurn += building.productionResourcePerTurn;
-                UI.instance.UpdateEnergyText(currentEnergy, energyPerTurn);
+                EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
                 break;
         }
     }
@@ -265,4 +239,35 @@ public class GameManager : MonoBehaviour
         EventHandler.OnBuildStarted -= SetPlacingBuilding;
     }
     #endregion
+}
+public enum BuildingType
+{
+    Base,
+    Greenhouse,
+    Fun,
+    SolarPanel
+}
+public enum ResourceType
+{
+    Materials,
+    Fun,
+    Oxygen,
+    Energy
+}
+public enum EndType
+{
+    Victory,
+    DefeatDioxygen,
+    DefeatEnergy
+}
+public enum TileType
+{
+    Neutral,
+    MinusDioxygen,
+    MinusEnergy,
+    MinusFun,
+    PlusDioxygen,
+    PlusEnergy,
+    PlusFun,
+    NotConstructible
 }

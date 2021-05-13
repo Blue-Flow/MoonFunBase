@@ -27,6 +27,7 @@ public class Map : MonoBehaviour
     void Start()
     {
         GenerateMap();
+        EventsSubscribe();
     }
 
     private void GenerateMap()
@@ -82,7 +83,7 @@ public class Map : MonoBehaviour
     }
 
     // disables the tiles we can place a building on
-    public void DisableUsableTiles ()
+    private void DisableUsableTiles ()
     {
         foreach(Tile tile in tilesList)
             tile.ToggleHighlight(false);
@@ -96,7 +97,7 @@ public class Map : MonoBehaviour
         buildings.Add(buildingObj.GetComponent<Building>());
         
         Audio.instance.PlayConstructionSound(buildingType);
-        UI.instance.ToggleBuildingButtonHighlight(buildingType, false);
+        UI.instance.DisableBuildingButtonHighlight(buildingType);
 
         GetTileAtPosition(position).hasBuilding = true;
 
@@ -115,4 +116,16 @@ public class Map : MonoBehaviour
     {
         return tilesList.Find(x => x.CanBeHighlighted(pos));
     }
+    #region Events
+    private void EventsSubscribe()
+    {
+        //EventHandler.OnBuildStarted += ;
+        EventHandler.OnBuildCanceled += DisableUsableTiles;
+    }
+    private void EventsClear()
+    {
+        //EventHandler.OnBuildStarted -= ;
+        EventHandler.OnBuildCanceled -= DisableUsableTiles;
+    }
+    #endregion
 }

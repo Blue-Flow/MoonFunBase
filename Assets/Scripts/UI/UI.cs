@@ -14,6 +14,7 @@ public class UI : MonoBehaviour
     [SerializeField] TextMeshProUGUI energyValue;
     [SerializeField] TextMeshProUGUI materialsValue;
     [SerializeField] TextMeshProUGUI funValue;
+    private int maxFun;
     [SerializeField] Image funBar;
     [SerializeField] TextMeshProUGUI curTurnText;
     [SerializeField] TextMeshProUGUI baseName;
@@ -22,10 +23,9 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject energyBuildingButtonHighlight;
     [SerializeField] GameObject funBuildingButtonHighlight;
 
-    [SerializeField] Image deathScreenBG;
-    [SerializeField] TextMeshProUGUI deathEndText;
-    [SerializeField] Image victoryScreenBG;
-    [SerializeField] TextMeshProUGUI victoryEndText;
+    [SerializeField] GameObject endScreen;
+    [SerializeField] TextMeshProUGUI endText;
+    [SerializeField] Sprite victoryBG;
 
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
@@ -36,62 +36,36 @@ public class UI : MonoBehaviour
     void Awake ()
     {
         instance = this;
+        EventsSubscribe();
     }
 
     void Start ()
     {
         GetBaseName();
     }
-
+    public void SetMaxFun(int value) { maxFun = value; }
     private void GetBaseName()
     {
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
-
-    public void ToggleBuildingButtonHighlight(BuildingType buildingType, bool toggle)
+    public void DisableBuildingButtonHighlight(BuildingType buildingType)
     {
         switch (buildingType)
         {
             case BuildingType.Fun:
-                funBuildingButtonHighlight.SetActive(toggle);
+                funBuildingButtonHighlight.SetActive(false);
                 break;
             case BuildingType.SolarPanel:
-                energyBuildingButtonHighlight.SetActive(toggle);
+                energyBuildingButtonHighlight.SetActive(false);
                 break;
             case BuildingType.Greenhouse:
-                oxygenBuildingButtonHighlight.SetActive(toggle);
+                oxygenBuildingButtonHighlight.SetActive(false);
                 break;
         }
     }
-
-    // called when the "End Turn" button is pressed
     public void UpdateTurnText(int currentTurn)
     {
         curTurnText.text = "Turn " + currentTurn;
-    }
-
-    // called when we place a building or the turn has ended
-    public void UpdateFunBarAmount (float funBarAmount)
-    {
-        funBar.fillAmount = funBarAmount;
-    }
-
-    // called when the fun amount reaches the goal
-    public void DisplayVictoryScreen(int currentTurn)
-    {
-        victoryScreenBG.gameObject.SetActive(true);
-        victoryScreenBG.gameObject.GetComponent<AudioSource>().Play();
-        victoryEndText.text = ("You won in " + currentTurn + " turns !");
-    }
-
-    public void DisplayGameOverScreen(ResourceType resource)
-    {
-        deathScreenBG.gameObject.SetActive(true);
-        deathScreenBG.gameObject.GetComponent<AudioSource>().Play();
-        if (resource == ResourceType.Oxygen)
-        deathEndText.text = ("You lost ! You ran out of oxygen..." +"\n" +"Your people slowly died of suffocation");
-        if(resource == ResourceType.Energy)
-        deathEndText.text = ("You lost ! You ran out of energy..." +"\n" +"Your life support systems shut off and your people froze to death");
     }
 
     public void DisplayNotification(int errorNumber)
@@ -105,32 +79,62 @@ public class UI : MonoBehaviour
                 break;
         }
     }
-
-    public void UpdateFunText(int currentFun, int funPerTurn)
+    private void UpdateValueText(ResourceType resourceType, int currentResource, int resourcePerTurn)
     {
-        string fun = string.Format("{0} ({1}{2})", currentFun, funPerTurn < 0 ? "" : "+", funPerTurn);
-        funValue.text = fun;
+        string textToChange = string.Format("{0} ({1}{2})", currentResource, resourcePerTurn < 0 ? "" : "+", resourcePerTurn);
+        switch (resourceType)
+        {
+            case ResourceType.Fun:
+                funValue.text = textToChange;
+                funBar.fillAmount = ((float)currentResource / (float)maxFun);
+                break;
+            case ResourceType.Materials:
+                materialsValue.text = textToChange;
+                break;
+            case ResourceType.Oxygen:
+                oxygenValue.text = textToChange;
+                break;
+            case ResourceType.Energy:
+                energyValue.text = textToChange;
+                break;
+        }
     }
-    public void UpdateMaterialsText(int currentMaterials, int materialsPerTurn)
+    private void DisplayEndScreen(bool victory, int turnNumber, ResourceType resource)
     {
-        string materials = string.Format("{0} ({1}{2})", currentMaterials, materialsPerTurn < 0 ? "" : "+", materialsPerTurn);
-        materialsValue.text = materials;
+        endScreen.SetActive(true);
+        if (victory == true)
+        {
+            endScreen.GetComponent<Image>().sprite = victoryBG;
+            endText.text = ("You won in " + turnNumber + " turns !");
+        }
+        else
+        {
+            if (resource == ResourceType.Energy)
+            {
+                endText.text = ("You lost ! You ran out of energy..." + "\n" + "Your life support systems shut off and your people froze to death");
+            }
+            else
+                endText.text = ("You lost ! You ran out of oxygen..." + "\n" + "Your people slowly died of suffocation");
+        }
     }
-
-    internal void UpdateOxygenText(int currentOxygen, int oxygenPerTurn)
-    {
-        string oxygen = string.Format("{0} ({1}{2})", currentOxygen, oxygenPerTurn < 0 ? "" : "+", oxygenPerTurn);
-        oxygenValue.text = oxygen;
-    }
-
-    internal void UpdateEnergyText(int currentEnergy, int energyPerTurn)
-    {
-        string energy = string.Format("{0} ({1}{2})", currentEnergy, energyPerTurn < 0 ? "" : "+", energyPerTurn);
-        energyValue.text = energy;
-    }
-
     public void SetTipsActive(bool toggle)
     {
         tipsCanvas.gameObject.SetActive(toggle);
     }
+
+    #region Events
+    private void EventsSubscribe()
+    {
+        EventHandler.OnValueChanged += UpdateValueText;
+        EventHandler.OnEndGame += DisplayEndScreen;
+        //EventHandler.OnEndTurn += UpdateValueText;
+        //EventHandler.BuildCanceled +=
+    }
+
+    private void EventsClear()
+    {
+        EventHandler.OnValueChanged -= UpdateValueText;
+        EventHandler.OnEndGame -= DisplayEndScreen;
+    }
+    #endregion
 }

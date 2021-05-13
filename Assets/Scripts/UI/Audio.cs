@@ -5,8 +5,10 @@ using UnityEngine.Audio;
 
 public class Audio : MonoBehaviour
 {
-    [Header("Audio")]
     private AudioSource audioSource;
+    [SerializeField] AudioClip victoryTheme;
+    [SerializeField] AudioClip defeatTheme;
+
     [SerializeField] AudioClip[] gHConstructionSounds;
     [SerializeField] AudioClip[] sPConstructionSounds;
     [SerializeField] AudioClip[] fHConstructionSounds;
@@ -19,6 +21,7 @@ public class Audio : MonoBehaviour
     {
         instance = this;
         audioSource = GetComponent<AudioSource>();
+        EventsSubscribe();
     }
     private void Start()
     {
@@ -45,5 +48,32 @@ public class Audio : MonoBehaviour
                 break;
         }
     }
+    private void PlayEndTheme(bool victory, int turnNumber, ResourceType resourceType)
+    {
+        if (victory)
+        {
+            audioSource.clip = victoryTheme;
+            audioSource.Play();
+        }
+        else
+        {
+            audioSource.clip = defeatTheme;
+            audioSource.Play();
+        }
+    }
+
+    #region Events
+    private void EventsSubscribe()
+    {
+        EventHandler.OnEndGame += PlayEndTheme;
+        //EventHandler.OnEndTurn += UpdateValueText;
+        //EventHandler.BuildCanceled +=
+    }
+
+    private void EventsClear()
+    {
+        EventHandler.OnEndGame -= PlayEndTheme;
+    }
+    #endregion
 
 }
