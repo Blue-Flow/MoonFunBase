@@ -48,20 +48,11 @@ public class UI : MonoBehaviour
     {
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
-    public void DisableBuildingButtonHighlight(BuildingType buildingType)
+    private void DisableBuildingButtonHighlight()
     {
-        switch (buildingType)
-        {
-            case BuildingType.Fun:
-                funBuildingButtonHighlight.SetActive(false);
-                break;
-            case BuildingType.SolarPanel:
-                energyBuildingButtonHighlight.SetActive(false);
-                break;
-            case BuildingType.Greenhouse:
-                oxygenBuildingButtonHighlight.SetActive(false);
-                break;
-        }
+        funBuildingButtonHighlight.SetActive(false);
+        energyBuildingButtonHighlight.SetActive(false);
+        oxygenBuildingButtonHighlight.SetActive(false);
     }
     public void UpdateTurnText(int currentTurn)
     {
@@ -125,16 +116,28 @@ public class UI : MonoBehaviour
     #region Events
     private void EventsSubscribe()
     {
+        EventHandler.OnBuildStarted += EnableBuildingButtonHighlight;
         EventHandler.OnValueChanged += UpdateValueText;
         EventHandler.OnEndGame += DisplayEndScreen;
         //EventHandler.OnEndTurn += UpdateValueText;
-        //EventHandler.BuildCanceled +=
+        EventHandler.OnBuildOver += DisableBuildingButtonHighlight;
+    }
+
+    private void EnableBuildingButtonHighlight(BuildingType buildingType)
+    {
+        if(buildingType == BuildingType.Fun)
+            funBuildingButtonHighlight.SetActive(true);
+        else if (buildingType == BuildingType.Energy)
+            energyBuildingButtonHighlight.SetActive(true);
+        else if (buildingType == BuildingType.Oxygen)
+            oxygenBuildingButtonHighlight.SetActive(true);
     }
 
     private void EventsClear()
     {
         EventHandler.OnValueChanged -= UpdateValueText;
         EventHandler.OnEndGame -= DisplayEndScreen;
+        EventHandler.OnBuildOver -= DisableBuildingButtonHighlight;
     }
     #endregion
 }

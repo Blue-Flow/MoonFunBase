@@ -51,8 +51,6 @@ public class GameManager : MonoBehaviour
         // Gets the registered setting
         if (PlayerPrefs.GetInt("areTipsactive") == 0)
             UI.instance.SetTipsActive(false);
-
-
     }
     private void Update()
     {
@@ -62,13 +60,19 @@ public class GameManager : MonoBehaviour
             if (currentSelectedTile != null)
             {
                 EventHandler.BuildCompleted(curSelectedBuilding, currentSelectedTile.tileType, currentSelectedTile.transform.position);
+                BuildCompleted();
             }
         }
         else if(placingBuilding && Input.GetKeyDown(KeyCode.Escape) 
              || placingBuilding && Input.GetMouseButtonDown(1))
         {
-            EventHandler.BuildCanceled();
+            EventHandler.BuildOver();
         }
+    }
+
+    private void BuildCompleted()
+    {
+        currentSelectedTile.hasBuilding = true;
     }
 
     private void GetSelectedTileInfo()
@@ -77,16 +81,12 @@ public class GameManager : MonoBehaviour
         if (hit.collider != null)
         {
             currentSelectedTile = hit.collider.GetComponent<Tile>();
-            Debug.Log(currentSelectedTile);
-            Debug.Log(currentSelectedTile.tileType);
-            Debug.Log(currentSelectedTile.transform.position);
         }
     }
 
     private void CancelBuildingConstruction()
     {
         placingBuilding = false;
-        UI.instance.DisableBuildingButtonHighlight(curSelectedBuilding);
     }
 
     // called when the "End Turn" button is pressed
@@ -147,13 +147,12 @@ public class GameManager : MonoBehaviour
     // called when we click on a building button to place it
     private void SetPlacingBuilding (BuildingType buildingType)
     {
-        EventHandler.OnBuildCanceled += CancelBuildingConstruction;
         if (currentMaterials >= 1)
         {
             placingBuilding = true;
             curSelectedBuilding = buildingType;
-            Map.instance.EnableUsableTiles();
-            //UI.instance.ToggleBuildingButtonHighlight(buildingType, true);
+            EventHandler.BuildStarted(buildingType);
+            EventHandler.OnBuildOver += CancelBuildingConstruction;
         }
         else
         {
@@ -180,8 +179,8 @@ public class GameManager : MonoBehaviour
         }
 
         currentMaterials -= 1;
-        placingBuilding = false;
-        EventHandler.OnBuildCanceled -= CancelBuildingConstruction;
+        EventHandler.BuildOver();
+        EventHandler.OnBuildOver -= CancelBuildingConstruction;
     }
 
     private void AddBuildingMaintenance(Building building)
@@ -231,21 +230,21 @@ public class GameManager : MonoBehaviour
     private void EventsSubscribe()
     {
         EventHandler.OnEndTurn += EndTurn;
-        EventHandler.OnBuildStarted += SetPlacingBuilding;
+        EventHandler.OnTryBuild += SetPlacingBuilding;
     }
     private void EventsClear()
     {
         EventHandler.OnEndTurn -= EndTurn;
-        EventHandler.OnBuildStarted -= SetPlacingBuilding;
+        EventHandler.OnTryBuild -= SetPlacingBuilding;
     }
     #endregion
 }
 public enum BuildingType
 {
     Base,
-    Greenhouse,
+    Oxygen,
     Fun,
-    SolarPanel
+    Energy
 }
 public enum ResourceType
 {

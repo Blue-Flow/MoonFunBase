@@ -29,12 +29,12 @@ public class Audio : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
-    public void PlayConstructionSound(BuildingType buildingType)
+    public void PlayConstructionSound(BuildingType buildingType, TileType tileType, Vector2 tilePosition)
     {
         //play building sound depending on the constructed building
         switch (buildingType)
         {
-            case (BuildingType.Greenhouse):
+            case (BuildingType.Oxygen):
                 AudioClip gHClip = gHConstructionSounds[Random.Range(0, gHConstructionSounds.Length)];
                 audioSource.PlayOneShot(gHClip);
                 break;
@@ -42,7 +42,7 @@ public class Audio : MonoBehaviour
                 AudioClip fHClip = fHConstructionSounds[Random.Range(0, fHConstructionSounds.Length)];
                 audioSource.PlayOneShot(fHClip);
                 break;
-            case (BuildingType.SolarPanel):
+            case (BuildingType.Energy):
                 AudioClip sPClip = sPConstructionSounds[Random.Range(0, sPConstructionSounds.Length)];
                 audioSource.PlayOneShot(sPClip);
                 break;
@@ -66,6 +66,7 @@ public class Audio : MonoBehaviour
     private void EventsSubscribe()
     {
         EventHandler.OnEndGame += PlayEndTheme;
+        EventHandler.OnBuildCompleted += PlayConstructionSound;
         //EventHandler.OnEndTurn += UpdateValueText;
         //EventHandler.BuildCanceled +=
     }
@@ -73,6 +74,7 @@ public class Audio : MonoBehaviour
     private void EventsClear()
     {
         EventHandler.OnEndGame -= PlayEndTheme;
+        EventHandler.OnBuildCompleted -= PlayConstructionSound;
     }
     #endregion
 

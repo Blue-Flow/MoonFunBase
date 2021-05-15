@@ -10,18 +10,15 @@ public class ButtonFunctionnality : MonoBehaviour
     }
     public void OnClickSolarPanelButton()
     {
-        EventHandler.BuildCanceled();
-        EventHandler.BuildStarted(BuildingType.SolarPanel);
+        EventHandler.TryBuild(BuildingType.Energy);
     }
     public void OnClickGreenhouseButton()
     {
-        EventHandler.BuildCanceled();
-        EventHandler.BuildStarted(BuildingType.Greenhouse);
+        EventHandler.TryBuild(BuildingType.Oxygen);
     }
     public void OnClickFunhouseButton()
     {
-        EventHandler.BuildCanceled();
-        EventHandler.BuildStarted(BuildingType.Fun);
+        EventHandler.TryBuild(BuildingType.Fun);
     }
     public void OnClickCloseTips()
     {

@@ -71,7 +71,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 499267833
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: cd077cfe751c7fa4caf4147939fd5da5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -97,9 +97,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 3
+  constructionCost: 1
   doesProduceResource: 1
   productionResource: 3
   productionResourcePerTurn: 1
   hasMaintenanceCost: 0
-  maintenanceResource: 3
-  maintenanceResourcePerTurn: 1
+  maintenanceResource: 
+  maintenanceResourcePerTurn: 

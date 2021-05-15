@@ -11,19 +11,16 @@ public class Map : MonoBehaviour
     [SerializeField] GameObject mapHolder;
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
-    [SerializeField] Tile tilesPrefab;
+    //[SerializeField] List<Tile> tilesPrefab = new List<Tile>;
 
     [SerializeField] List<Building> buildings = new List<Building>();
-
 
     public static Map instance;
 
     void Awake()
     {
         instance = this;
-        EventHandler.OnBuildCompleted += CreateNewBuilding;
     }
-
     void Start()
     {
         GenerateMap();
@@ -32,16 +29,13 @@ public class Map : MonoBehaviour
 
     private void GenerateMap()
     {
-        GenerateTilesinGrid();
+        // GenerateTilesinGrid();
         DetermineStartingTile();
     }
 
     private void GenerateTilesinGrid()
     {
-        //List<float> rotations = new List<float>() { 0, 90, 180, 270 };
-                // set a random rotation for the tile -------------------------------- /!\ Pb rotation ? Liée à chaque prefab ?
-                // float tilerotation = rotations[Random.Range(0, rotations.Count)];
-                // tile.transform.rotation = new Quaternion(0, 0, tilerotation, 0);
+       // using randomTileList, generate the random tiles with attributes
     }
 
     private void DetermineStartingTile()
@@ -49,6 +43,7 @@ public class Map : MonoBehaviour
         // determines the starting tile
         int randomNumber = Random.Range(0, startTilesList.Count);
         Tile startingTile = startTilesList[randomNumber];
+
         // sets the starting building
         startingTile.hasBuilding = true;
         Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);
@@ -59,9 +54,9 @@ public class Map : MonoBehaviour
     }
 
     // displays the tiles which we can place a building on
-    public void EnableUsableTiles ()
+    public void EnableUsableTiles (BuildingType buildingType)
     {
-        foreach(Tile tile in tilesList)
+        foreach (Tile tile in tilesList)
         {
             if (tile.hasBuilding && !tile.isEnabled)
             {
@@ -81,8 +76,6 @@ public class Map : MonoBehaviour
             }
         }
     }
-
-    // disables the tiles we can place a building on
     private void DisableUsableTiles ()
     {
         foreach(Tile tile in tilesList)
@@ -95,13 +88,6 @@ public class Map : MonoBehaviour
         Building prefabToSpawn = buildingPrefabs.Find(x => x.type == buildingType);
         GameObject buildingObj = Instantiate(prefabToSpawn.gameObject, position, Quaternion.identity);
         buildings.Add(buildingObj.GetComponent<Building>());
-        
-        Audio.instance.PlayConstructionSound(buildingType);
-        UI.instance.DisableBuildingButtonHighlight(buildingType);
-
-        GetTileAtPosition(position).hasBuilding = true;
-
-        DisableUsableTiles();
 
         GameManager.instance.OnCreatedNewBuilding(prefabToSpawn);
 
@@ -119,13 +105,17 @@ public class Map : MonoBehaviour
     #region Events
     private void EventsSubscribe()
     {
-        //EventHandler.OnBuildStarted += ;
-        EventHandler.OnBuildCanceled += DisableUsableTiles;
+        EventHandler.OnBuildStarted += EnableUsableTiles;
+        EventHandler.OnBuildOver += DisableUsableTiles;
+        //EventHandler.OnBuildCompleted += DisableUsableTiles;
+        EventHandler.OnBuildCompleted += CreateNewBuilding;
     }
     private void EventsClear()
     {
-        //EventHandler.OnBuildStarted -= ;
-        EventHandler.OnBuildCanceled -= DisableUsableTiles;
+        EventHandler.OnBuildStarted -= EnableUsableTiles;
+        EventHandler.OnBuildOver -= DisableUsableTiles;
+        //EventHandler.OnBuildCompleted -= DisableUsableTiles;
+        EventHandler.OnBuildCompleted -= CreateNewBuilding;
     }
     #endregion
 }

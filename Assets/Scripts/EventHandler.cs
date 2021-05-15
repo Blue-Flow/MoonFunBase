@@ -7,8 +7,9 @@ public class EventHandler : MonoBehaviour
 {
     public static event Action OnEndTurn;
 
+    public static event Action<BuildingType> OnTryBuild;
     public static event Action<BuildingType> OnBuildStarted;
-    public static event Action OnBuildCanceled;
+    public static event Action OnBuildOver;
     public static event Action<BuildingType, TileType, Vector2>  OnBuildCompleted;
     public static event Action<ResourceType, int, int> OnValueChanged;
 
@@ -19,16 +20,22 @@ public class EventHandler : MonoBehaviour
             OnEndTurn();
         else Debug.Log("Error with event OnEndTurn, no subscriber");
     }
-    public static void BuildStarted(BuildingType building)
+    public static void TryBuild(BuildingType buildingType)
+    {
+        if (OnTryBuild != null)
+            OnTryBuild(buildingType);
+        else Debug.Log("Error with event OnTryBuild, no subscriber");
+    }
+    public static void BuildStarted(BuildingType buildingType)
     {
         if (OnBuildStarted != null)
-            OnBuildStarted(building);
+            OnBuildStarted(buildingType);
         else Debug.Log("Error with event OnBuildStarted, no subscriber");
     }
-    public static void BuildCanceled()
+    public static void BuildOver()
     {
-        if (OnBuildCanceled != null)
-            OnBuildCanceled();
+        if (OnBuildOver != null)
+            OnBuildOver();
         else Debug.Log("Error with event OnBuildCanceled, no subscriber");
     }
     public static void BuildCompleted(BuildingType buildingType, TileType tileType, Vector2 tilePosition)
