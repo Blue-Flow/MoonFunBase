@@ -6,6 +6,8 @@ using System;
 public class EventHandler : MonoBehaviour
 {
     public static event Action OnEndTurn;
+    public static event Action<bool, int, ResourceType> OnEndGame;
+    public static event Action<int> OnError;
 
     public static event Action<BuildingType> OnTryBuild;
     public static event Action<BuildingType> OnBuildStarted;
@@ -13,7 +15,12 @@ public class EventHandler : MonoBehaviour
     public static event Action<BuildingType, TileType, Vector2>  OnBuildCompleted;
     public static event Action<ResourceType, int, int> OnValueChanged;
 
-    public static event Action<bool, int, ResourceType> OnEndGame;
+    public static void Error(int errorNumber)
+    {
+        if (OnError != null)
+            OnError(errorNumber);
+        else Debug.Log("Error with event OnError, no subscriber");
+    }
     public static void EndTurn()
     {
         if (OnEndTurn != null)

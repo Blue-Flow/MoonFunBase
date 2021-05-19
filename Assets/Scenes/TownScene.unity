@@ -16275,6 +16275,14 @@ MonoBehaviour:
   - {fileID: 1418905732990755650, guid: 5c96506342c30ff4c97734f66b8d6b45, type: 3}
   - {fileID: 968492059089205214, guid: e85565de4a92a4545b639bf8b14f72a6, type: 3}
   - {fileID: 2183679902423214086, guid: 4b56df21a7c1536419c076a4f25a1c41, type: 3}
+  tilesPrefab:
+  - {fileID: 5153666586144107824, guid: c8bd67742618346489ce114be85a8dd1, type: 3}
+  - {fileID: 5483660955725873779, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+  - {fileID: 8230554339299333100, guid: 4c8aaf39c76ea5744ad27e93322c9bea, type: 3}
+  - {fileID: 5330810106932278813, guid: dc5ac44e0af0a5841a3529b361b947c9, type: 3}
+  - {fileID: 623162189536433912, guid: 6f3c6fd1ebf150a48bad3d460422fcbc, type: 3}
+  - {fileID: 5118986524564824308, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+  - {fileID: 5922705436454342450, guid: f04815ee45f18d445bacca13e02e8205, type: 3}
   buildings:
   - {fileID: 1204741655282086968, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
 --- !u!82 &1399649835
@@ -16399,6 +16407,14 @@ MonoBehaviour:
   fHConstructionSounds:
   - {fileID: 8300000, guid: 165bd9b914c689c4696b1d95da7ee653, type: 3}
   - {fileID: 8300000, guid: 924b5814d39e6334db65dea761b63c1c, type: 3}
+  endTurnSounds:
+  - {fileID: 8300000, guid: cefa776600dd1e040ade5d974057fea9, type: 3}
+  - {fileID: 8300000, guid: 10905f14de3be004b876f75557facf40, type: 3}
+  - {fileID: 8300000, guid: cb93ff4a090178549bb7c3b2089670f1, type: 3}
+  errorSounds:
+  - {fileID: 8300000, guid: 045c76225802eb749884c9c909ffc7db, type: 3}
+  - {fileID: 8300000, guid: c0e05ba1c15d08049a6fd28c0b8b1e62, type: 3}
+  - {fileID: 8300000, guid: 243e3df155bf7474ba6e381852a60cd3, type: 3}
   audioMixer: {fileID: 24100000, guid: 368d1e64f7a0d304592162ea20264517, type: 2}
 --- !u!114 &1399649837
 MonoBehaviour:

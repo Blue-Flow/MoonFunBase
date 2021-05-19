@@ -11,7 +11,7 @@ public class Map : MonoBehaviour
     [SerializeField] GameObject mapHolder;
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
-    //[SerializeField] List<Tile> tilesPrefab = new List<Tile>;
+    [SerializeField] List<Tile> tilesPrefab = new List<Tile>();
 
     [SerializeField] List<Building> buildings = new List<Building>();
 
@@ -29,13 +29,28 @@ public class Map : MonoBehaviour
 
     private void GenerateMap()
     {
-        // GenerateTilesinGrid();
         DetermineStartingTile();
+        GenerateTilesinGrid();
     }
 
     private void GenerateTilesinGrid()
     {
-       // using randomTileList, generate the random tiles with attributes
+        foreach (Tile tile in randomTilesList)
+        {
+            Vector2 tilePosition = tile.transform.position;
+            tilesList.Remove(tile);
+            Destroy(tile);
+            int randomNumber = DetermineRandomTile();
+            Tile randomTile = Instantiate(tilesPrefab[randomNumber], mapHolder.transform);
+            randomTile.transform.position = tilePosition;
+            tilesList.Add(randomTile);
+        }
+    }
+
+    private int DetermineRandomTile()
+    {
+        int randomNumber = Random.Range(0, tilesPrefab.Count);
+        return randomNumber;
     }
 
     private void DetermineStartingTile()
@@ -54,7 +69,7 @@ public class Map : MonoBehaviour
     }
 
     // displays the tiles which we can place a building on
-    public void EnableUsableTiles (BuildingType buildingType)
+    private void EnableUsableTiles (BuildingType buildingType)
     {
         foreach (Tile tile in tilesList)
         {
@@ -83,7 +98,7 @@ public class Map : MonoBehaviour
     }
 
     // creates a new building on a specific tile
-    public void CreateNewBuilding (BuildingType buildingType, TileType tileType, Vector2 position)
+    private void CreateNewBuilding (BuildingType buildingType, TileType tileType, Vector2 position)
     {
         Building prefabToSpawn = buildingPrefabs.Find(x => x.type == buildingType);
         GameObject buildingObj = Instantiate(prefabToSpawn.gameObject, position, Quaternion.identity);

@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour
 {
     public GameObject highlight;
     public TileType tileType;
+    public TilePreset tilePreset;
     public bool hasBuilding = false;
     public bool isEnabled = false;
     [SerializeField] Animation tileHighlightAnim;

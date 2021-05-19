@@ -12,6 +12,8 @@ public class Audio : MonoBehaviour
     [SerializeField] AudioClip[] gHConstructionSounds;
     [SerializeField] AudioClip[] sPConstructionSounds;
     [SerializeField] AudioClip[] fHConstructionSounds;
+    [SerializeField] AudioClip[] endTurnSounds;
+    [SerializeField] AudioClip[] errorSounds;
 
     [SerializeField] AudioMixer audioMixer;
 
@@ -29,7 +31,7 @@ public class Audio : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
-    public void PlayConstructionSound(BuildingType buildingType, TileType tileType, Vector2 tilePosition)
+    private void PlayConstructionSound(BuildingType buildingType, TileType tileType, Vector2 tilePosition)
     {
         //play building sound depending on the constructed building
         switch (buildingType)
@@ -47,6 +49,16 @@ public class Audio : MonoBehaviour
                 audioSource.PlayOneShot(sPClip);
                 break;
         }
+    }
+    private void PlayEndTurnSound()
+    {
+        AudioClip endTurnClip = endTurnSounds[Random.Range(0, endTurnSounds.Length)];
+        audioSource.PlayOneShot(endTurnClip);
+    }
+    private void PlayErrorSound(int errorNumber)
+    {
+        AudioClip errorClip = errorSounds[Random.Range(0, errorSounds.Length)];
+        audioSource.PlayOneShot(errorClip);
     }
     private void PlayEndTheme(bool victory, int turnNumber, ResourceType resourceType)
     {
@@ -67,7 +79,8 @@ public class Audio : MonoBehaviour
     {
         EventHandler.OnEndGame += PlayEndTheme;
         EventHandler.OnBuildCompleted += PlayConstructionSound;
-        //EventHandler.OnEndTurn += UpdateValueText;
+        EventHandler.OnEndTurn += PlayEndTurnSound;
+        EventHandler.OnError += PlayErrorSound;
         //EventHandler.BuildCanceled +=
     }
 
@@ -75,6 +88,7 @@ public class Audio : MonoBehaviour
     {
         EventHandler.OnEndGame -= PlayEndTheme;
         EventHandler.OnBuildCompleted -= PlayConstructionSound;
+        EventHandler.OnEndTurn -= PlayEndTurnSound;
     }
     #endregion
 

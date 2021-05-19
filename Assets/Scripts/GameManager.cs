@@ -157,7 +157,7 @@ public class GameManager : MonoBehaviour
         else
         {
             // Display a notification screen with the appropriate error : not enough materials to build
-            UI.instance.DisplayNotification(0);
+            EventHandler.Error(0);
         }
     }
 
@@ -239,6 +239,7 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 }
+#region Enum
 public enum BuildingType
 {
     Base,
@@ -270,3 +271,4 @@ public enum TileType
     PlusFun,
     NotConstructible
 }
+#endregion

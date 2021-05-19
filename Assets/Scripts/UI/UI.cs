@@ -48,6 +48,15 @@ public class UI : MonoBehaviour
     {
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
+    private void EnableBuildingButtonHighlight(BuildingType buildingType)
+    {
+        if (buildingType == BuildingType.Fun)
+            funBuildingButtonHighlight.SetActive(true);
+        else if (buildingType == BuildingType.Energy)
+            energyBuildingButtonHighlight.SetActive(true);
+        else if (buildingType == BuildingType.Oxygen)
+            oxygenBuildingButtonHighlight.SetActive(true);
+    }
     private void DisableBuildingButtonHighlight()
     {
         funBuildingButtonHighlight.SetActive(false);
@@ -59,7 +68,7 @@ public class UI : MonoBehaviour
         curTurnText.text = "Turn " + currentTurn;
     }
 
-    public void DisplayNotification(int errorNumber)
+    private void DisplayNotification(int errorNumber)
     {
         notificationBG.gameObject.SetActive(true);
         switch (errorNumber)
@@ -121,23 +130,15 @@ public class UI : MonoBehaviour
         EventHandler.OnEndGame += DisplayEndScreen;
         //EventHandler.OnEndTurn += UpdateValueText;
         EventHandler.OnBuildOver += DisableBuildingButtonHighlight;
+        EventHandler.OnError += DisplayNotification;
     }
-
-    private void EnableBuildingButtonHighlight(BuildingType buildingType)
-    {
-        if(buildingType == BuildingType.Fun)
-            funBuildingButtonHighlight.SetActive(true);
-        else if (buildingType == BuildingType.Energy)
-            energyBuildingButtonHighlight.SetActive(true);
-        else if (buildingType == BuildingType.Oxygen)
-            oxygenBuildingButtonHighlight.SetActive(true);
-    }
-
     private void EventsClear()
     {
         EventHandler.OnValueChanged -= UpdateValueText;
         EventHandler.OnEndGame -= DisplayEndScreen;
         EventHandler.OnBuildOver -= DisableBuildingButtonHighlight;
+        EventHandler.OnBuildStarted -= EnableBuildingButtonHighlight;
+        EventHandler.OnError -= DisplayNotification;
     }
     #endregion
 }
