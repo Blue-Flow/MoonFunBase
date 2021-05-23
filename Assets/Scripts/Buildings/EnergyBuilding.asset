@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f51d04fe6c61974489f63b73e444ef0, type: 3}
-  m_Name: EnergyBuildingPrefab
+  m_Name: EnergyBuilding
   m_EditorClassIdentifier: 
+  prefab: {fileID: 968492059089205215, guid: e85565de4a92a4545b639bf8b14f72a6, type: 3}
+  buildingType: 3
+  constructionCost: 1
   doesProduceResource: 1
   productionResource: 3
   productionResourcePerTurn: 1

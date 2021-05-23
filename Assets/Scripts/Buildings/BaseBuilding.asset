@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f51d04fe6c61974489f63b73e444ef0, type: 3}
-  m_Name: BaseBuildingPrefab
+  m_Name: BaseBuilding
   m_EditorClassIdentifier: 
+  prefab: {fileID: 1204741655282086969, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
+  buildingType: 0
+  constructionCost: 1
   doesProduceResource: 1
   productionResource: 0
   productionResourcePerTurn: 1

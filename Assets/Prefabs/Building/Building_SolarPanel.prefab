@@ -96,11 +96,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 675d18c4c621e0747bbc09c0c01ab967, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  type: 3
-  constructionCost: 1
-  doesProduceResource: 1
-  productionResource: 3
-  productionResourcePerTurn: 1
-  hasMaintenanceCost: 0
-  maintenanceResource: 
-  maintenanceResourcePerTurn: 
+  preset: {fileID: 11400000, guid: d27cee9653db80b48950c2935ab95d88, type: 2}

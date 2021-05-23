@@ -3098,11 +3098,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1399649837}
         m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
-        m_MethodName: OnClickGreenhouseButton
-        m_Mode: 1
+        m_MethodName: ClickBuildingButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: dcda1cef664d8f543ab5d278f50fd4e4, type: 2}
+          m_ObjectArgumentAssemblyTypeName: BuildingPreset, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6585,11 +6585,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1399649837}
         m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
-        m_MethodName: OnClickFunhouseButton
-        m_Mode: 1
+        m_MethodName: ClickBuildingButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: 40e195e2f494a8240b7532bd2f62d066, type: 2}
+          m_ObjectArgumentAssemblyTypeName: BuildingPreset, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6734,11 +6734,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1399649837}
         m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
-        m_MethodName: OnClickSolarPanelButton
-        m_Mode: 1
+        m_MethodName: ClickBuildingButton
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgument: {fileID: 11400000, guid: d27cee9653db80b48950c2935ab95d88, type: 2}
+          m_ObjectArgumentAssemblyTypeName: BuildingPreset, Assembly-CSharp
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -15953,7 +15953,6 @@ MonoBehaviour:
   baseBuilding: {fileID: 1204741655282086968, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
   currentTurn: 0
   maxFun: 20
-  placingBuilding: 0
   currentFun: 0
   currentMaterials: 2
   currentOxygen: 1
@@ -16117,45 +16116,6 @@ MonoBehaviour:
   - {fileID: 457173142}
   - {fileID: 444753100}
   startTilesList:
-  - {fileID: 282247006}
-  - {fileID: 678448234}
-  - {fileID: 1473235430}
-  - {fileID: 975359012}
-  - {fileID: 1800144068}
-  - {fileID: 1378626784}
-  - {fileID: 1572503307}
-  - {fileID: 1726469077}
-  - {fileID: 770151041}
-  - {fileID: 1365314652}
-  - {fileID: 1193528539}
-  - {fileID: 1440461683}
-  - {fileID: 356574698}
-  - {fileID: 1726576759}
-  - {fileID: 1468189289}
-  - {fileID: 967878013}
-  - {fileID: 938780487}
-  - {fileID: 393231946}
-  - {fileID: 835073909}
-  - {fileID: 2060166958}
-  - {fileID: 1300551904}
-  - {fileID: 1684060993}
-  - {fileID: 1382135200}
-  - {fileID: 936735626}
-  - {fileID: 525008948}
-  - {fileID: 2050754163}
-  - {fileID: 1784141209}
-  - {fileID: 1448783533}
-  - {fileID: 976780775}
-  - {fileID: 743889816}
-  - {fileID: 911630017}
-  - {fileID: 1851033932}
-  - {fileID: 847242556}
-  - {fileID: 133203972}
-  - {fileID: 658485420}
-  - {fileID: 349082410}
-  - {fileID: 814356511}
-  - {fileID: 1449020768}
-  - {fileID: 1390822301}
   - {fileID: 1511660461}
   - {fileID: 615079757}
   - {fileID: 741153879}
@@ -16169,45 +16129,6 @@ MonoBehaviour:
   - {fileID: 2010872900}
   - {fileID: 452108541}
   - {fileID: 3476549}
-  - {fileID: 434771195}
-  - {fileID: 1910575749}
-  - {fileID: 908906370}
-  - {fileID: 1523217271}
-  - {fileID: 1279468608}
-  - {fileID: 991011636}
-  - {fileID: 851316515}
-  - {fileID: 56227275}
-  - {fileID: 411617897}
-  - {fileID: 221716138}
-  - {fileID: 576288116}
-  - {fileID: 1898148095}
-  - {fileID: 125169484}
-  - {fileID: 892322559}
-  - {fileID: 1989879288}
-  - {fileID: 208072501}
-  - {fileID: 1259959701}
-  - {fileID: 655598809}
-  - {fileID: 721368874}
-  - {fileID: 1616987090}
-  - {fileID: 656370850}
-  - {fileID: 1406749260}
-  - {fileID: 1431516135}
-  - {fileID: 2039694479}
-  - {fileID: 1579703095}
-  - {fileID: 1484572865}
-  - {fileID: 1367746510}
-  - {fileID: 1759708070}
-  - {fileID: 218677068}
-  - {fileID: 246430098}
-  - {fileID: 2038520684}
-  - {fileID: 2006214366}
-  - {fileID: 287488217}
-  - {fileID: 56475144}
-  - {fileID: 860020865}
-  - {fileID: 787570597}
-  - {fileID: 1264433082}
-  - {fileID: 1794918526}
-  - {fileID: 457173142}
   randomTilesList:
   - {fileID: 282247006}
   - {fileID: 678448234}
@@ -16285,6 +16206,13 @@ MonoBehaviour:
   - {fileID: 5922705436454342450, guid: f04815ee45f18d445bacca13e02e8205, type: 3}
   buildings:
   - {fileID: 1204741655282086968, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
+  tileMECount: 0
+  tileMOCount: 0
+  tileMFCount: 0
+  tilePECount: 0
+  tilePOCount: 0
+  tilePFCount: 0
+  tileNCCount: 0
 --- !u!82 &1399649835
 AudioSource:
   m_ObjectHideFlags: 0

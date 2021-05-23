@@ -48,13 +48,13 @@ public class UI : MonoBehaviour
     {
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
-    private void EnableBuildingButtonHighlight(BuildingType buildingType)
+    private void EnableBuildingButtonHighlight(BuildingPreset buildingPreset)
     {
-        if (buildingType == BuildingType.Fun)
+        if (buildingPreset.buildingType == BuildingType.Fun)
             funBuildingButtonHighlight.SetActive(true);
-        else if (buildingType == BuildingType.Energy)
+        else if (buildingPreset.buildingType == BuildingType.Energy)
             energyBuildingButtonHighlight.SetActive(true);
-        else if (buildingType == BuildingType.Oxygen)
+        else if (buildingPreset.buildingType == BuildingType.Oxygen)
             oxygenBuildingButtonHighlight.SetActive(true);
     }
     private void DisableBuildingButtonHighlight()
@@ -128,7 +128,7 @@ public class UI : MonoBehaviour
         EventHandler.OnBuildStarted += EnableBuildingButtonHighlight;
         EventHandler.OnValueChanged += UpdateValueText;
         EventHandler.OnEndGame += DisplayEndScreen;
-        //EventHandler.OnEndTurn += UpdateValueText;
+        //EventHandler.OnEndTurn += UpdateValueText; TODO : check if still useful ?
         EventHandler.OnBuildOver += DisableBuildingButtonHighlight;
         EventHandler.OnError += DisplayNotification;
     }

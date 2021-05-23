@@ -10,8 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3f51d04fe6c61974489f63b73e444ef0, type: 3}
-  m_Name: OxygenBuildingPrefab
+  m_Name: OxygenBuilding
   m_EditorClassIdentifier: 
+  prefab: {fileID: 1418905732990755651, guid: 5c96506342c30ff4c97734f66b8d6b45, type: 3}
+  buildingType: 1
+  constructionCost: 1
   doesProduceResource: 1
   productionResource: 2
   productionResourcePerTurn: 1

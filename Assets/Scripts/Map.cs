@@ -15,6 +15,17 @@ public class Map : MonoBehaviour
 
     [SerializeField] List<Building> buildings = new List<Building>();
 
+    // Counts for random Tile generation
+    public int tileMECount;
+    public int tileMOCount;
+    public int tileMFCount;
+    public int tilePECount;
+    public int tilePOCount;
+    public int tilePFCount;
+    public int tileNCCount;
+    private int tileMaxCount = 9;
+    bool randomTilePossible = true;
+
     public static Map instance;
 
     void Awake()
@@ -27,6 +38,7 @@ public class Map : MonoBehaviour
         EventsSubscribe();
     }
 
+    #region MapGeneration
     private void GenerateMap()
     {
         DetermineStartingTile();
@@ -46,13 +58,75 @@ public class Map : MonoBehaviour
             tilesList.Add(randomTile);
         }
     }
-
     private int DetermineRandomTile()
     {
+        int tryNumber = 0;
+        Start:
         int randomNumber = Random.Range(0, tilesPrefab.Count);
-        return randomNumber;
+        bool possible = CheckRandomTilePossibility(randomNumber);
+        if (possible)
+            return randomNumber;
+        else
+        { 
+            if (tryNumber < 30)
+            {
+                tryNumber++;
+                goto Start;
+            }
+            else
+            {
+                Debug.Log("Generation failed");
+                tileMOCount++;
+                return 0;
+            }
+        }
     }
+    private bool CheckRandomTilePossibility(int tileNumber)
+    {
+        Tile prefabToSpawn = tilesPrefab[tileNumber];
+        switch (prefabToSpawn.tileType)
+        {
+            case TileType.MinusDioxygen:
+                randomTilePossible = (tileMOCount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tileMOCount++;
+                break;
 
+            case TileType.MinusEnergy:
+                randomTilePossible = (tileMECount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tileMECount++;
+                break;
+
+            case TileType.MinusFun:
+                randomTilePossible = (tileMFCount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tileMFCount++;
+                break;
+
+            case TileType.NotConstructible:
+                randomTilePossible = (tileNCCount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tileNCCount++;
+                break;
+
+            case TileType.PlusDioxygen:
+                randomTilePossible = (tilePOCount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tilePOCount++;
+                break;
+
+            case TileType.PlusEnergy:
+                randomTilePossible = (tilePECount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tilePECount++;
+                break;
+
+            case TileType.PlusFun:
+                randomTilePossible = (tilePFCount < tileMaxCount) ? true : false;
+                if (randomTilePossible) tilePFCount++;
+                break;
+            default:
+                Debug.Log("Invalid tile type");
+                randomTilePossible = false;
+                break;
+        }
+        return randomTilePossible;
+    }
     private void DetermineStartingTile()
     {
         // determines the starting tile
@@ -68,8 +142,10 @@ public class Map : MonoBehaviour
         startBuilding.transform.position = new Vector2(startingTile.transform.position.x + (tileSize / 2), startingTile.transform.position.y);
     }
 
+    #endregion
+
     // displays the tiles which we can place a building on
-    private void EnableUsableTiles (BuildingType buildingType)
+    private void EnableUsableTiles (BuildingPreset buildingPreset)
     {
         foreach (Tile tile in tilesList)
         {
@@ -98,16 +174,12 @@ public class Map : MonoBehaviour
     }
 
     // creates a new building on a specific tile
-    private void CreateNewBuilding (BuildingType buildingType, TileType tileType, Vector2 position)
+    private void CreateNewBuilding (BuildingPreset buildingPreset, TileType tileType, Vector2 position)
     {
-        Building prefabToSpawn = buildingPrefabs.Find(x => x.type == buildingType);
-        GameObject buildingObj = Instantiate(prefabToSpawn.gameObject, position, Quaternion.identity);
+        GameObject buildingObj = Instantiate(buildingPreset.prefab, position, Quaternion.identity);
         buildings.Add(buildingObj.GetComponent<Building>());
 
-        GameManager.instance.OnCreatedNewBuilding(prefabToSpawn);
-
     }
-
     // returns the tile that's at the given position
     private Tile GetTileAtPosition (Vector3 pos)
     {
@@ -122,14 +194,12 @@ public class Map : MonoBehaviour
     {
         EventHandler.OnBuildStarted += EnableUsableTiles;
         EventHandler.OnBuildOver += DisableUsableTiles;
-        //EventHandler.OnBuildCompleted += DisableUsableTiles;
         EventHandler.OnBuildCompleted += CreateNewBuilding;
     }
     private void EventsClear()
     {
         EventHandler.OnBuildStarted -= EnableUsableTiles;
         EventHandler.OnBuildOver -= DisableUsableTiles;
-        //EventHandler.OnBuildCompleted -= DisableUsableTiles;
         EventHandler.OnBuildCompleted -= CreateNewBuilding;
     }
     #endregion

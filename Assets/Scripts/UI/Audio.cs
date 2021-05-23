@@ -31,10 +31,10 @@ public class Audio : MonoBehaviour
         audioMixer.SetFloat("volume", volume);
     }
 
-    private void PlayConstructionSound(BuildingType buildingType, TileType tileType, Vector2 tilePosition)
+    private void PlayConstructionSound(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
     {
         //play building sound depending on the constructed building
-        switch (buildingType)
+        switch (buildingPreset.buildingType)
         {
             case (BuildingType.Oxygen):
                 AudioClip gHClip = gHConstructionSounds[Random.Range(0, gHConstructionSounds.Length)];

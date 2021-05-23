@@ -9,10 +9,9 @@ public class GameManager : MonoBehaviour
     public int currentTurn;
     public int maxFun = 20;
 
-    public bool placingBuilding;
-    private BuildingType curSelectedBuilding;
-    private int buildingConstructionCost;
-    private Tile currentSelectedTile;
+    //public bool placingBuilding;
+    //private Tile currentSelectedTile;
+    //private int buildingConstructionCost;
 
     [Header("Current Resources")]
     public int currentFun;
@@ -34,11 +33,10 @@ public class GameManager : MonoBehaviour
         EventsSubscribe();
     }
 
-    private void Start ()
+    private void Start()
     {
         UI.instance.SetMaxFun(maxFun);
-        // Finish the implementation of the base building (started in Map.cs)
-        OnCreatedNewBuilding(baseBuilding);
+        // Finish the implementation of the base building (started in Map.cs) TODO : le remettre ? Comment ?
 
         // Update the values on the UI
         UI.instance.UpdateTurnText(currentTurn);
@@ -52,42 +50,6 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.GetInt("areTipsactive") == 0)
             UI.instance.SetTipsActive(false);
     }
-    private void Update()
-    {
-        if (placingBuilding && Input.GetMouseButtonDown(0) && (currentMaterials >= buildingConstructionCost))
-        {
-            GetSelectedTileInfo();
-            if (currentSelectedTile != null)
-            {
-                EventHandler.BuildCompleted(curSelectedBuilding, currentSelectedTile.tileType, currentSelectedTile.transform.position);
-                BuildCompleted();
-            }
-        }
-        else if(placingBuilding && Input.GetKeyDown(KeyCode.Escape) 
-             || placingBuilding && Input.GetMouseButtonDown(1))
-        {
-            EventHandler.BuildOver();
-        }
-    }
-
-    private void BuildCompleted()
-    {
-        currentSelectedTile.hasBuilding = true;
-    }
-
-    private void GetSelectedTileInfo()
-    {
-        RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
-        if (hit.collider != null)
-        {
-            currentSelectedTile = hit.collider.GetComponent<Tile>();
-        }
-    }
-
-    private void CancelBuildingConstruction()
-    {
-        placingBuilding = false;
-    }
 
     // called when the "End Turn" button is pressed
     private void EndTurn ()
@@ -99,10 +61,8 @@ public class GameManager : MonoBehaviour
         currentTurn++;
         UI.instance.UpdateTurnText(currentTurn);
     }
-
     private void GiveResources()
     {
-        // give resources
         if (funPerTurn != 0)
         {
             currentFun += funPerTurn;
@@ -128,31 +88,28 @@ public class GameManager : MonoBehaviour
         {
             EventHandler.EndGame(false, currentTurn, ResourceType.Energy);
             EventsClear();
-            // Clear events on all other components
+            // TODO Clear events on all other components
         }
         else if (currentOxygen < 1)
         {
             EventHandler.EndGame(false, currentTurn, ResourceType.Oxygen);
             EventsClear();
-            // Clear events on all other components
+            // TODO Clear events on all other components
         }
         else if (currentFun >= maxFun)
         {
             EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
             EventsClear();
-            // Clear events on all other components
+            // TODO Clear events on all other components
         }
     }
 
-    // called when we click on a building button to place it
-    private void SetPlacingBuilding (BuildingType buildingType)
+    // called to check possibility of the building placement
+    private void CheckBuildingConditions (BuildingPreset buildingPreset)
     {
-        if (currentMaterials >= 1)
+        if (currentMaterials >= 1) // TODO : (currentMaterials >= buildingConstructionCost)
         {
-            placingBuilding = true;
-            curSelectedBuilding = buildingType;
-            EventHandler.BuildStarted(buildingType);
-            EventHandler.OnBuildOver += CancelBuildingConstruction;
+            EventHandler.BuildStarted(buildingPreset);
         }
         else
         {
@@ -162,83 +119,83 @@ public class GameManager : MonoBehaviour
     }
 
     // called when a new building has been created and placed down
-    public void OnCreatedNewBuilding (Building building)
+    private void ModifyValues_Building(BuildingPreset buildingPreset, TileType arg2, Vector2 arg3)
     {
         // resource the building produces
-        if (building.doesProduceResource)
+        if (buildingPreset.doesProduceResource)
         {
             // Add the resources to give to the count
-            AddBuildingProduction(building);
+            AddBuildingProduction(buildingPreset);
         }
 
         // resource the building may cost
-        if (building.hasMaintenanceCost)
+        if (buildingPreset.hasMaintenanceCost)
         {
             // Substract the resources to take from the count
-            AddBuildingMaintenance(building);
+            AddBuildingMaintenance(buildingPreset);
         }
 
         currentMaterials -= 1;
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
         EventHandler.BuildOver();
-        EventHandler.OnBuildOver -= CancelBuildingConstruction;
     }
-
-    private void AddBuildingMaintenance(Building building)
+    private void AddBuildingProduction(BuildingPreset buildingPreset)
     {
-        foreach (ResourceType resource in building.maintenanceResource)
+        switch (buildingPreset.productionResource)
         {
-            int index = 0;
+            case ResourceType.Materials:
+                materialsPerTurn += buildingPreset.productionResourcePerTurn;
+                EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
+                break;
+            case ResourceType.Fun:
+                funPerTurn += buildingPreset.productionResourcePerTurn;
+                EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+                break;
+            case ResourceType.Oxygen:
+                oxygenPerTurn += buildingPreset.productionResourcePerTurn;
+                EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                break;
+            case ResourceType.Energy:
+                energyPerTurn += buildingPreset.productionResourcePerTurn;
+                EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                break;
+        }
+    }
+    private void AddBuildingMaintenance(BuildingPreset buildingPreset)
+    {
+        foreach (ResourceType resource in buildingPreset.maintenanceResource)
+        {
             switch (resource)
             {
                 case ResourceType.Oxygen:
-                    oxygenPerTurn -= building.maintenanceResourcePerTurn[index];
+                    oxygenPerTurn--;
                     EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
-                    index++;
                     break;
                 case ResourceType.Energy:
-                    energyPerTurn -= building.maintenanceResourcePerTurn[index];
+                    energyPerTurn--;
                     EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
-                    index++;
                     break;
             }
         }
     }
 
-    private void AddBuildingProduction(Building building)
-    {
-        switch (building.productionResource)
-        {
-            case ResourceType.Materials:
-                materialsPerTurn += building.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
-                break;
-            case ResourceType.Fun:
-                funPerTurn += building.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
-                break;
-            case ResourceType.Oxygen:
-                oxygenPerTurn += building.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
-                break;
-            case ResourceType.Energy:
-                energyPerTurn += building.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
-                break;
-        }
-    }
     #region Events
     private void EventsSubscribe()
     {
         EventHandler.OnEndTurn += EndTurn;
-        EventHandler.OnTryBuild += SetPlacingBuilding;
+        EventHandler.OnTryBuild += CheckBuildingConditions;
+        EventHandler.OnBuildCompleted += ModifyValues_Building;
     }
+
     private void EventsClear()
     {
         EventHandler.OnEndTurn -= EndTurn;
-        EventHandler.OnTryBuild -= SetPlacingBuilding;
+        EventHandler.OnTryBuild -= CheckBuildingConditions;
+        EventHandler.OnBuildCompleted -= ModifyValues_Building;
     }
     #endregion
 }
+
 #region Enum
 public enum BuildingType
 {

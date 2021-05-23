@@ -8,17 +8,9 @@ public class ButtonFunctionnality : MonoBehaviour
     {
         EventHandler.EndTurn();
     }
-    public void OnClickSolarPanelButton()
+    public void ClickBuildingButton(BuildingPreset buildingPreset)
     {
-        EventHandler.TryBuild(BuildingType.Energy);
-    }
-    public void OnClickGreenhouseButton()
-    {
-        EventHandler.TryBuild(BuildingType.Oxygen);
-    }
-    public void OnClickFunhouseButton()
-    {
-        EventHandler.TryBuild(BuildingType.Fun);
+        EventHandler.TryBuild(buildingPreset);
     }
     public void OnClickCloseTips()
     {

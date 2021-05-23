@@ -9,10 +9,10 @@ public class EventHandler : MonoBehaviour
     public static event Action<bool, int, ResourceType> OnEndGame;
     public static event Action<int> OnError;
 
-    public static event Action<BuildingType> OnTryBuild;
-    public static event Action<BuildingType> OnBuildStarted;
+    public static event Action<BuildingPreset> OnTryBuild;
+    public static event Action<BuildingPreset> OnBuildStarted;
     public static event Action OnBuildOver;
-    public static event Action<BuildingType, TileType, Vector2>  OnBuildCompleted;
+    public static event Action<BuildingPreset, TileType, Vector2>  OnBuildCompleted;
     public static event Action<ResourceType, int, int> OnValueChanged;
 
     public static void Error(int errorNumber)
@@ -27,16 +27,19 @@ public class EventHandler : MonoBehaviour
             OnEndTurn();
         else Debug.Log("Error with event OnEndTurn, no subscriber");
     }
-    public static void TryBuild(BuildingType buildingType)
+    // Called by the UI buttons
+    // Check if there is enough materials to build
+    public static void TryBuild(BuildingPreset buildingType)
     {
         if (OnTryBuild != null)
             OnTryBuild(buildingType);
         else Debug.Log("Error with event OnTryBuild, no subscriber");
     }
-    public static void BuildStarted(BuildingType buildingType)
+    // Called if conditions to build are checked true
+    public static void BuildStarted(BuildingPreset buildingPreset)
     {
         if (OnBuildStarted != null)
-            OnBuildStarted(buildingType);
+            OnBuildStarted(buildingPreset);
         else Debug.Log("Error with event OnBuildStarted, no subscriber");
     }
     public static void BuildOver()
@@ -45,10 +48,16 @@ public class EventHandler : MonoBehaviour
             OnBuildOver();
         else Debug.Log("Error with event OnBuildCanceled, no subscriber");
     }
-    public static void BuildCompleted(BuildingType buildingType, TileType tileType, Vector2 tilePosition)
+    // Called if mouse clic on a valid tile
+    // Changes the tile status to hasBuilding
+    // Spawns the prefab on the tile
+    // Calls for the update of the resources values
+    // Updates the UI accordingly to the new numbers for the resources
+    // Disable the building indicators (tilesHighlight, buildingIndicator, buttonHighlight)
+    public static void BuildCompleted(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
     {
         if (OnBuildCompleted != null)
-            OnBuildCompleted(buildingType, tileType, tilePosition);
+            OnBuildCompleted(buildingPreset, tileType, tilePosition);
         else Debug.Log("Error with event OnBuildCompleted, no subscriber");
     }
 

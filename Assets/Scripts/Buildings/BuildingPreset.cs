@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-[CreateAssetMenu (fileName = "BuildingPrefab", menuName = "ScriptableObjects/Buildings")]
+[CreateAssetMenu (fileName = "BuildingPreset", menuName = "ScriptableObjects/Buildings")]
 public class BuildingPreset : ScriptableObject
 {
+    public GameObject prefab;
+    public BuildingType buildingType;
+    public int constructionCost;
+
+    [Header("Production")]
     public bool doesProduceResource;
     public ResourceType productionResource;
     public int productionResourcePerTurn;

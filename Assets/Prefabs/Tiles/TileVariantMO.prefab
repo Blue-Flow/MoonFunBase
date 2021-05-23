@@ -67,5 +67,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: TileVariantMO
       objectReference: {fileID: 0}
+    - target: {fileID: 8416137272275828190, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15937632
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416137272275828190, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15709624
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416137272275828190, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2108
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416137272275828190, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.2341
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
