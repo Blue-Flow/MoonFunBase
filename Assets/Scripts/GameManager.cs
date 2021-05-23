@@ -98,10 +98,16 @@ public class GameManager : MonoBehaviour
         }
         else if (currentFun >= maxFun)
         {
+            CheckHighScore();
             EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
             EventsClear();
             // TODO Clear events on all other components
         }
+    }
+    private void CheckHighScore()
+    {
+        if (currentTurn < PlayerPrefs.GetInt("Highscore"))
+            PlayerPrefs.SetInt("Highscore", currentTurn);
     }
 
     // called to check possibility of the building placement

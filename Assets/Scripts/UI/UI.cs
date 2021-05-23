@@ -26,6 +26,7 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject endScreen;
     [SerializeField] TextMeshProUGUI endText;
     [SerializeField] Sprite victoryBG;
+    [SerializeField] TextMeshProUGUI highscoreText;
 
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
@@ -47,6 +48,7 @@ public class UI : MonoBehaviour
     private void GetBaseName()
     {
         baseName.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
+        highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
     }
     private void EnableBuildingButtonHighlight(BuildingPreset buildingPreset)
     {
@@ -106,6 +108,7 @@ public class UI : MonoBehaviour
         {
             endScreen.GetComponent<Image>().sprite = victoryBG;
             endText.text = ("You won in " + turnNumber + " turns !");
+            highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
         }
         else
         {
