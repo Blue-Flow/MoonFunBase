@@ -15931,6 +15931,7 @@ GameObject:
   - component: {fileID: 1399649836}
   - component: {fileID: 1399649837}
   - component: {fileID: 1399649835}
+  - component: {fileID: 1399649838}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -15954,11 +15955,11 @@ MonoBehaviour:
   currentTurn: 0
   maxFun: 20
   currentFun: 0
-  currentMaterials: 2
+  currentMaterials: 1
   currentOxygen: 1
   currentEnergy: 1
   funPerTurn: 0
-  materialsPerTurn: 0
+  materialsPerTurn: 1
   oxygenPerTurn: 0
   energyPerTurn: 0
 --- !u!4 &1399649832
@@ -16356,6 +16357,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce3e6c9e657d3440901a17c0756b280, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1399649838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1399649830}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb800bd64c4a7f04d824b3bdb325a890, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  placingBuilding: 0
+  placementIndicator: {fileID: 2142585594}
 --- !u!1001 &1406749258
 PrefabInstance:
   m_ObjectHideFlags: 0

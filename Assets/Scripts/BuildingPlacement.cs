@@ -8,11 +8,11 @@ public class BuildingPlacement : MonoBehaviour
     public bool placingBuilding;
     private Tile currentSelectedTile;
 
-    private float indicatorUpdateRate = 0.05f;
-    private float lastUpdateTime;
+    //private float indicatorUpdateRate = 0.05f;
+    //private float lastUpdateTime;
     //private Vector2 curIndicatorPosition;
+    //public GameObject placementIndicator;
 
-    public GameObject placementIndicator;
     private void Start()
     {
         EventsSubscribe();
@@ -30,8 +30,9 @@ public class BuildingPlacement : MonoBehaviour
         {
             GetSelectedTileInfo();
             //placementIndicator.transform.position = curIndicatorPosition;
-            if (currentSelectedTile != null)
+            if (CheckTileDisponibility())
             {
+                currentSelectedTile.hasBuilding = true;
                 EventHandler.BuildCompleted(curSelectedBuilding, currentSelectedTile.tileType, currentSelectedTile.transform.position);
             }
         }
@@ -50,6 +51,12 @@ public class BuildingPlacement : MonoBehaviour
             EventHandler.BuildOver();
         }
     }
+
+    private bool CheckTileDisponibility()
+    {
+        return currentSelectedTile != null && currentSelectedTile.isEnabled && !currentSelectedTile.hasBuilding;
+    }
+
     private void GetSelectedTileInfo()
     {
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -63,23 +70,23 @@ public class BuildingPlacement : MonoBehaviour
         placingBuilding = false;
         //placementIndicator.SetActive(false);
     }
-
-    private void BuildCompleted(BuildingPreset buildingType, TileType tileType, Vector2 position)
+    private void ClearTile()
     {
-        currentSelectedTile.hasBuilding = true;
+        currentSelectedTile = null;
     }
+
     #region Events
     private void EventsSubscribe()
     {
         EventHandler.OnBuildOver += CancelBuildingConstruction;
+        EventHandler.OnBuildOver += ClearTile;
         EventHandler.OnBuildStarted += ConstructionStarted;
-        EventHandler.OnBuildCompleted += BuildCompleted;
     }
     private void EventsClear()
     {
         EventHandler.OnBuildOver -= CancelBuildingConstruction;
+        EventHandler.OnBuildOver -= ClearTile;
         EventHandler.OnBuildStarted -= ConstructionStarted;
-        EventHandler.OnBuildCompleted -= BuildCompleted;
     }
     #endregion
 }

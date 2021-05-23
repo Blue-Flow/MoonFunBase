@@ -127,17 +127,66 @@ public class GameManager : MonoBehaviour
             // Add the resources to give to the count
             AddBuildingProduction(buildingPreset);
         }
-
         // resource the building may cost
         if (buildingPreset.hasMaintenanceCost)
         {
             // Substract the resources to take from the count
             AddBuildingMaintenance(buildingPreset);
         }
-
         currentMaterials -= 1;
         EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
         EventHandler.BuildOver();
+    }
+    private void ModifyValues_Tile(BuildingPreset buildingPreset, TileType tileType, Vector2 position)
+    {
+        if (tileType != TileType.Neutral)
+        {
+            switch (tileType)
+            {
+                case TileType.MinusDioxygen:
+                    if (buildingPreset.buildingType == BuildingType.Oxygen)
+                    {
+                        oxygenPerTurn--;
+                        EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                    }
+                    break;
+                case TileType.PlusDioxygen:
+                    if (buildingPreset.buildingType == BuildingType.Oxygen)
+                    {
+                        oxygenPerTurn++;
+                        EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                    }
+                    break;
+                case TileType.MinusEnergy:
+                    if (buildingPreset.buildingType == BuildingType.Energy)
+                    {
+                        energyPerTurn--;
+                        EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                    }
+                    break;
+                case TileType.PlusEnergy:
+                    if (buildingPreset.buildingType == BuildingType.Energy)
+                    {
+                        energyPerTurn++;
+                        EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                    }
+                    break;
+                case TileType.MinusFun:
+                    if (buildingPreset.buildingType == BuildingType.Fun)
+                    {
+                        funPerTurn--;
+                        EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+                    }
+                    break;
+                case TileType.PlusFun:
+                    if (buildingPreset.buildingType == BuildingType.Fun)
+                    {
+                        funPerTurn++;
+                        EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+                    }
+                    break;
+            }
+        }
     }
     private void AddBuildingProduction(BuildingPreset buildingPreset)
     {
@@ -185,6 +234,7 @@ public class GameManager : MonoBehaviour
         EventHandler.OnEndTurn += EndTurn;
         EventHandler.OnTryBuild += CheckBuildingConditions;
         EventHandler.OnBuildCompleted += ModifyValues_Building;
+        EventHandler.OnBuildCompleted += ModifyValues_Tile;
     }
 
     private void EventsClear()
@@ -192,6 +242,7 @@ public class GameManager : MonoBehaviour
         EventHandler.OnEndTurn -= EndTurn;
         EventHandler.OnTryBuild -= CheckBuildingConditions;
         EventHandler.OnBuildCompleted -= ModifyValues_Building;
+        EventHandler.OnBuildCompleted -= ModifyValues_Tile;
     }
     #endregion
 }

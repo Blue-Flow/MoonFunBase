@@ -16,15 +16,15 @@ public class Map : MonoBehaviour
     [SerializeField] List<Building> buildings = new List<Building>();
 
     // Counts for random Tile generation
-    public int tileMECount;
-    public int tileMOCount;
-    public int tileMFCount;
-    public int tilePECount;
-    public int tilePOCount;
-    public int tilePFCount;
-    public int tileNCCount;
+    private int tileMECount;
+    private int tileMOCount;
+    private int tileMFCount;
+    private int tilePECount;
+    private int tilePOCount;
+    private int tilePFCount;
+    private int tileNCCount;
     private int tileMaxCount = 9;
-    bool randomTilePossible = true;
+    private bool randomTilePossible = true;
 
     public static Map instance;
 

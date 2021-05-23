@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6dc127d1df8f8d4083dc31f10c07d25, type: 3}
   m_Name: NotConstructibleTilePreset
   m_EditorClassIdentifier: 
+  isNotConstructible: 1
   hasBonus: 0
   hasMalus: 0
   resourceType: 0

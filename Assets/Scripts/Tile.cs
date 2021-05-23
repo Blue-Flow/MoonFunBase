@@ -22,10 +22,10 @@ public class Tile : MonoBehaviour
     // can this tile be highlighted based on a given position
     public bool CanBeHighlighted (Vector3 potentialPosition)
     {
-        return transform.position == potentialPosition && !hasBuilding;
+        return (transform.position == potentialPosition) && !hasBuilding && tileType != TileType.NotConstructible;
     }
     public bool CanBeHighlighted(Vector2 potentialPosition)
     {
-        return new Vector2(transform.position.x, transform.position.y) == potentialPosition && !hasBuilding;
+        return (new Vector2(transform.position.x, transform.position.y) == potentialPosition) && !hasBuilding && tileType != TileType.NotConstructible;
     }
 }
