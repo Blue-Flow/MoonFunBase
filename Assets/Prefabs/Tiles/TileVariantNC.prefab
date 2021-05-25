@@ -8,21 +8,45 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.226
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.226
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9998685
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.016216664
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.858
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 859108012272184239, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 9845bcfe93bc64842b20643d2d248bc9, type: 3}
+      objectReference: {fileID: 21300000, guid: e86536f3b12b26b4791bb9f66ba8939e, type: 3}
     - target: {fileID: 859108012272184239, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_Color.b
       value: 0.5559274

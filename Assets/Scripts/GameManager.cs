@@ -14,16 +14,16 @@ public class GameManager : MonoBehaviour
     //private int buildingConstructionCost;
 
     [Header("Current Resources")]
-    public int currentFun;
-    public int currentMaterials;
-    public int currentOxygen;
-    public int currentEnergy;
+    //private int currentFun;
+    private int currentMaterials = 1;
+    //public int currentOxygen;
+    //public int currentEnergy;
 
     [Header("Round Resource Increase")]
-    public int funPerTurn;
-    public int materialsPerTurn;
-    public int oxygenPerTurn;
-    public int energyPerTurn;
+    private int funPerTurn;
+    //private int materialsPerTurn;
+    private int oxygenPerTurn;
+    private int energyPerTurn;
 
     public static GameManager instance;
 
@@ -41,22 +41,26 @@ public class GameManager : MonoBehaviour
         // Update the values on the UI
         UI.instance.UpdateTurnText(currentTurn);
 
-        EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
-        EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
-        EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
-        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
+        EventHandler.ValueChanged(ResourceType.Fun, funPerTurn);
+        EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);
+        EventHandler.ValueChanged(ResourceType.Energy, energyPerTurn);
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials);
     }
 
     // called when the "End Turn" button is pressed
     private void EndTurn ()
     {
-        GiveResources();
+        //GiveResources();
+
+        currentMaterials ++;
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials);
 
         CheckEndGame();
 
         currentTurn++;
         UI.instance.UpdateTurnText(currentTurn);
     }
+    /*
     private void GiveResources()
     {
         if (funPerTurn != 0)
@@ -77,22 +81,24 @@ public class GameManager : MonoBehaviour
         currentMaterials += materialsPerTurn;
         EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
     }
-
+    */
     private void CheckEndGame()
     {
-        if (currentEnergy < 1)
+        //if (currentEnergy < 1)
+        if (energyPerTurn < 0)
         {
             EventHandler.EndGame(false, currentTurn, ResourceType.Energy);
             EventsClear();
             // TODO Clear events on all other components
         }
-        else if (currentOxygen < 1)
+        //else if (currentOxygen < 1)
+        else if (oxygenPerTurn < 0)
         {
             EventHandler.EndGame(false, currentTurn, ResourceType.Oxygen);
             EventsClear();
             // TODO Clear events on all other components
         }
-        else if (currentFun >= maxFun)
+        else if (funPerTurn >= maxFun)
         {
             CheckHighScore();
             EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
@@ -136,7 +142,7 @@ public class GameManager : MonoBehaviour
             AddBuildingMaintenance(buildingPreset);
         }
         currentMaterials -= 1;
-        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials);
         EventHandler.BuildOver();
     }
     private void ModifyValues_Tile(BuildingPreset buildingPreset, TileType tileType, Vector2 position)
@@ -149,42 +155,42 @@ public class GameManager : MonoBehaviour
                     if (buildingPreset.buildingType == BuildingType.Oxygen)
                     {
                         oxygenPerTurn--;
-                        EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                        EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);
                     }
                     break;
                 case TileType.PlusDioxygen:
                     if (buildingPreset.buildingType == BuildingType.Oxygen)
                     {
                         oxygenPerTurn++;
-                        EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                        EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);
                     }
                     break;
                 case TileType.MinusEnergy:
                     if (buildingPreset.buildingType == BuildingType.Energy)
                     {
                         energyPerTurn--;
-                        EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                        EventHandler.ValueChanged(ResourceType.Energy, energyPerTurn);
                     }
                     break;
                 case TileType.PlusEnergy:
                     if (buildingPreset.buildingType == BuildingType.Energy)
                     {
                         energyPerTurn++;
-                        EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                        EventHandler.ValueChanged(ResourceType.Energy, energyPerTurn);
                     }
                     break;
                 case TileType.MinusFun:
                     if (buildingPreset.buildingType == BuildingType.Fun)
                     {
                         funPerTurn--;
-                        EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+                        EventHandler.ValueChanged(ResourceType.Fun, funPerTurn);
                     }
                     break;
                 case TileType.PlusFun:
                     if (buildingPreset.buildingType == BuildingType.Fun)
                     {
                         funPerTurn++;
-                        EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+                        EventHandler.ValueChanged(ResourceType.Fun, funPerTurn);
                     }
                     break;
             }
@@ -194,21 +200,22 @@ public class GameManager : MonoBehaviour
     {
         switch (buildingPreset.productionResource)
         {
-            case ResourceType.Materials:
+            /*case ResourceType.Materials:
                 materialsPerTurn += buildingPreset.productionResourcePerTurn;
                 EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
                 break;
+            */
             case ResourceType.Fun:
                 funPerTurn += buildingPreset.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
+                EventHandler.ValueChanged(ResourceType.Fun, funPerTurn);
                 break;
             case ResourceType.Oxygen:
                 oxygenPerTurn += buildingPreset.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);
                 break;
             case ResourceType.Energy:
                 energyPerTurn += buildingPreset.productionResourcePerTurn;
-                EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                EventHandler.ValueChanged(ResourceType.Energy, energyPerTurn);
                 break;
         }
     }
@@ -220,11 +227,11 @@ public class GameManager : MonoBehaviour
             {
                 case ResourceType.Oxygen:
                     oxygenPerTurn--;
-                    EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
+                    EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);
                     break;
                 case ResourceType.Energy:
                     energyPerTurn--;
-                    EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
+                    EventHandler.ValueChanged(ResourceType.Energy, energyPerTurn);
                     break;
             }
         }

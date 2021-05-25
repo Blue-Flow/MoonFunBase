@@ -16,7 +16,7 @@ public class EventHandler : MonoBehaviour
     public static event Action<BuildingPreset> OnBuildStarted;
     public static event Action OnBuildOver;
     public static event Action<BuildingPreset, TileType, Vector2>  OnBuildCompleted;
-    public static event Action<ResourceType, int, int> OnValueChanged;
+    public static event Action<ResourceType, int> OnValueChanged;
 
     public static void StartGame()
     {
@@ -80,10 +80,10 @@ public class EventHandler : MonoBehaviour
         else Debug.Log("Error with event OnBuildCompleted, no subscriber");
     }
 
-    public static void ValueChanged(ResourceType resourceType, int currentResource, int resourcePerTurn)
+    public static void ValueChanged(ResourceType resourceType, int resourcePerTurn)
     {
         if (OnValueChanged != null)
-            OnValueChanged(resourceType, currentResource, resourcePerTurn);
+            OnValueChanged(resourceType, resourcePerTurn);
         else Debug.Log("Error with event OnValueChanged, no subscriber");
     }
     public static void EndGame(bool victory, int turnNumber, ResourceType resource)

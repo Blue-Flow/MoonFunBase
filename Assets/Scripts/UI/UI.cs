@@ -53,12 +53,24 @@ public class UI : MonoBehaviour
     }
     private void EnableBuildingButtonHighlight(BuildingPreset buildingPreset)
     {
-        if (buildingPreset.buildingType == BuildingType.Fun)
-            funBuildingButtonHighlight.SetActive(true);
-        else if (buildingPreset.buildingType == BuildingType.Energy)
-            energyBuildingButtonHighlight.SetActive(true);
-        else if (buildingPreset.buildingType == BuildingType.Oxygen)
-            oxygenBuildingButtonHighlight.SetActive(true);
+        switch (buildingPreset.buildingType)
+        {
+            case BuildingType.Fun:
+                funBuildingButtonHighlight.SetActive(true);
+                oxygenBuildingButtonHighlight.SetActive(false);
+                energyBuildingButtonHighlight.SetActive(false);
+                break;
+            case BuildingType.Energy:
+                energyBuildingButtonHighlight.SetActive(true);
+                oxygenBuildingButtonHighlight.SetActive(false);
+                funBuildingButtonHighlight.SetActive(false);
+                break;
+            case BuildingType.Oxygen:
+                oxygenBuildingButtonHighlight.SetActive(true);
+                energyBuildingButtonHighlight.SetActive(false);
+                funBuildingButtonHighlight.SetActive(false);
+                break;
+        }
     }
     private void DisableBuildingButtonHighlight(BuildingPreset buildingPreset)
     {
@@ -88,23 +100,23 @@ public class UI : MonoBehaviour
                 break;
         }
     }
-    private void UpdateValueText(ResourceType resourceType, int currentResource, int resourcePerTurn)
+    private void UpdateValueText(ResourceType resourceType, int resourcePerTurn)
     {
-        string textToChange = string.Format("{0} ({1}{2})", currentResource, resourcePerTurn < 0 ? "" : "+", resourcePerTurn);
+        //string textToChange = string.Format("{0} ({1}{2})", currentResource, resourcePerTurn < 0 ? "" : "+", resourcePerTurn);
         switch (resourceType)
         {
             case ResourceType.Fun:
-                funValue.text = textToChange;
-                funBar.fillAmount = ((float)currentResource / (float)maxFun);
+                funValue.text = resourcePerTurn + "(/" + maxFun +")";
+                funBar.fillAmount = ((float)resourcePerTurn / (float)maxFun);
                 break;
             case ResourceType.Materials:
-                materialsValue.text = textToChange;
+                materialsValue.text = resourcePerTurn + "(+1)";
                 break;
             case ResourceType.Oxygen:
-                oxygenValue.text = textToChange;
+                oxygenValue.text = Convert.ToString(resourcePerTurn);
                 break;
             case ResourceType.Energy:
-                energyValue.text = textToChange;
+                energyValue.text = Convert.ToString(resourcePerTurn);
                 break;
         }
     }
@@ -135,7 +147,6 @@ public class UI : MonoBehaviour
         EventHandler.OnValueChanged += UpdateValueText;
         EventHandler.OnEndGame += DisplayEndScreen;
         EventHandler.OnBuildOver += DisableBuildingButtonHighlight;
-        EventHandler.OnTryBuild += DisableBuildingButtonHighlight;
         EventHandler.OnError += DisplayNotification;
     }
     private void EventsClear()
@@ -144,7 +155,6 @@ public class UI : MonoBehaviour
         EventHandler.OnEndGame -= DisplayEndScreen;
         EventHandler.OnBuildOver -= DisableBuildingButtonHighlight;
         EventHandler.OnBuildStarted -= EnableBuildingButtonHighlight;
-        EventHandler.OnTryBuild -= DisableBuildingButtonHighlight;
         EventHandler.OnError -= DisplayNotification;
     }
     #endregion

@@ -52,7 +52,7 @@ public class Map : MonoBehaviour
         {
             Vector2 tilePosition = tile.transform.position;
             tilesList.Remove(tile);
-            Destroy(tile);
+            Destroy(tile.gameObject);
             int randomNumber = DetermineRandomTile();
             Tile randomTile = Instantiate(tilesPrefab[randomNumber], mapHolder.transform);
             randomTile.transform.position = tilePosition;
