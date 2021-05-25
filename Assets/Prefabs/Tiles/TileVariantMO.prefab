@@ -7,6 +7,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 71918668206180648, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 517c5023180af5640a7796eba4542ce7, type: 3}
+    - target: {fileID: 250164269916675121, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.16588947
+      objectReference: {fileID: 0}
+    - target: {fileID: 250164269916675121, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2231
+      objectReference: {fileID: 0}
     - target: {fileID: 1375590518173943527, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -66,6 +78,22 @@ PrefabInstance:
     - target: {fileID: 5483660955725873783, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
       propertyPath: m_Name
       value: TileVariantMO
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483660955878177073, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_DrawMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483660955878177078, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483660955878177078, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5483660955878177079, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8416137272275828190, guid: ee245f61a468f7f4f8ceb21b2caf3bda, type: 3}
       propertyPath: m_LocalScale.x

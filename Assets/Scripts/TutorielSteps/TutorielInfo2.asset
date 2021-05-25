@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c745fa1281a499f4baf1ab7c2997cdc7, type: 3}
+  m_Name: TutorielInfo2
+  m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
+  ID: 2
+  textToDisplay: There are three buildings you can erect.  Each building cost you    
+    1 material to build. You gain 1 material per turn.
+  imageToDisplay: {fileID: 0}

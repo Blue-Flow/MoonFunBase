@@ -13,7 +13,7 @@ public class BuildingPlacement : MonoBehaviour
     //private Vector2 curIndicatorPosition;
     //public GameObject placementIndicator;
 
-    private void Start()
+    private void Awake()
     {
         EventsSubscribe();
     }

@@ -7,6 +7,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9998685
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.016216664
+      objectReference: {fileID: 0}
+    - target: {fileID: 606693582290173622, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.858
+      objectReference: {fileID: 0}
+    - target: {fileID: 859108012272184239, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9845bcfe93bc64842b20643d2d248bc9, type: 3}
+    - target: {fileID: 859108012272184239, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5559274
+      objectReference: {fileID: 0}
+    - target: {fileID: 859108012272184239, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5559274
+      objectReference: {fileID: 0}
+    - target: {fileID: 859108012272184239, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5754717
+      objectReference: {fileID: 0}
     - target: {fileID: 1730719003072898144, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_Sprite
       value: 

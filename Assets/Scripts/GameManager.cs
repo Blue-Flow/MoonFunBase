@@ -45,10 +45,6 @@ public class GameManager : MonoBehaviour
         EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
         EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
         EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
-
-        // Gets the registered setting
-        if (PlayerPrefs.GetInt("areTipsactive") == 0)
-            UI.instance.SetTipsActive(false);
     }
 
     // called when the "End Turn" button is pressed

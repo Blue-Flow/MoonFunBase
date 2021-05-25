@@ -31,11 +31,12 @@ public class Map : MonoBehaviour
     void Awake()
     {
         instance = this;
+        EventsSubscribe();
     }
     void Start()
     {
         GenerateMap();
-        EventsSubscribe();
+ 
     }
 
     #region MapGeneration

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ButtonFunctionnality : MonoBehaviour
 {
-    public void OnEndTurnButton()
+    public void ClickEndTurnButton()
     {
         EventHandler.EndTurn();
     }
@@ -12,12 +12,15 @@ public class ButtonFunctionnality : MonoBehaviour
     {
         EventHandler.TryBuild(buildingPreset);
     }
-    public void OnClickCloseTips()
+    public void ClickCloseTips()
     {
-        PlayerPrefs.SetInt("areTipsactive", 0);
+        // Disable the tutorial when charging the game
+        PlayerPrefs.SetInt("areTipsactive", 2);
     }
     public void OnClickActivateTips()
     {
-        UI.instance.SetTipsActive(true);
+        // Enable the tutorial from the menu
+        EventHandler.SetTutorial();
+
     }
 }
