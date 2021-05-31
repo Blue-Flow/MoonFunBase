@@ -10,6 +10,7 @@ public class Audio : MonoBehaviour
     [SerializeField] AudioClip defeatTheme;
     [SerializeField] AudioClip mainTheme;
 
+    [SerializeField] AudioClip buttonSound;
     [SerializeField] AudioClip[] gHConstructionSounds;
     [SerializeField] AudioClip[] sPConstructionSounds;
     [SerializeField] AudioClip[] fHConstructionSounds;
@@ -42,7 +43,10 @@ public class Audio : MonoBehaviour
         float volume = PlayerPrefs.GetFloat("volume");
         audioMixer.SetFloat("volume", volume);
     }
-
+    private void PlayButtonSound()
+    {
+        AudioSource.PlayClipAtPoint(buttonSound, Vector3.zero, 1.0f);
+    }
     private void PlayConstructionSound(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
     {
         //play building sound depending on the constructed building
@@ -99,6 +103,7 @@ public class Audio : MonoBehaviour
         EventHandler.OnError += PlayErrorSound;
         EventHandler.OnStartGame += StartAudio;
         EventHandler.OnClearGame += ClearAudio;
+        EventHandler.OnButtonClicked += PlayButtonSound;
     }
 
     #endregion

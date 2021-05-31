@@ -24,10 +24,12 @@ public class StartMenu : MonoBehaviour
     {
         EventHandler.ClearGame();
         EventHandler.StartGame();
+        EventHandler.ButtonClicked();
     }
 
     public void QuitGame()
     {
+        EventHandler.ButtonClicked();
         Application.Quit();
     }
 
@@ -46,6 +48,7 @@ public class StartMenu : MonoBehaviour
 
     public void LoadNextScene()
     {
+        EventHandler.ButtonClicked();
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }

@@ -13,6 +13,7 @@ public class EventHandler : MonoBehaviour
     public static event Action OnClearGame;
     public static event Action<int> OnError;
 
+    public static event Action OnButtonClicked;
     public static event Action<BuildingPreset> OnTryBuild;
     public static event Action<BuildingPreset> OnBuildStarted;
     public static event Action OnBuildOver;
@@ -48,6 +49,12 @@ public class EventHandler : MonoBehaviour
         if (OnError != null)
             OnError(errorNumber);
         else Debug.Log("Error with event OnError, no subscriber");
+    }
+    public static void ButtonClicked()
+    {
+        if (OnButtonClicked != null)
+            OnButtonClicked();
+        else Debug.Log("Error with event OnButtonClicked, no subscriber");
     }
     public static void EndTurn()
     {

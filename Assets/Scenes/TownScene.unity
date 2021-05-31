@@ -530,6 +530,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &39814691
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2475,6 +2487,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -6777,6 +6801,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &665485223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10116,6 +10152,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &998382904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10880,6 +10928,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12415,6 +12475,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1266875891
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13853,6 +13925,7 @@ MonoBehaviour:
   victoryTheme: {fileID: 8300000, guid: 450710061c84f0947b391ec6ba0b5bb9, type: 3}
   defeatTheme: {fileID: 8300000, guid: 01f946f74f591444680cfded2eae50d5, type: 3}
   mainTheme: {fileID: 8300000, guid: 03ed8b22aec4bbf4f92c77bccfa5a30c, type: 3}
+  buttonSound: {fileID: 8300000, guid: 3ecf2a3c41478df4bb1b07db8a50608a, type: 3}
   gHConstructionSounds:
   - {fileID: 8300000, guid: 903a1bc7379d4024bb617d00356131c2, type: 3}
   - {fileID: 8300000, guid: a750cae81e3c34b4c8ede80a9db3f814, type: 3}
@@ -15720,8 +15793,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "  Welcome to the MoonFunBase ! Your job is to develop its Fun Level. Fill
     the bar on the right !\n  But be careful. Without oxygen or energy people will
-    die and you will lose...\n  Start building by clicking on the buttons down there
-    on the left !"
+    die and you will lose...\n  Start building by clicking on the buttons down on
+    the left !"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -15748,7 +15821,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.75
+  m_fontSize: 53.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -17235,6 +17308,18 @@ MonoBehaviour:
       - m_Target: {fileID: 809444069}
         m_TargetAssemblyTypeName: Tutoriel, Assembly-CSharp
         m_MethodName: ClickNextButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1399649837}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: PlayClickSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
