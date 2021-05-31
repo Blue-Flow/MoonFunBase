@@ -8,6 +8,7 @@ public class Audio : MonoBehaviour
     private AudioSource audioSource;
     [SerializeField] AudioClip victoryTheme;
     [SerializeField] AudioClip defeatTheme;
+    [SerializeField] AudioClip mainTheme;
 
     [SerializeField] AudioClip[] gHConstructionSounds;
     [SerializeField] AudioClip[] sPConstructionSounds;
@@ -21,9 +22,20 @@ public class Audio : MonoBehaviour
 
     private void Awake()
     {
+        int audioCount = FindObjectsOfType<Audio>().Length;
+        if (audioCount > 1) { Destroy(gameObject); }
+        else DontDestroyOnLoad(gameObject);
+
         instance = this;
+
         audioSource = GetComponent<AudioSource>();
+
         EventsSubscribe();
+    }
+    private void StartAudio()
+    {
+        audioSource.clip = mainTheme;
+        audioSource.Play();
     }
     private void Start()
     {
@@ -73,6 +85,10 @@ public class Audio : MonoBehaviour
             audioSource.Play();
         }
     }
+    private void ClearAudio()
+    {
+        audioSource.Stop();
+    }
 
     #region Events
     private void EventsSubscribe()
@@ -81,15 +97,10 @@ public class Audio : MonoBehaviour
         EventHandler.OnBuildCompleted += PlayConstructionSound;
         EventHandler.OnEndTurn += PlayEndTurnSound;
         EventHandler.OnError += PlayErrorSound;
-        //EventHandler.BuildCanceled +=
+        EventHandler.OnStartGame += StartAudio;
+        EventHandler.OnClearGame += ClearAudio;
     }
 
-    private void EventsClear()
-    {
-        EventHandler.OnEndGame -= PlayEndTheme;
-        EventHandler.OnBuildCompleted -= PlayConstructionSound;
-        EventHandler.OnEndTurn -= PlayEndTurnSound;
-    }
     #endregion
 
 }

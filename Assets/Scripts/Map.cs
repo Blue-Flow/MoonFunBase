@@ -5,15 +5,20 @@ using UnityEngine;
 public class Map : MonoBehaviour
 {
     private float tileSize = 1;
-    [SerializeField] List<Tile> tilesList = new List<Tile>();
+    [SerializeField] List<Tile> generation_TilesList = new List<Tile>();
     [SerializeField] List<Tile> startTilesList = new List<Tile>();
-    [SerializeField] List<Tile> randomTilesList = new List<Tile>();
+    [SerializeField] List<Tile> generation_RandomTilesList = new List<Tile>();
     [SerializeField] GameObject mapHolder;
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
     [SerializeField] List<Tile> tilesPrefab = new List<Tile>();
 
-    [SerializeField] List<Building> buildings = new List<Building>();
+    [SerializeField] List<Tile> thisGameTilesList = new List<Tile>();
+    [SerializeField] List<Tile> thisGameRandomTilesList = new List<Tile>();
+
+    [SerializeField] List<Building> buildingsList = new List<Building>();
+    
+    private Building startBuilding = null;
 
     // Counts for random Tile generation
     private int tileMECount;
@@ -30,33 +35,42 @@ public class Map : MonoBehaviour
 
     void Awake()
     {
+        int mapCount = FindObjectsOfType<Map>().Length;
+        if (mapCount > 1) { Destroy(gameObject); }
+        else DontDestroyOnLoad(gameObject);
+
         instance = this;
+
         EventsSubscribe();
-    }
-    void Start()
-    {
-        GenerateMap();
- 
     }
 
     #region MapGeneration
     private void GenerateMap()
     {
+        GenerateGlobalTilesinGrid();
+        GenerateRandomTilesinGrid();
         DetermineStartingTile();
-        GenerateTilesinGrid();
     }
-
-    private void GenerateTilesinGrid()
+    private void GenerateGlobalTilesinGrid()
     {
-        foreach (Tile tile in randomTilesList)
+        foreach (Tile tile in generation_TilesList)
+        {
+            thisGameTilesList.Add(tile);
+        }
+    }
+    #region RandomTilesGeneration
+    private void GenerateRandomTilesinGrid()
+    {
+        foreach (Tile tile in generation_RandomTilesList)
         {
             Vector2 tilePosition = tile.transform.position;
-            tilesList.Remove(tile);
-            Destroy(tile.gameObject);
+            tile.gameObject.SetActive(false);
+            thisGameTilesList.Remove(tile);
             int randomNumber = DetermineRandomTile();
             Tile randomTile = Instantiate(tilesPrefab[randomNumber], mapHolder.transform);
             randomTile.transform.position = tilePosition;
-            tilesList.Add(randomTile);
+            thisGameTilesList.Add(randomTile);
+            thisGameRandomTilesList.Add(randomTile);
         }
     }
     private int DetermineRandomTile()
@@ -128,6 +142,7 @@ public class Map : MonoBehaviour
         }
         return randomTilePossible;
     }
+    #endregion
     private void DetermineStartingTile()
     {
         // determines the starting tile
@@ -139,7 +154,7 @@ public class Map : MonoBehaviour
         Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);
         GetTileAtPosition(otherStartingPosition).hasBuilding = true;
         //startingTile.transform.rotation = new Quaternion(0, 0, 0, 0); // sets back the rotation of the first tile to keep building straight
-        Building startBuilding = Instantiate(buildingPrefabs[0], startingTile.transform);
+        startBuilding = Instantiate(buildingPrefabs[0], startingTile.transform);
         startBuilding.transform.position = new Vector2(startingTile.transform.position.x + (tileSize / 2), startingTile.transform.position.y);
     }
 
@@ -148,7 +163,7 @@ public class Map : MonoBehaviour
     // displays the tiles which we can place a building on
     private void EnableUsableTiles (BuildingPreset buildingPreset)
     {
-        foreach (Tile tile in tilesList)
+        foreach (Tile tile in thisGameTilesList)
         {
             if (tile.hasBuilding && !tile.isEnabled)
             {
@@ -170,7 +185,7 @@ public class Map : MonoBehaviour
     }
     private void DisableUsableTiles ()
     {
-        foreach(Tile tile in tilesList)
+        foreach(Tile tile in thisGameTilesList)
             tile.ToggleHighlight(false);
     }
 
@@ -178,30 +193,49 @@ public class Map : MonoBehaviour
     private void CreateNewBuilding (BuildingPreset buildingPreset, TileType tileType, Vector2 position)
     {
         GameObject buildingObj = Instantiate(buildingPreset.prefab, position, Quaternion.identity);
-        buildings.Add(buildingObj.GetComponent<Building>());
+        buildingsList.Add(buildingObj.GetComponent<Building>());
 
     }
     // returns the tile that's at the given position
     private Tile GetTileAtPosition (Vector3 pos)
     {
-        return tilesList.Find(x => x.CanBeHighlighted(pos));
+        return thisGameTilesList.Find(x => x.CanBeHighlighted(pos));
     }
     private Tile GetTileAtPosition(Vector2 pos)
     {
-        return tilesList.Find(x => x.CanBeHighlighted(pos));
+        return thisGameTilesList.Find(x => x.CanBeHighlighted(pos));
+    }
+    private void ClearPreviousGame_Map()
+    {
+        foreach (Tile tile in thisGameTilesList)
+            tile.hasBuilding = false;
+        thisGameTilesList.Clear();
+
+        foreach (Tile randomTile in thisGameRandomTilesList)
+            Destroy(randomTile.gameObject);
+        thisGameRandomTilesList.Clear();
+
+        foreach (Building building in buildingsList)
+            Destroy(building.gameObject);
+        Destroy(startBuilding.gameObject);
+        buildingsList.Clear();
+
+        tileMECount = 0;
+        tileMOCount = 0;
+        tileMFCount = 0;
+        tilePECount = 0;
+        tilePOCount = 0;
+        tilePFCount = 0;
+        tileNCCount = 0;
     }
     #region Events
     private void EventsSubscribe()
     {
+        EventHandler.OnStartGame += GenerateMap;
         EventHandler.OnBuildStarted += EnableUsableTiles;
         EventHandler.OnBuildOver += DisableUsableTiles;
         EventHandler.OnBuildCompleted += CreateNewBuilding;
-    }
-    private void EventsClear()
-    {
-        EventHandler.OnBuildStarted -= EnableUsableTiles;
-        EventHandler.OnBuildOver -= DisableUsableTiles;
-        EventHandler.OnBuildCompleted -= CreateNewBuilding;
+        EventHandler.OnClearGame += ClearPreviousGame_Map;
     }
     #endregion
 }

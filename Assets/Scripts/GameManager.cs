@@ -9,19 +9,11 @@ public class GameManager : MonoBehaviour
     public int currentTurn;
     public int maxFun = 20;
 
-    //public bool placingBuilding;
-    //private Tile currentSelectedTile;
-    //private int buildingConstructionCost;
-
     [Header("Current Resources")]
-    //private int currentFun;
     private int currentMaterials = 1;
-    //public int currentOxygen;
-    //public int currentEnergy;
 
     [Header("Round Resource Increase")]
     private int funPerTurn;
-    //private int materialsPerTurn;
     private int oxygenPerTurn;
     private int energyPerTurn;
 
@@ -29,91 +21,32 @@ public class GameManager : MonoBehaviour
 
     private void Awake ()
     {
+        int gameManagerCount = FindObjectsOfType<GameManager>().Length;
+        if (gameManagerCount > 1) { Destroy(gameObject); }
+        else DontDestroyOnLoad(gameObject);
+
         instance = this;
+
         EventsSubscribe();
     }
-
     private void Start()
     {
+        EventHandler.StartGame();
+    }
+
+    private void GenerateValues()
+    {
         UI.instance.SetMaxFun(maxFun);
-        // Finish the implementation of the base building (started in Map.cs) TODO : le remettre ? Comment ?
 
         // Update the values on the UI
         UI.instance.UpdateTurnText(currentTurn);
-
         EventHandler.ValueChanged(ResourceType.Fun, funPerTurn);
         EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);
         EventHandler.ValueChanged(ResourceType.Energy, energyPerTurn);
         EventHandler.ValueChanged(ResourceType.Materials, currentMaterials);
-    }
 
-    // called when the "End Turn" button is pressed
-    private void EndTurn ()
-    {
-        //GiveResources();
-
-        currentMaterials ++;
-        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials);
-
-        CheckEndGame();
-
-        currentTurn++;
-        UI.instance.UpdateTurnText(currentTurn);
     }
-    /*
-    private void GiveResources()
-    {
-        if (funPerTurn != 0)
-        {
-            currentFun += funPerTurn;
-            EventHandler.ValueChanged(ResourceType.Fun, currentFun, funPerTurn);
-        }
-        if (energyPerTurn != 0)
-        {
-            currentEnergy += energyPerTurn;
-            EventHandler.ValueChanged(ResourceType.Energy, currentEnergy, energyPerTurn);
-        }
-        if (oxygenPerTurn != 0)
-        {
-            currentOxygen += oxygenPerTurn;
-            EventHandler.ValueChanged(ResourceType.Oxygen, currentOxygen, oxygenPerTurn);
-        }
-        currentMaterials += materialsPerTurn;
-        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials, materialsPerTurn);
-    }
-    */
-    private void CheckEndGame()
-    {
-        //if (currentEnergy < 1)
-        if (energyPerTurn < 0)
-        {
-            EventHandler.EndGame(false, currentTurn, ResourceType.Energy);
-            EventsClear();
-            // TODO Clear events on all other components
-        }
-        //else if (currentOxygen < 1)
-        else if (oxygenPerTurn < 0)
-        {
-            EventHandler.EndGame(false, currentTurn, ResourceType.Oxygen);
-            EventsClear();
-            // TODO Clear events on all other components
-        }
-        else if (funPerTurn >= maxFun)
-        {
-            CheckHighScore();
-            EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
-            EventsClear();
-            // TODO Clear events on all other components
-        }
-    }
-    private void CheckHighScore()
-    {
-        if (currentTurn < PlayerPrefs.GetInt("Highscore"))
-            PlayerPrefs.SetInt("Highscore", currentTurn);
-    }
-
-    // called to check possibility of the building placement
-    private void CheckBuildingConditions (BuildingPreset buildingPreset)
+    private void CheckBuildingConditions(BuildingPreset buildingPreset)
     {
         if (currentMaterials >= 1) // TODO : (currentMaterials >= buildingConstructionCost)
         {
@@ -125,7 +58,18 @@ public class GameManager : MonoBehaviour
             EventHandler.Error(0);
         }
     }
+    private void EndTurn ()
+    {
+        currentMaterials ++;
+        EventHandler.ValueChanged(ResourceType.Materials, currentMaterials);
 
+        CheckEndGame();
+
+        currentTurn++;
+        UI.instance.UpdateTurnText(currentTurn);
+    }
+
+    #region Resources values
     // called when a new building has been created and placed down
     private void ModifyValues_Building(BuildingPreset buildingPreset, TileType arg2, Vector2 arg3)
     {
@@ -236,22 +180,44 @@ public class GameManager : MonoBehaviour
             }
         }
     }
+    #endregion
+
+    #region EndGame
+    private void CheckEndGame()
+    {
+        if (energyPerTurn < 0)
+        {
+            EventHandler.EndGame(false, currentTurn, ResourceType.Energy);
+        }
+        else if (oxygenPerTurn < 0)
+        {
+            EventHandler.EndGame(false, currentTurn, ResourceType.Oxygen);
+        }
+        else if (funPerTurn >= maxFun)
+        {
+            EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
+        }
+    }
+
+    private void ClearPreviousGame_GameManager()
+    {
+        currentTurn = 0;
+        currentMaterials = 1;
+        funPerTurn = 0;
+        oxygenPerTurn = 0;
+        energyPerTurn = 0;
+    }
+    #endregion
 
     #region Events
     private void EventsSubscribe()
     {
         EventHandler.OnEndTurn += EndTurn;
+        EventHandler.OnClearGame += ClearPreviousGame_GameManager;
         EventHandler.OnTryBuild += CheckBuildingConditions;
         EventHandler.OnBuildCompleted += ModifyValues_Building;
         EventHandler.OnBuildCompleted += ModifyValues_Tile;
-    }
-
-    private void EventsClear()
-    {
-        EventHandler.OnEndTurn -= EndTurn;
-        EventHandler.OnTryBuild -= CheckBuildingConditions;
-        EventHandler.OnBuildCompleted -= ModifyValues_Building;
-        EventHandler.OnBuildCompleted -= ModifyValues_Tile;
+        EventHandler.OnStartGame += GenerateValues;
     }
     #endregion
 }

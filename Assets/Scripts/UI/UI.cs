@@ -27,7 +27,8 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject endScreen;
     [SerializeField] TextMeshProUGUI endText;
     [SerializeField] Sprite victoryBG;
-    [SerializeField] TextMeshProUGUI highscoreText;
+    [SerializeField] GameObject leaderboard;
+    public TextMeshProUGUI highscoreText;
 
     [SerializeField] Image notificationBG;
     [SerializeField] TextMeshProUGUI notificationText;
@@ -36,10 +37,14 @@ public class UI : MonoBehaviour
 
     void Awake ()
     {
+        int uICount = FindObjectsOfType<UI>().Length;
+        if (uICount > 1) { Destroy(gameObject); }
+        else DontDestroyOnLoad(gameObject);
+
         instance = this;
+
         EventsSubscribe();
     }
-
     void Start ()
     {
         GetStartSettings();
@@ -127,10 +132,11 @@ public class UI : MonoBehaviour
         {
             endScreen.GetComponent<Image>().sprite = victoryBG;
             endText.text = ("You won in " + turnNumber + " turns !");
-            highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
+            leaderboard.SetActive(true);
         }
         else
         {
+            leaderboard.SetActive(false);
             if (resource == ResourceType.Energy)
             {
                 endText.text = ("You lost ! You ran out of energy..." + "\n" + "Your life support systems shut off and your people froze to death");
@@ -139,23 +145,24 @@ public class UI : MonoBehaviour
                 endText.text = ("You lost ! You ran out of oxygen..." + "\n" + "Your people slowly died of suffocation");
         }
     }
+    private void CheckHighScore(bool victory, int currentTurn, ResourceType resource)
+    {
+        if (currentTurn < PlayerPrefs.GetInt("Highscore"))
+        {
+            PlayerPrefs.SetInt("Highscore", currentTurn);
+            highscoreText.text = (Convert.ToString(currentTurn) + " turns");
+        }
+    }
 
     #region Events
     private void EventsSubscribe()
     {
         EventHandler.OnBuildStarted += EnableBuildingButtonHighlight;
         EventHandler.OnValueChanged += UpdateValueText;
+        EventHandler.OnEndGame += CheckHighScore;
         EventHandler.OnEndGame += DisplayEndScreen;
         EventHandler.OnBuildOver += DisableBuildingButtonHighlight;
         EventHandler.OnError += DisplayNotification;
-    }
-    private void EventsClear()
-    {
-        EventHandler.OnValueChanged -= UpdateValueText;
-        EventHandler.OnEndGame -= DisplayEndScreen;
-        EventHandler.OnBuildOver -= DisableBuildingButtonHighlight;
-        EventHandler.OnBuildStarted -= EnableBuildingButtonHighlight;
-        EventHandler.OnError -= DisplayNotification;
     }
     #endregion
 }

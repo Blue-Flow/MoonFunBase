@@ -10,6 +10,7 @@ public class EventHandler : MonoBehaviour
 
     public static event Action OnEndTurn;
     public static event Action<bool, int, ResourceType> OnEndGame;
+    public static event Action OnClearGame;
     public static event Action<int> OnError;
 
     public static event Action<BuildingPreset> OnTryBuild;
@@ -18,10 +19,18 @@ public class EventHandler : MonoBehaviour
     public static event Action<BuildingPreset, TileType, Vector2>  OnBuildCompleted;
     public static event Action<ResourceType, int> OnValueChanged;
 
+    private void Awake()
+    {
+        int eventHandlerCount = FindObjectsOfType<EventHandler>().Length;
+        if (eventHandlerCount > 1) { Destroy(gameObject); }
+        else DontDestroyOnLoad(gameObject);
+    }
     public static void StartGame()
     {
         if (OnStartGame != null)
+        {
             OnStartGame();
+        }
         else Debug.Log("Error with event OnStartGame, no subscriber");
     }
     // Sets the currentStep to the first
@@ -91,5 +100,11 @@ public class EventHandler : MonoBehaviour
         if (OnEndGame != null)
             OnEndGame(victory, turnNumber, resource);
         else Debug.Log("Error with event OnEndGame, no subscriber");
+    }
+    public static void ClearGame()
+    {
+        if (OnClearGame != null)
+            OnClearGame();
+        else Debug.Log("Error with event OnClearGame, no subscriber");
     }
 }

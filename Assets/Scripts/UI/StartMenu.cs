@@ -22,7 +22,8 @@ public class StartMenu : MonoBehaviour
 
     public void ReloadScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        EventHandler.ClearGame();
+        EventHandler.StartGame();
     }
 
     public void QuitGame()

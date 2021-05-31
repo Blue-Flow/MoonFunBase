@@ -17,9 +17,16 @@ public class Tutoriels : MonoBehaviour
     private string currentText;
     private Sprite currentSprite;
 
+    private void Awake()
+    {
+        int TutorielsCount = FindObjectsOfType<Tutoriels>().Length;
+        if (TutorielsCount > 1) { Destroy(gameObject); }
+        else DontDestroyOnLoad(gameObject);
+
+        EventsSubscribe();
+    }
     private void Start()
     {
-        EventsSubscribe();
         if (PlayerPrefs.GetInt("areTipsactive") != 2)
             EventHandler.SetTutorial();
     }
@@ -64,11 +71,6 @@ public class Tutoriels : MonoBehaviour
     private void EventsSubscribe()
     {
         EventHandler.OnSetTutorial += SetTutorials;
-    }
-    private void EventsClear()
-    {
-        EventHandler.OnSetTutorial -= SetTutorials;
-
     }
     #endregion 
 }

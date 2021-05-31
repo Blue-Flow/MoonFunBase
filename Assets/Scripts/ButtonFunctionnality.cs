@@ -21,6 +21,10 @@ public class ButtonFunctionnality : MonoBehaviour
     {
         // Enable the tutorial from the menu
         EventHandler.SetTutorial();
-
+    }
+    public void ResetHighScore()
+    {
+        PlayerPrefs.SetInt("Highscore", 0);
+        UI.instance.highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
     }
 }
