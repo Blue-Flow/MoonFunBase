@@ -5,10 +5,14 @@ using UnityEngine;
 public class Tile : MonoBehaviour
 {
     public GameObject highlight;
+    public GameObject randomTileType;
+    public GameObject unknownTileIndicator;
     public TileType tileType;
     public TilePreset tilePreset;
     public bool hasBuilding = false;
     public bool isEnabled = false;
+    public bool isRandomTile = false;
+    public bool isDiscovered = false;
     [SerializeField] Animation tileHighlightAnim;
 
     // toggles the tile highlight to show where we can place a building
@@ -17,6 +21,16 @@ public class Tile : MonoBehaviour
         highlight.SetActive(toggle);
         isEnabled = toggle;
         if(isEnabled) tileHighlightAnim.Play();
+    }
+
+    public void ShowRandomTileType()
+    {
+        Debug.Log("ShowRandomTileTypeCalled");
+        if(isRandomTile)
+        {
+            unknownTileIndicator.SetActive(false);
+            randomTileType.SetActive(true);
+        }
     }
 
     // can this tile be highlighted based on a given position

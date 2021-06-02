@@ -69,6 +69,7 @@ public class Map : MonoBehaviour
             int randomNumber = DetermineRandomTile();
             Tile randomTile = Instantiate(tilesPrefab[randomNumber], mapHolder.transform);
             randomTile.transform.position = tilePosition;
+            randomTile.isRandomTile = true;
             thisGameTilesList.Add(randomTile);
             thisGameRandomTilesList.Add(randomTile);
         }
@@ -183,8 +184,37 @@ public class Map : MonoBehaviour
             }
         }
     }
+    
+    //private void ShowRandomTilesType(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
+    private void ShowRandomTilesType()
+    {
+        foreach (Tile tile in thisGameTilesList)
+        {
+            if (tile.isEnabled)
+            {
+                Tile northTile = GetTileAtPosition(tile.transform.position + new Vector3(0, tileSize, 0));
+                Tile eastTile = GetTileAtPosition(tile.transform.position + new Vector3(tileSize, 0, 0));
+                Tile southTile = GetTileAtPosition(tile.transform.position + new Vector3(0, -tileSize, 0));
+                Tile westTile = GetTileAtPosition(tile.transform.position + new Vector3(-tileSize, 0, 0));
+
+                if (northTile != null)
+                {
+                    Debug.Log("northTile");
+                    northTile.ShowRandomTileType();
+                }
+                else Debug.Log("No northTile");
+                if (eastTile != null)
+                    eastTile.ShowRandomTileType();
+                if (southTile != null)
+                    southTile.ShowRandomTileType();
+                if (westTile != null)
+                    westTile.ShowRandomTileType();
+            }
+        }
+    }
     private void DisableUsableTiles ()
     {
+        ShowRandomTilesType();
         foreach(Tile tile in thisGameTilesList)
             tile.ToggleHighlight(false);
     }
@@ -232,9 +262,11 @@ public class Map : MonoBehaviour
     private void EventsSubscribe()
     {
         EventHandler.OnStartGame += GenerateMap;
+        EventHandler.OnStartGame += ShowRandomTilesType;
         EventHandler.OnBuildStarted += EnableUsableTiles;
         EventHandler.OnBuildOver += DisableUsableTiles;
         EventHandler.OnBuildCompleted += CreateNewBuilding;
+        //EventHandler.OnBuildCompleted += ShowRandomTilesType;
         EventHandler.OnClearGame += ClearPreviousGame_Map;
     }
     #endregion
