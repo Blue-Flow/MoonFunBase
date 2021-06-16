@@ -13585,7 +13585,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   baseBuilding: {fileID: 1204741655282086968, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
   currentTurn: 0
-  maxFun: 1
+  maxFun: 10
 --- !u!4 &1399649832
 Transform:
   m_ObjectHideFlags: 0

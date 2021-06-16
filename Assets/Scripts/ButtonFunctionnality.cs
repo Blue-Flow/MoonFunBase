@@ -28,7 +28,7 @@ public class ButtonFunctionnality : MonoBehaviour
     }
     public void ResetHighScore()
     {
-        PlayerPrefs.SetInt("Highscore", 0);
+        PlayerPrefs.SetInt("Highscore", 1000);
         UI.instance.highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
         EventHandler.ButtonClicked();
     }

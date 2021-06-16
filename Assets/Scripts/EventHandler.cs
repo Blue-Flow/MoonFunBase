@@ -19,6 +19,7 @@ public class EventHandler : MonoBehaviour
     public static event Action OnBuildOver;
     public static event Action<BuildingPreset, TileType, Vector2>  OnBuildCompleted;
     public static event Action<ResourceType, int> OnValueChanged;
+    public static event Action<Transform> OnNewTileDiscovered;
 
     private void Awake()
     {
@@ -113,5 +114,11 @@ public class EventHandler : MonoBehaviour
         if (OnClearGame != null)
             OnClearGame();
         else Debug.Log("Error with event OnClearGame, no subscriber");
+    }
+    public static void NewTileDiscovered(Transform position)
+    {
+        if (OnNewTileDiscovered != null)
+            OnNewTileDiscovered(position);
+        else Debug.Log("Error with event OnNewTileDiscovered, no subscriber");
     }
 }

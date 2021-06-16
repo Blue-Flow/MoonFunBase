@@ -50,6 +50,7 @@ public class Map : MonoBehaviour
         GenerateGlobalTilesinGrid();
         GenerateRandomTilesinGrid();
         DetermineStartingTile();
+        ShowTilesType();
     }
     private void GenerateGlobalTilesinGrid()
     {
@@ -152,8 +153,11 @@ public class Map : MonoBehaviour
 
         // sets the starting building
         startingTile.hasBuilding = true;
+        startingTile.warFog.SetActive(false);
         Vector2 otherStartingPosition = new Vector2(startingTile.transform.position.x + 1, startingTile.transform.position.y);
-        GetTileAtPosition(otherStartingPosition).hasBuilding = true;
+        Tile otherstartingTile = GetTileAtPosition(otherStartingPosition);
+        otherstartingTile.hasBuilding = true;
+        otherstartingTile.warFog.SetActive(false);
         //startingTile.transform.rotation = new Quaternion(0, 0, 0, 0); // sets back the rotation of the first tile to keep building straight
         startBuilding = Instantiate(buildingPrefabs[0], startingTile.transform);
         startBuilding.transform.position = new Vector2(startingTile.transform.position.x + (tileSize / 2), startingTile.transform.position.y);
@@ -185,36 +189,71 @@ public class Map : MonoBehaviour
         }
     }
     
-    //private void ShowRandomTilesType(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
-    private void ShowRandomTilesType()
+    private void ShowRandomTilesType(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
     {
         foreach (Tile tile in thisGameTilesList)
         {
-            if (tile.isEnabled)
+            if (tile.hasBuilding)
             {
                 Tile northTile = GetTileAtPosition(tile.transform.position + new Vector3(0, tileSize, 0));
                 Tile eastTile = GetTileAtPosition(tile.transform.position + new Vector3(tileSize, 0, 0));
                 Tile southTile = GetTileAtPosition(tile.transform.position + new Vector3(0, -tileSize, 0));
                 Tile westTile = GetTileAtPosition(tile.transform.position + new Vector3(-tileSize, 0, 0));
 
-                if (northTile != null)
-                {
-                    Debug.Log("northTile");
-                    northTile.ShowRandomTileType();
-                }
-                else Debug.Log("No northTile");
-                if (eastTile != null)
-                    eastTile.ShowRandomTileType();
-                if (southTile != null)
-                    southTile.ShowRandomTileType();
-                if (westTile != null)
-                    westTile.ShowRandomTileType();
+                if (northTile != null && !northTile.isDiscovered)
+                    northTile.DiscoverTile();
+                if (eastTile != null && !eastTile.isDiscovered)
+                    eastTile.DiscoverTile();
+                if (southTile != null && !southTile.isDiscovered)
+                    southTile.DiscoverTile();
+                if (westTile != null && !westTile.isDiscovered)
+                    westTile.DiscoverTile();
             }
         }
     }
+    private void ShowTilesType()
+    {
+        foreach (Tile tile in thisGameTilesList)
+        {
+            if (tile.hasBuilding)
+            {
+                Tile northTile = GetTileAtPosition(tile.transform.position + new Vector3(0, tileSize, 0));
+                Tile eastTile = GetTileAtPosition(tile.transform.position + new Vector3(tileSize, 0, 0));
+                Tile southTile = GetTileAtPosition(tile.transform.position + new Vector3(0, -tileSize, 0));
+                Tile westTile = GetTileAtPosition(tile.transform.position + new Vector3(-tileSize, 0, 0));
+
+                if (northTile != null && !northTile.isDiscovered)
+                    northTile.DiscoverTile();
+                if (eastTile != null && !eastTile.isDiscovered)
+                    eastTile.DiscoverTile();
+                if (southTile != null && !southTile.isDiscovered)
+                    southTile.DiscoverTile();
+                if (westTile != null && !westTile.isDiscovered)
+                    westTile.DiscoverTile();
+            }
+        }
+    }
+
+    private void ShowRandomTilesIndicator(Transform tilePosition)
+    {
+        Tile northTile = GetTileAtPosition(tilePosition.transform.position + new Vector3(0, tileSize, 0));
+        Tile eastTile = GetTileAtPosition(tilePosition.transform.position + new Vector3(tileSize, 0, 0));
+        Tile southTile = GetTileAtPosition(tilePosition.transform.position + new Vector3(0, -tileSize, 0));
+        Tile westTile = GetTileAtPosition(tilePosition.transform.position + new Vector3(-tileSize, 0, 0));
+
+        if (northTile != null && northTile.isRandomTile)
+            northTile.ShowRandomTileIndicator();
+        if (eastTile != null && eastTile.isRandomTile)
+            eastTile.ShowRandomTileIndicator();
+        if (southTile != null && southTile.isRandomTile)
+            southTile.ShowRandomTileIndicator();
+        if (westTile != null && westTile.isRandomTile)
+            westTile.ShowRandomTileIndicator();
+    }
+
     private void DisableUsableTiles ()
     {
-        ShowRandomTilesType();
+        ShowTilesType();
         foreach(Tile tile in thisGameTilesList)
             tile.ToggleHighlight(false);
     }
@@ -238,7 +277,9 @@ public class Map : MonoBehaviour
     private void ClearPreviousGame_Map()
     {
         foreach (Tile tile in thisGameTilesList)
-            tile.hasBuilding = false;
+        {
+            tile.RestartTile();
+        }
         thisGameTilesList.Clear();
 
         foreach (Tile randomTile in thisGameRandomTilesList)
@@ -262,12 +303,12 @@ public class Map : MonoBehaviour
     private void EventsSubscribe()
     {
         EventHandler.OnStartGame += GenerateMap;
-        EventHandler.OnStartGame += ShowRandomTilesType;
         EventHandler.OnBuildStarted += EnableUsableTiles;
         EventHandler.OnBuildOver += DisableUsableTiles;
         EventHandler.OnBuildCompleted += CreateNewBuilding;
-        //EventHandler.OnBuildCompleted += ShowRandomTilesType;
+        EventHandler.OnBuildCompleted += ShowRandomTilesType;
         EventHandler.OnClearGame += ClearPreviousGame_Map;
+        EventHandler.OnNewTileDiscovered += ShowRandomTilesIndicator;
     }
     #endregion
 }

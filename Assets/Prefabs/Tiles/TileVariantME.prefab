@@ -16,7 +16,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8149814904938537183
 Transform:
   m_ObjectHideFlags: 0
@@ -154,6 +154,10 @@ PrefabInstance:
       propertyPath: tilePreset
       value: 
       objectReference: {fileID: 11400000, guid: dd81a60a1fe51894fb413f10dcc63ccf, type: 2}
+    - target: {fileID: 5028185755893826957, guid: 3e1161bb8c5f0bf48afa8a9aa6ef2c4e, type: 3}
+      propertyPath: isRandomTile
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5028185755893826957, guid: 3e1161bb8c5f0bf48afa8a9aa6ef2c4e, type: 3}
       propertyPath: unknownTileIndicator
       value: 

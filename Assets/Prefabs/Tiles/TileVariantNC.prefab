@@ -75,6 +75,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0.4528302
       objectReference: {fileID: 0}
+    - target: {fileID: 3036822725878077228, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5118986524564824304, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
       propertyPath: m_Name
       value: TileVariantNC
