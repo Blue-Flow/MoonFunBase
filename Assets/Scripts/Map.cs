@@ -31,16 +31,8 @@ public class Map : MonoBehaviour
     private int tileMaxCount = 9;
     private bool randomTilePossible = true;
 
-    public static Map instance;
-
     void Awake()
     {
-        int mapCount = FindObjectsOfType<Map>().Length;
-        if (mapCount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-
-        instance = this;
-
         EventsSubscribe();
     }
 
@@ -288,7 +280,8 @@ public class Map : MonoBehaviour
 
         foreach (Building building in buildingsList)
             Destroy(building.gameObject);
-        Destroy(startBuilding.gameObject);
+        if (startBuilding != null)
+            Destroy(startBuilding.gameObject);
         buildingsList.Clear();
 
         tileMECount = 0;

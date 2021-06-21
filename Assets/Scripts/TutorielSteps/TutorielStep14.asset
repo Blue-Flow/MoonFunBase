@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c745fa1281a499f4baf1ab7c2997cdc7, type: 3}
-  m_Name: TutorielInfo6
-  m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
-  ID: 6
-  textToDisplay: Energy is produced by a solar panel, producing 1 energy when the
-    building is placed and active.
-  imageToDisplay: {fileID: 21300000, guid: cd077cfe751c7fa4caf4147939fd5da5, type: 3}
-  pannelToDeactivate: PanelSolarPanel
+  m_Name: TutorielStep14
+  m_EditorClassIdentifier: 
+  ID: 14
+  textToDisplay: Ooh, there's a creepy atmosphere around here. It's hard to have
+    fun in those conditions, so avoid building your fun house here.
+  imageToDisplay: {fileID: 21300000, guid: 8efde3cddbf9ff5468f2df2036d499af, type: 3}
+  pannelToDeactivate: none

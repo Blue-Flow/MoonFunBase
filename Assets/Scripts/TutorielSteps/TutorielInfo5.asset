@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TutorielInfo5
   m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
   ID: 5
-  textToDisplay: The recreation place generates 1 fun per turn.  This building uses    
-    1 energy and 1 oxygen each turn; be careful not to run out of those !
-  imageToDisplay: {fileID: 21300000, guid: c7f5bd3a69fb13c4ea6e3cf0674d4d0b, type: 3}
+  textToDisplay: To run the whole thing, you will need energy.
+  imageToDisplay: {fileID: 21300000, guid: e296be010b64c9747829781fe5a999bb, type: 3}
+  pannelToDeactivate: PanelEnergy

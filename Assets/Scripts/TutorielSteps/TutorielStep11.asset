@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c745fa1281a499f4baf1ab7c2997cdc7, type: 3}
-  m_Name: TutorielInfo6
-  m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
-  ID: 6
-  textToDisplay: Energy is produced by a solar panel, producing 1 energy when the
-    building is placed and active.
-  imageToDisplay: {fileID: 21300000, guid: cd077cfe751c7fa4caf4147939fd5da5, type: 3}
-  pannelToDeactivate: PanelSolarPanel
+  m_Name: TutorielStep11
+  m_EditorClassIdentifier: 
+  ID: 11
+  textToDisplay: Be careful not to run out of resources! 1 fun house built consumes
+    1 oxygen and 1 energy. Keep an eye on your resources!
+  imageToDisplay: {fileID: 0}
+  pannelToDeactivate: none

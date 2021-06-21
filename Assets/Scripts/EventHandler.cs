@@ -6,7 +6,6 @@ using System;
 public class EventHandler : MonoBehaviour
 {
     public static event Action OnStartGame;
-    public static event Action OnSetTutorial;
 
     public static event Action OnEndTurn;
     public static event Action<bool, int, ResourceType> OnEndGame;
@@ -34,16 +33,6 @@ public class EventHandler : MonoBehaviour
             OnStartGame();
         }
         else Debug.Log("Error with event OnStartGame, no subscriber");
-    }
-    // Sets the currentStep to the first
-    // Gets the currentStep info
-    // Displays the currentStep
-    // Puts the tutorial screen to on
-    public static void SetTutorial()
-    {
-        if (OnSetTutorial != null)
-            OnSetTutorial();
-        else Debug.Log("Error with event OnSetTutorial, no subscriber");
     }
     public static void Error(int errorNumber)
     {
@@ -96,7 +85,6 @@ public class EventHandler : MonoBehaviour
             OnBuildCompleted(buildingPreset, tileType, tilePosition);
         else Debug.Log("Error with event OnBuildCompleted, no subscriber");
     }
-
     public static void ValueChanged(ResourceType resourceType, int resourcePerTurn)
     {
         if (OnValueChanged != null)

@@ -15,10 +15,6 @@ public class BuildingPlacement : MonoBehaviour
 
     private void Awake()
     {
-        int buildingPlacementCount = FindObjectsOfType<BuildingPlacement>().Length;
-        if (buildingPlacementCount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-
         EventsSubscribe();
     }
     private void ConstructionStarted(BuildingPreset buildingPreset)

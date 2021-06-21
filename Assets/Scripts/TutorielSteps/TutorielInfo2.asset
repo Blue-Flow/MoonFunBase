@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TutorielInfo2
   m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
   ID: 2
-  textToDisplay: There are three buildings you can erect.  Each building cost you    
-    1 material to build. You gain 1 material per turn.
-  imageToDisplay: {fileID: 0}
+  textToDisplay: This is your base. Your role is to lay structures to develop both
+    life and fun on this moon!
+  imageToDisplay: {fileID: 21300000, guid: 22169c960994f4e46a64fe23a4307b5c, type: 3}
+  pannelToDeactivate: PanelBase

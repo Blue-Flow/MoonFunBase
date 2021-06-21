@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TutorielInfo3
   m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
   ID: 3
-  textToDisplay: The greenhouse generates 1 dioxygen per turn.  This building has    
-    no maintenance cost.
-  imageToDisplay: {fileID: 21300000, guid: e2289bebdc8bada4eb07c11b45b2c324, type: 3}
+  textToDisplay: To sustain life on the moon, you must produce oxygen.
+  imageToDisplay: {fileID: 21300000, guid: 37110627ab987694684a15b79cf67a8d, type: 3}
+  pannelToDeactivate: PanelOxygen

@@ -16,26 +16,19 @@ public class Tutoriels : MonoBehaviour
     private int currentID = 0;
     private string currentText;
     private Sprite currentSprite;
+    private GameObject currentPannelToDeactivate;
+    private string cPTDName;
 
-    private void Awake()
-    {
-        int TutorielsCount = FindObjectsOfType<Tutoriels>().Length;
-        if (TutorielsCount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-
-        EventsSubscribe();
-    }
     private void Start()
     {
-        if (PlayerPrefs.GetInt("areTipsactive") != 2)
-            EventHandler.SetTutorial();
+        SetTutorials();
     }
     private void SetTutorials()
     {
+        // currentID = 0 so that it can get the intel on step 1 with GetNextStep and display it
         currentID = 0;
         GetNextStep();
         DisplayCurrentStep();
-        tutorialBG.SetActive(true);
     }
     public void ClickNextButton()
     {
@@ -51,6 +44,14 @@ public class Tutoriels : MonoBehaviour
         }
         else
             imageField.gameObject.SetActive(false);
+        if (cPTDName != "none")
+        {
+            // Gets the gameObject in scene that is wearing the same name as
+            // the string that is referenced in the corresponding TutorielStep
+            // (is there a way to reference directly the right gameObject ? --> Image doesn't work, gameObject neither except if it is a prefab...)
+            currentPannelToDeactivate = GameObject.Find(cPTDName);
+            currentPannelToDeactivate.SetActive(false);
+        }
         GetNextStep();
     }
     private void GetNextStep()
@@ -61,16 +62,15 @@ public class Tutoriels : MonoBehaviour
         {
             currentSprite = currentStep.imageToDisplay;
             currentText = currentStep.textToDisplay;
+            if (currentStep.pannelToDeactivate != "none")
+            {
+                cPTDName = currentStep.pannelToDeactivate;
+            }
+            else cPTDName = "none";
         }
         else
         {
             nextStepButton.gameObject.SetActive(false);
         }
     }
-    #region Events
-    private void EventsSubscribe()
-    {
-        EventHandler.OnSetTutorial += SetTutorials;
-    }
-    #endregion 
 }

@@ -19,16 +19,8 @@ public class Audio : MonoBehaviour
 
     [SerializeField] AudioMixer audioMixer;
 
-    public static Audio instance;
-
     private void Awake()
     {
-        int audioCount = FindObjectsOfType<Audio>().Length;
-        if (audioCount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-
-        instance = this;
-
         audioSource = GetComponent<AudioSource>();
 
         EventsSubscribe();
@@ -91,7 +83,7 @@ public class Audio : MonoBehaviour
     }
     private void ClearAudio()
     {
-        audioSource.Stop();
+            audioSource.Stop();
     }
 
     #region Events

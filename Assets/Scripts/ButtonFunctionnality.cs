@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class ButtonFunctionnality : MonoBehaviour
@@ -20,10 +21,18 @@ public class ButtonFunctionnality : MonoBehaviour
         PlayerPrefs.SetInt("areTipsactive", 2);
         EventHandler.ButtonClicked();
     }
-    public void OnClickActivateTips()
+    public void LoadTutoriel()
     {
-        // Enable the tutorial from the menu
-        EventHandler.SetTutorial();
+        EventHandler.ClearGame();
+        // Loads the tutoriel scene
+        SceneManager.LoadScene(2);
+        EventHandler.ButtonClicked();
+    }
+    public void LoadMainMenu()
+    {
+        // Loads the main menu scene
+        SceneManager.LoadScene(0);
+        EventHandler.ClearGame();
         EventHandler.ButtonClicked();
     }
     public void ResetHighScore()
@@ -32,8 +41,20 @@ public class ButtonFunctionnality : MonoBehaviour
         UI.instance.highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
         EventHandler.ButtonClicked();
     }
+    public void LoadGameScene()
+    {
+        EventHandler.ButtonClicked();
+        //EventHandler.ClearGame();
+        SceneManager.LoadScene(1);
+        EventHandler.StartGame();
+    }
     public void PlayClickSound()
     {
         EventHandler.ButtonClicked();
+    }
+    public void QuitGame()
+    {
+        EventHandler.ButtonClicked();
+        Application.Quit();
     }
 }

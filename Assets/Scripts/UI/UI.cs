@@ -7,9 +7,7 @@ using System;
 
 public class UI : MonoBehaviour
 {
-    [Header("Graphismes")]
-    [SerializeField] GameObject buildingButtons;
-
+    [Header("Values")]
     [SerializeField] TextMeshProUGUI oxygenValue;
     [SerializeField] TextMeshProUGUI energyValue;
     [SerializeField] TextMeshProUGUI materialsValue;
@@ -17,17 +15,19 @@ public class UI : MonoBehaviour
     private int maxFun;
     [SerializeField] Image funBar;
     [SerializeField] TextMeshProUGUI curTurnText;
-    [SerializeField] TextMeshProUGUI baseName1;
-    [SerializeField] TextMeshProUGUI baseName2;
 
+    [Header("Building")]
+    [SerializeField] TextMeshProUGUI baseNameGameScreen;
     [SerializeField] GameObject oxygenBuildingButtonHighlight;
     [SerializeField] GameObject energyBuildingButtonHighlight;
     [SerializeField] GameObject funBuildingButtonHighlight;
 
+    [Header("EndGame")]
     [SerializeField] GameObject endScreen;
     [SerializeField] TextMeshProUGUI endText;
     [SerializeField] Sprite victoryBG;
     [SerializeField] GameObject leaderboard;
+    [SerializeField] TextMeshProUGUI baseNameEndScreen;
     public TextMeshProUGUI highscoreText;
 
     [SerializeField] Image notificationBG;
@@ -37,10 +37,6 @@ public class UI : MonoBehaviour
 
     void Awake ()
     {
-        int uICount = FindObjectsOfType<UI>().Length;
-        if (uICount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-
         instance = this;
 
         EventsSubscribe();
@@ -52,8 +48,8 @@ public class UI : MonoBehaviour
     public void SetMaxFun (int value) { maxFun = value; }
     private void GetStartSettings()
     {
-        baseName1.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
-        baseName2.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
+        baseNameGameScreen.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
+        baseNameEndScreen.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
         highscoreText.text = (PlayerPrefs.GetInt("Highscore") + " turns");
     }
     private void EnableBuildingButtonHighlight(BuildingPreset buildingPreset)

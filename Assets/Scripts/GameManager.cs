@@ -5,9 +5,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField] Building baseBuilding;
     public int currentTurn;
-    public int maxFun = 20;
+    public int maxFun = 10;
 
     [Header("Current Resources")]
     private int currentMaterials = 1;
@@ -17,21 +16,10 @@ public class GameManager : MonoBehaviour
     private int oxygenPerTurn;
     private int energyPerTurn;
 
-    public static GameManager instance;
 
     private void Awake ()
     {
-        int gameManagerCount = FindObjectsOfType<GameManager>().Length;
-        if (gameManagerCount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-
-        instance = this;
-
         EventsSubscribe();
-    }
-    private void Start()
-    {
-        EventHandler.StartGame();
     }
 
     private void GenerateValues()

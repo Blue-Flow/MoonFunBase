@@ -20,19 +20,6 @@ public class StartMenu : MonoBehaviour
         baseNameText.text = PlayerPrefs.GetString("baseName", "MoonFunBase");
     }
 
-    public void ReloadScene()
-    {
-        EventHandler.ClearGame();
-        EventHandler.StartGame();
-        EventHandler.ButtonClicked();
-    }
-
-    public void QuitGame()
-    {
-        EventHandler.ButtonClicked();
-        Application.Quit();
-    }
-
     public void SetVolume (float volume)
     {
         audioMixer.SetFloat("volume", volume);
@@ -44,12 +31,5 @@ public class StartMenu : MonoBehaviour
         baseName = inputField.text;
         baseNameText.text = baseName;
         PlayerPrefs.SetString("baseName", baseName);
-    }
-
-    public void LoadNextScene()
-    {
-        EventHandler.ButtonClicked();
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene(currentSceneIndex + 1);
     }
 }

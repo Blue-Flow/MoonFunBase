@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TutorielInfo4
   m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
   ID: 4
-  textToDisplay: The solar panel generates 1 energy per turn.  This building has    
-    no maintenance cost.
-  imageToDisplay: {fileID: 21300000, guid: cd077cfe751c7fa4caf4147939fd5da5, type: 3}
+  textToDisplay: To produce oxygen, you can lay a greenhouse, producing 1 oxygen
+    when the building is placed and active.
+  imageToDisplay: {fileID: 21300000, guid: e2289bebdc8bada4eb07c11b45b2c324, type: 3}
+  pannelToDeactivate: PanelGreenHouse

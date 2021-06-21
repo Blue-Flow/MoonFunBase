@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: TutorielInfo1
   m_EditorClassIdentifier: Assembly-CSharp::Tutoriel
   ID: 1
-  textToDisplay: Welcome to your base !  Your job is to develop its Fun Level.    
-    Fill the bar on the right ! But be careful. Without oxygen or energy people will    
-    die and you will lose...
+  textToDisplay: Welcome to Moon Fun Base !
   imageToDisplay: {fileID: 0}
+  pannelToDeactivate: none
