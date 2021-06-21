@@ -21,9 +21,8 @@ public class Audio : MonoBehaviour
 
     private void Awake()
     {
-        audioSource = GetComponent<AudioSource>();
-
         EventsSubscribe();
+        audioSource = GetComponent<AudioSource>();
     }
     private void StartAudio()
     {
@@ -81,11 +80,6 @@ public class Audio : MonoBehaviour
             audioSource.Play();
         }
     }
-    private void ClearAudio()
-    {
-            audioSource.Stop();
-    }
-
     #region Events
     private void EventsSubscribe()
     {
@@ -94,7 +88,7 @@ public class Audio : MonoBehaviour
         EventHandler.OnEndTurn += PlayEndTurnSound;
         EventHandler.OnError += PlayErrorSound;
         EventHandler.OnStartGame += StartAudio;
-        EventHandler.OnClearGame += ClearAudio;
+        //EventHandler.OnClearGame += ClearAudio;
         EventHandler.OnButtonClicked += PlayButtonSound;
     }
 

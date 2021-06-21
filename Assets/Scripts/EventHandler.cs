@@ -20,12 +20,6 @@ public class EventHandler : MonoBehaviour
     public static event Action<ResourceType, int> OnValueChanged;
     public static event Action<Transform> OnNewTileDiscovered;
 
-    private void Awake()
-    {
-        int eventHandlerCount = FindObjectsOfType<EventHandler>().Length;
-        if (eventHandlerCount > 1) { Destroy(gameObject); }
-        else DontDestroyOnLoad(gameObject);
-    }
     public static void StartGame()
     {
         if (OnStartGame != null)

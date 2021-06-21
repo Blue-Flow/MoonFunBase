@@ -25,13 +25,13 @@ public class ButtonFunctionnality : MonoBehaviour
     {
         EventHandler.ClearGame();
         // Loads the tutoriel scene
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(2, LoadSceneMode.Single);
         EventHandler.ButtonClicked();
     }
     public void LoadMainMenu()
     {
         // Loads the main menu scene
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(0, LoadSceneMode.Single);
         EventHandler.ClearGame();
         EventHandler.ButtonClicked();
     }
@@ -44,7 +44,7 @@ public class ButtonFunctionnality : MonoBehaviour
     public void LoadGameScene()
     {
         //EventHandler.ClearGame();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(1, LoadSceneMode.Single);
         //EventHandler.StartGame();
         EventHandler.ButtonClicked();
     }
