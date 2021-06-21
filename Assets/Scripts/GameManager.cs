@@ -24,7 +24,6 @@ public class GameManager : MonoBehaviour
     {
         EventHandler.StartGame();
     }
-
     private void GenerateValues()
     {
         UI.instance.SetMaxFun(maxFun);
@@ -209,6 +208,16 @@ public class GameManager : MonoBehaviour
         EventHandler.OnBuildCompleted += ModifyValues_Building;
         EventHandler.OnBuildCompleted += ModifyValues_Tile;
         EventHandler.OnStartGame += GenerateValues;
+    }
+    private void OnDestroy()
+    {
+        Debug.Log("Caca");
+        EventHandler.OnEndTurn -= EndTurn;
+        EventHandler.OnClearGame -= ClearPreviousGame_GameManager;
+        EventHandler.OnTryBuild -= CheckBuildingConditions;
+        EventHandler.OnBuildCompleted -= ModifyValues_Building;
+        EventHandler.OnBuildCompleted -= ModifyValues_Tile;
+        EventHandler.OnStartGame -= GenerateValues;
     }
     #endregion
 }

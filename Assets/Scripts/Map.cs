@@ -39,6 +39,7 @@ public class Map : MonoBehaviour
     #region MapGeneration
     private void GenerateMap()
     {
+        Debug.Log("Coucou");
         GenerateGlobalTilesinGrid();
         GenerateRandomTilesinGrid();
         DetermineStartingTile();
@@ -56,6 +57,11 @@ public class Map : MonoBehaviour
     {
         foreach (Tile tile in generation_RandomTilesList)
         {
+            if (tile == null)
+            {
+                Debug.Log("Prout");
+                continue;
+            }
             Vector2 tilePosition = tile.transform.position;
             tile.gameObject.SetActive(false);
             thisGameTilesList.Remove(tile);
@@ -266,7 +272,7 @@ public class Map : MonoBehaviour
     {
         return thisGameTilesList.Find(x => x.CanBeHighlighted(pos));
     }
-    private void ClearPreviousGame_Map()
+    /*private void ClearPreviousGame_Map()
     {
         foreach (Tile tile in thisGameTilesList)
         {
@@ -291,7 +297,7 @@ public class Map : MonoBehaviour
         tilePOCount = 0;
         tilePFCount = 0;
         tileNCCount = 0;
-    }
+    }*/
     #region Events
     private void EventsSubscribe()
     {
@@ -300,8 +306,19 @@ public class Map : MonoBehaviour
         EventHandler.OnBuildOver += DisableUsableTiles;
         EventHandler.OnBuildCompleted += CreateNewBuilding;
         EventHandler.OnBuildCompleted += ShowRandomTilesType;
-        EventHandler.OnClearGame += ClearPreviousGame_Map;
+        //EventHandler.OnClearGame += ClearPreviousGame_Map;
         EventHandler.OnNewTileDiscovered += ShowRandomTilesIndicator;
+    }
+    private void OnDestroy()
+    {
+        Debug.Log("Caca2");
+        EventHandler.OnStartGame -= GenerateMap;
+        EventHandler.OnBuildStarted -= EnableUsableTiles;
+        EventHandler.OnBuildOver -= DisableUsableTiles;
+        EventHandler.OnBuildCompleted -= CreateNewBuilding;
+        EventHandler.OnBuildCompleted -= ShowRandomTilesType;
+        //EventHandler.OnClearGame -= ClearPreviousGame_Map;
+        EventHandler.OnNewTileDiscovered -= ShowRandomTilesIndicator;
     }
     #endregion
 }
