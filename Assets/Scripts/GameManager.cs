@@ -16,10 +16,13 @@ public class GameManager : MonoBehaviour
     private int oxygenPerTurn;
     private int energyPerTurn;
 
-
     private void Awake ()
     {
         EventsSubscribe();
+    }
+    private void Start()
+    {
+        EventHandler.StartGame();
     }
 
     private void GenerateValues()

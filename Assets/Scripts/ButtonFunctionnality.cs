@@ -43,10 +43,10 @@ public class ButtonFunctionnality : MonoBehaviour
     }
     public void LoadGameScene()
     {
-        EventHandler.ButtonClicked();
         //EventHandler.ClearGame();
         SceneManager.LoadScene(1);
-        EventHandler.StartGame();
+        //EventHandler.StartGame();
+        EventHandler.ButtonClicked();
     }
     public void PlayClickSound()
     {

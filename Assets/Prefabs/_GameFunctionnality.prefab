@@ -493,10 +493,10 @@ RectTransform:
   m_Father: {fileID: 1880789671668685368}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -526.95465}
-  m_SizeDelta: {x: 300.4894, y: 107.701324}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300.4894, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4469823580415545527
 CanvasRenderer:
@@ -2437,7 +2437,7 @@ GameObject:
   - component: {fileID: 8901207728373847508}
   - component: {fileID: 7788430675022820025}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2545,22 +2545,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4184461733509188693}
-        m_TargetAssemblyTypeName: StartMenu, Assembly-CSharp
-        m_MethodName: ReloadScene
+      - m_Target: {fileID: 4184461732757291888}
+        m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
+        m_MethodName: LoadMainMenu
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4184461734098311771}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -16306,10 +16294,10 @@ RectTransform:
   m_Father: {fileID: 1880789671668685368}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -684.65594}
-  m_SizeDelta: {x: 300.4894, y: 107.701324}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300.4894, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &780509831812533700
 CanvasRenderer:
@@ -18845,7 +18833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -18872,7 +18860,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 52.65
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -25502,7 +25490,7 @@ GameObject:
   - component: {fileID: 306593943098079849}
   - component: {fileID: 7661126187035715639}
   m_Layer: 5
-  m_Name: RestartButton
+  m_Name: MainMenuButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25523,10 +25511,10 @@ RectTransform:
   m_Father: {fileID: 1880789671668685368}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -369.2533}
-  m_SizeDelta: {x: 300.4894, y: 107.701324}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300.4894, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7859733676899499742
 CanvasRenderer:
@@ -25612,7 +25600,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 4184461732757291888}
         m_TargetAssemblyTypeName: ButtonFunctionnality, Assembly-CSharp
-        m_MethodName: LoadGameScene
+        m_MethodName: LoadMainMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -39092,7 +39080,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Restart
+  m_text: Main menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -46270,10 +46258,10 @@ RectTransform:
   m_Father: {fileID: 1880789671668685368}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -211.55199}
-  m_SizeDelta: {x: 300.4894, y: 107.701324}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300.4894, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6492654628407224370
 CanvasRenderer:
@@ -47066,7 +47054,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21cdabe118013bb479ba8e912eeea6ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  baseBuilding: {fileID: 1204741655282086968, guid: 763b2dcb52982e34ba9e8c491573dbe1, type: 3}
   currentTurn: 0
   maxFun: 10
 --- !u!114 &3004065280734462031
@@ -49492,10 +49479,10 @@ RectTransform:
   m_Father: {fileID: 1880789671668685368}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 50, y: -53.850662}
-  m_SizeDelta: {x: 300.4894, y: 107.701324}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 300.4894, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &784169846313950326
 CanvasRenderer:
