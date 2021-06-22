@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: TutorielStep16
   m_EditorClassIdentifier: 
   ID: 16
-  textToDisplay: If you need to double-check some information, you can consult your
-    notes in the menu.
-  imageToDisplay: {fileID: 0}
+  textToDisplay: If you need more information, you can consult the codex in the menu.
+  imageToDisplay: {fileID: 21300000, guid: 0a1f99fc294998d45b07d60e519edce7, type: 3}
   pannelToDeactivate: PanelMenu
