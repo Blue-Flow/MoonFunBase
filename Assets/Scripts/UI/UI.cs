@@ -160,5 +160,14 @@ public class UI : MonoBehaviour
         EventHandler.OnBuildOver += DisableBuildingButtonHighlight;
         EventHandler.OnError += DisplayNotification;
     }
+    private void OnDestroy()
+    {
+        EventHandler.OnBuildStarted -= EnableBuildingButtonHighlight;
+        EventHandler.OnValueChanged -= UpdateValueText;
+        EventHandler.OnEndGame -= CheckHighScore;
+        EventHandler.OnEndGame -= DisplayEndScreen;
+        EventHandler.OnBuildOver -= DisableBuildingButtonHighlight;
+        EventHandler.OnError -= DisplayNotification;
+    }
     #endregion
 }

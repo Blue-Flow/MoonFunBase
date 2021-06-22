@@ -82,5 +82,11 @@ public class BuildingPlacement : MonoBehaviour
         EventHandler.OnBuildOver += ClearTile;
         EventHandler.OnBuildStarted += ConstructionStarted;
     }
+    private void OnDestroy()
+    {
+        EventHandler.OnBuildOver -= CancelBuildingConstruction;
+        EventHandler.OnBuildOver -= ClearTile;
+        EventHandler.OnBuildStarted -= ConstructionStarted;
+    }
     #endregion
 }

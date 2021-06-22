@@ -39,7 +39,6 @@ public class Map : MonoBehaviour
     #region MapGeneration
     private void GenerateMap()
     {
-        Debug.Log("Coucou");
         GenerateGlobalTilesinGrid();
         GenerateRandomTilesinGrid();
         DetermineStartingTile();
@@ -186,7 +185,6 @@ public class Map : MonoBehaviour
             }
         }
     }
-    
     private void ShowRandomTilesType(BuildingPreset buildingPreset, TileType tileType, Vector2 tilePosition)
     {
         foreach (Tile tile in thisGameTilesList)
@@ -231,7 +229,6 @@ public class Map : MonoBehaviour
             }
         }
     }
-
     private void ShowRandomTilesIndicator(Transform tilePosition)
     {
         Tile northTile = GetTileAtPosition(tilePosition.transform.position + new Vector3(0, tileSize, 0));
@@ -248,20 +245,17 @@ public class Map : MonoBehaviour
         if (westTile != null && westTile.isRandomTile)
             westTile.ShowRandomTileIndicator();
     }
-
     private void DisableUsableTiles ()
     {
         ShowTilesType();
         foreach(Tile tile in thisGameTilesList)
             tile.ToggleHighlight(false);
     }
-
     // creates a new building on a specific tile
     private void CreateNewBuilding (BuildingPreset buildingPreset, TileType tileType, Vector2 position)
     {
         GameObject buildingObj = Instantiate(buildingPreset.prefab, position, Quaternion.identity);
         buildingsList.Add(buildingObj.GetComponent<Building>());
-
     }
     // returns the tile that's at the given position
     private Tile GetTileAtPosition (Vector3 pos)
@@ -272,32 +266,6 @@ public class Map : MonoBehaviour
     {
         return thisGameTilesList.Find(x => x.CanBeHighlighted(pos));
     }
-    /*private void ClearPreviousGame_Map()
-    {
-        foreach (Tile tile in thisGameTilesList)
-        {
-            tile.RestartTile();
-        }
-        thisGameTilesList.Clear();
-
-        foreach (Tile randomTile in thisGameRandomTilesList)
-            Destroy(randomTile.gameObject);
-        thisGameRandomTilesList.Clear();
-
-        foreach (Building building in buildingsList)
-            Destroy(building.gameObject);
-        if (startBuilding != null)
-            Destroy(startBuilding.gameObject);
-        buildingsList.Clear();
-
-        tileMECount = 0;
-        tileMOCount = 0;
-        tileMFCount = 0;
-        tilePECount = 0;
-        tilePOCount = 0;
-        tilePFCount = 0;
-        tileNCCount = 0;
-    }*/
     #region Events
     private void EventsSubscribe()
     {
@@ -306,18 +274,15 @@ public class Map : MonoBehaviour
         EventHandler.OnBuildOver += DisableUsableTiles;
         EventHandler.OnBuildCompleted += CreateNewBuilding;
         EventHandler.OnBuildCompleted += ShowRandomTilesType;
-        //EventHandler.OnClearGame += ClearPreviousGame_Map;
         EventHandler.OnNewTileDiscovered += ShowRandomTilesIndicator;
     }
     private void OnDestroy()
     {
-        Debug.Log("Caca2");
         EventHandler.OnStartGame -= GenerateMap;
         EventHandler.OnBuildStarted -= EnableUsableTiles;
         EventHandler.OnBuildOver -= DisableUsableTiles;
         EventHandler.OnBuildCompleted -= CreateNewBuilding;
         EventHandler.OnBuildCompleted -= ShowRandomTilesType;
-        //EventHandler.OnClearGame -= ClearPreviousGame_Map;
         EventHandler.OnNewTileDiscovered -= ShowRandomTilesIndicator;
     }
     #endregion

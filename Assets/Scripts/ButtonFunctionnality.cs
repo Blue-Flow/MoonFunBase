@@ -15,15 +15,8 @@ public class ButtonFunctionnality : MonoBehaviour
         EventHandler.TryBuild(buildingPreset);
         EventHandler.ButtonClicked();
     }
-    public void ClickCloseTips()
-    {
-        // Disable the tutorial when charging the game
-        PlayerPrefs.SetInt("areTipsactive", 2);
-        EventHandler.ButtonClicked();
-    }
     public void LoadTutoriel()
     {
-        EventHandler.ClearGame();
         // Loads the tutoriel scene
         SceneManager.LoadScene(2);
         EventHandler.ButtonClicked();
@@ -32,7 +25,6 @@ public class ButtonFunctionnality : MonoBehaviour
     {
         // Loads the main menu scene
         SceneManager.LoadScene(0);
-        EventHandler.ClearGame();
         EventHandler.ButtonClicked();
     }
     public void ResetHighScore()
@@ -43,9 +35,7 @@ public class ButtonFunctionnality : MonoBehaviour
     }
     public void LoadGameScene()
     {
-        //EventHandler.ClearGame();
-        SceneManager.LoadScene(1, LoadSceneMode.Single);
-        //EventHandler.StartGame();
+        SceneManager.LoadScene(1);
         EventHandler.ButtonClicked();
     }
     public void PlayClickSound()

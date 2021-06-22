@@ -88,10 +88,16 @@ public class Audio : MonoBehaviour
         EventHandler.OnEndTurn += PlayEndTurnSound;
         EventHandler.OnError += PlayErrorSound;
         EventHandler.OnStartGame += StartAudio;
-        //EventHandler.OnClearGame += ClearAudio;
         EventHandler.OnButtonClicked += PlayButtonSound;
     }
-
+    private void OnDestroy()
+    {
+        EventHandler.OnEndGame -= PlayEndTheme;
+        EventHandler.OnBuildCompleted -= PlayConstructionSound;
+        EventHandler.OnEndTurn -= PlayEndTurnSound;
+        EventHandler.OnError -= PlayErrorSound;
+        EventHandler.OnStartGame -= StartAudio;
+        EventHandler.OnButtonClicked -= PlayButtonSound;
+    }
     #endregion
-
 }

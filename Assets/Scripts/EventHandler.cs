@@ -9,7 +9,6 @@ public class EventHandler : MonoBehaviour
 
     public static event Action OnEndTurn;
     public static event Action<bool, int, ResourceType> OnEndGame;
-    public static event Action OnClearGame;
     public static event Action<int> OnError;
 
     public static event Action OnButtonClicked;
@@ -90,12 +89,6 @@ public class EventHandler : MonoBehaviour
         if (OnEndGame != null)
             OnEndGame(victory, turnNumber, resource);
         else Debug.Log("Error with event OnEndGame, no subscriber");
-    }
-    public static void ClearGame()
-    {
-        if (OnClearGame != null)
-            OnClearGame();
-        else Debug.Log("Error with event OnClearGame, no subscriber");
     }
     public static void NewTileDiscovered(Transform position)
     {

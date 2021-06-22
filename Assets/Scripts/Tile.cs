@@ -26,7 +26,6 @@ public class Tile : MonoBehaviour
             if (isEnabled) tileHighlightAnim.Play();
         }
     }
-
     public void DiscoverTile()
     {
         warFog.SetActive(false);
@@ -53,13 +52,4 @@ public class Tile : MonoBehaviour
     {
         return (new Vector2(transform.position.x, transform.position.y) == potentialPosition) && !hasBuilding;
     }
-    /*public void RestartTile()
-    {
-        hasBuilding = false;
-        isDiscovered = false;
-
-        warFog.SetActive(true);
-        unknownTileIndicator.SetActive(false);
-        randomTileType.SetActive(false);
-    }*/
 }

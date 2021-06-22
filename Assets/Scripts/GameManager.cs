@@ -188,22 +188,12 @@ public class GameManager : MonoBehaviour
             EventHandler.EndGame(true, currentTurn, ResourceType.Fun);
         }
     }
-
-    private void ClearPreviousGame_GameManager()
-    {
-        currentTurn = 0;
-        currentMaterials = 1;
-        funPerTurn = 0;
-        oxygenPerTurn = 0;
-        energyPerTurn = 0;
-    }
     #endregion
 
     #region Events
     private void EventsSubscribe()
     {
         EventHandler.OnEndTurn += EndTurn;
-        EventHandler.OnClearGame += ClearPreviousGame_GameManager;
         EventHandler.OnTryBuild += CheckBuildingConditions;
         EventHandler.OnBuildCompleted += ModifyValues_Building;
         EventHandler.OnBuildCompleted += ModifyValues_Tile;
@@ -211,9 +201,7 @@ public class GameManager : MonoBehaviour
     }
     private void OnDestroy()
     {
-        Debug.Log("Caca");
         EventHandler.OnEndTurn -= EndTurn;
-        EventHandler.OnClearGame -= ClearPreviousGame_GameManager;
         EventHandler.OnTryBuild -= CheckBuildingConditions;
         EventHandler.OnBuildCompleted -= ModifyValues_Building;
         EventHandler.OnBuildCompleted -= ModifyValues_Tile;
