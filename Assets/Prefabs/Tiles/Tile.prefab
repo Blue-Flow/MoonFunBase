@@ -211,7 +211,6 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7367694523815545739}
-  warFogAnim: {fileID: 0}
 --- !u!61 &5028185755893826958
 BoxCollider2D:
   m_ObjectHideFlags: 0

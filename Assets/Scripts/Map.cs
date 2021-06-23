@@ -40,26 +40,29 @@ public class Map : MonoBehaviour
     #region MapGeneration
     private void GenerateMap()
     {
-        GenerateGlobalTilesinGrid();
         GenerateRandomTilesinGrid();
+        GenerateGlobalTilesinGrid();
         DetermineStartingTile();
         ShowTilesType();
     }
     private void GenerateGlobalTilesinGrid()
     {
         foreach (Tile tile in generation_TilesList)
-        { thisGameTilesList.Add(tile);
-            /*if (!tile.isRandomTile)
+        {
+            if (tile.isActiveAndEnabled)
             {
                 Vector2 tilePosition = tile.transform.position;
                 tile.gameObject.SetActive(false);
                 Tile neutralTile = Instantiate(neutralTilePrefab, mapHolder.transform);
                 neutralTile.transform.position = tilePosition;
                 thisGameTilesList.Add(neutralTile);
+                Debug.Log("NeutralTileAdded");
+            }
+            /*else
+            {
+                thisGameTilesList.Add(tile);
+                Debug.Log("TileAdded");
             }*/
-            //else 
-            
-        
         }
     }
         #region RandomTilesGeneration
@@ -69,13 +72,14 @@ public class Map : MonoBehaviour
         {
             Vector2 tilePosition = tile.transform.position;
             tile.gameObject.SetActive(false);
-            thisGameTilesList.Remove(tile);
+            //thisGameTilesList.Remove(tile);
             int randomNumber = DetermineRandomTile();
             Tile randomTile = Instantiate(tilesPrefab[randomNumber], mapHolder.transform);
             randomTile.transform.position = tilePosition;
             randomTile.isRandomTile = true;
             thisGameTilesList.Add(randomTile);
             thisGameRandomTilesList.Add(randomTile);
+            Debug.Log("RandomTileAdded");
         }
     }
     private int DetermineRandomTile()
@@ -151,8 +155,9 @@ public class Map : MonoBehaviour
     private void DetermineStartingTile()
     {
         // determines the starting tile
-        int randomNumber = Random.Range(0, startTilesList.Count);
-        Tile startingTile = startTilesList[randomNumber];
+        int randomNumber = Random.Range(-7, 6);
+        Tile startingTile = thisGameTilesList.Find(x => x.transform.position.y == 0.5f && x.transform.position.x == randomNumber);
+        Debug.Log(startingTile.isActiveAndEnabled);
 
         // sets the starting building
         startingTile.hasBuilding = true;

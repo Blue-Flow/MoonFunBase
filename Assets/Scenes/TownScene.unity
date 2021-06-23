@@ -1025,6 +1025,10 @@ PrefabInstance:
       propertyPath: m_Animations.Array.data[0]
       value: 
       objectReference: {fileID: 7400000, guid: d3ce262e29f791945a90e817df91beb0, type: 2}
+    - target: {fileID: 708409150731705652, guid: 88f0a838c3ca31d488250ddf88a51ae1, type: 3}
+      propertyPath: neutralTilePrefab
+      value: 
+      objectReference: {fileID: 5028185755893826957, guid: 3e1161bb8c5f0bf48afa8a9aa6ef2c4e, type: 3}
     - target: {fileID: 771577176568868192, guid: 88f0a838c3ca31d488250ddf88a51ae1, type: 3}
       propertyPath: m_Enabled
       value: 1
