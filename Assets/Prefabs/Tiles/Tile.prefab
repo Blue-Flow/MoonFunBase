@@ -91,11 +91,11 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2947897873360122453}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -211,6 +211,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7367694523815545739}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5028185755893826958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -310,7 +311,7 @@ SpriteRenderer:
   m_SortingLayerID: -1156869273
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 7166dd176632e234f86031dea66e696d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8034c86dd1071384d9d81b2e4a536754, type: 3}
   m_Color: {r: 0.8679245, g: 0.8679245, b: 0.8679245, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -328,11 +329,11 @@ Animation:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5028185756046163657}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 7400000, guid: d3ce262e29f791945a90e817df91beb0, type: 2}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 7400000, guid: d3ce262e29f791945a90e817df91beb0, type: 2}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -347,6 +348,8 @@ GameObject:
   m_Component:
   - component: {fileID: 851166879079849329}
   - component: {fileID: 4274761856186095163}
+  - component: {fileID: 5421477721713781385}
+  - component: {fileID: 826711156692054768}
   m_Layer: 6
   m_Name: WarFog
   m_TagString: Untagged
@@ -420,3 +423,41 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5421477721713781385
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215085536156317014}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a89499da82b60104990cc460fb34cbb8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &826711156692054768
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9215085536156317014}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 11400000, guid: 6387ec491ae31b043b4ce5b811ea68f0, type: 2}
+  m_InitialState: 1
+  m_WrapMode: 0
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: 1109085465698948095, guid: 6387ec491ae31b043b4ce5b811ea68f0, type: 2}
+    value: {fileID: 5421477721713781385}
+  m_ExposedReferences:
+    m_References: []

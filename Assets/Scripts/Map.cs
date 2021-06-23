@@ -12,6 +12,7 @@ public class Map : MonoBehaviour
 
     [SerializeField] List<Building> buildingPrefabs = new List<Building>();
     [SerializeField] List<Tile> tilesPrefab = new List<Tile>();
+    [SerializeField] Tile neutralTilePrefab;
 
     [SerializeField] List<Tile> thisGameTilesList = new List<Tile>();
     [SerializeField] List<Tile> thisGameRandomTilesList = new List<Tile>();
@@ -47,20 +48,25 @@ public class Map : MonoBehaviour
     private void GenerateGlobalTilesinGrid()
     {
         foreach (Tile tile in generation_TilesList)
-        {
-            thisGameTilesList.Add(tile);
+        { thisGameTilesList.Add(tile);
+            /*if (!tile.isRandomTile)
+            {
+                Vector2 tilePosition = tile.transform.position;
+                tile.gameObject.SetActive(false);
+                Tile neutralTile = Instantiate(neutralTilePrefab, mapHolder.transform);
+                neutralTile.transform.position = tilePosition;
+                thisGameTilesList.Add(neutralTile);
+            }*/
+            //else 
+            
+        
         }
     }
-    #region RandomTilesGeneration
-    private void GenerateRandomTilesinGrid()
+        #region RandomTilesGeneration
+        private void GenerateRandomTilesinGrid()
     {
         foreach (Tile tile in generation_RandomTilesList)
         {
-            if (tile == null)
-            {
-                Debug.Log("Prout");
-                continue;
-            }
             Vector2 tilePosition = tile.transform.position;
             tile.gameObject.SetActive(false);
             thisGameTilesList.Remove(tile);
