@@ -97,7 +97,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 24300002, guid: 368d1e64f7a0d304592162ea20264517, type: 2}
   m_audioClip: {fileID: 8300000, guid: 03ed8b22aec4bbf4f92c77bccfa5a30c, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -196,6 +196,9 @@ MonoBehaviour:
   victoryTheme: {fileID: 8300000, guid: 450710061c84f0947b391ec6ba0b5bb9, type: 3}
   defeatTheme: {fileID: 8300000, guid: 01f946f74f591444680cfded2eae50d5, type: 3}
   mainTheme: {fileID: 8300000, guid: 03ed8b22aec4bbf4f92c77bccfa5a30c, type: 3}
+  funCap0SFX: {fileID: 0}
+  funCap1SFX: {fileID: 0}
+  funCap2SFX: {fileID: 0}
   buttonSound: {fileID: 8300000, guid: 3ecf2a3c41478df4bb1b07db8a50608a, type: 3}
   gHConstructionSounds:
   - {fileID: 8300000, guid: 903a1bc7379d4024bb617d00356131c2, type: 3}

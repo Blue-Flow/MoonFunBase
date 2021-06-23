@@ -56,13 +56,7 @@ public class Map : MonoBehaviour
                 Tile neutralTile = Instantiate(neutralTilePrefab, mapHolder.transform);
                 neutralTile.transform.position = tilePosition;
                 thisGameTilesList.Add(neutralTile);
-                Debug.Log("NeutralTileAdded");
             }
-            /*else
-            {
-                thisGameTilesList.Add(tile);
-                Debug.Log("TileAdded");
-            }*/
         }
     }
         #region RandomTilesGeneration
@@ -79,7 +73,6 @@ public class Map : MonoBehaviour
             randomTile.isRandomTile = true;
             thisGameTilesList.Add(randomTile);
             thisGameRandomTilesList.Add(randomTile);
-            Debug.Log("RandomTileAdded");
         }
     }
     private int DetermineRandomTile()
@@ -156,8 +149,8 @@ public class Map : MonoBehaviour
     {
         // determines the starting tile
         int randomNumber = Random.Range(-7, 6);
-        Tile startingTile = thisGameTilesList.Find(x => x.transform.position.y == 0.5f && x.transform.position.x == randomNumber);
-        Debug.Log(startingTile.isActiveAndEnabled);
+        Tile startingTile = thisGameTilesList.Find(x => x.transform.position.y == 0.5f 
+                                                     && x.transform.position.x == randomNumber);
 
         // sets the starting building
         startingTile.hasBuilding = true;

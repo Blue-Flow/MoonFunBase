@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     private int oxygenPerTurn;
     private int energyPerTurn;
 
+    private int funCap1 = 5;
+    private int funCap2 = 10;
+    private bool funCap1Reached = false;
+
     private void Awake ()
     {
         EventsSubscribe();
@@ -142,7 +146,13 @@ public class GameManager : MonoBehaviour
             case ResourceType.Fun:
                 funPerTurn += buildingPreset.productionResourcePerTurn;
                 EventHandler.ValueChanged(ResourceType.Fun, funPerTurn);
-                break;
+                if (funPerTurn > funCap1 && !funCap1Reached || funPerTurn > funCap2)
+                {
+                    EventHandler.NewFunCapReached();
+                    funCap1Reached = true;
+                    break;
+                }
+                else break;
             case ResourceType.Oxygen:
                 oxygenPerTurn += buildingPreset.productionResourcePerTurn;
                 EventHandler.ValueChanged(ResourceType.Oxygen, oxygenPerTurn);

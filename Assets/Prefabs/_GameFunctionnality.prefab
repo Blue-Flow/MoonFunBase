@@ -111,6 +111,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 9075470807202861928}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4373119493460996258
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -313,9 +314,9 @@ Animation:
   m_GameObject: {fileID: 68354927151448160}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -490,9 +491,9 @@ Animation:
   m_GameObject: {fileID: 76763907367536993}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -673,9 +674,9 @@ Animation:
   m_GameObject: {fileID: 88211138427185486}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -773,9 +774,9 @@ Animation:
   m_GameObject: {fileID: 128033418718949741}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -974,6 +975,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8599831411668015224}
+  warFogAnim: {fileID: 0}
 --- !u!61 &563669383558107594
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1111,6 +1113,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7537705893392412426}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5405835113566860591
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1313,9 +1316,9 @@ Animation:
   m_GameObject: {fileID: 199956333063567657}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -1413,9 +1416,9 @@ Animation:
   m_GameObject: {fileID: 206184358363842990}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2048,9 +2051,9 @@ Animation:
   m_GameObject: {fileID: 257455969785704106}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2166,6 +2169,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 491130917376446558}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1208978625892231081
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2285,9 +2289,9 @@ Animation:
   m_GameObject: {fileID: 281006665289451600}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2529,9 +2533,9 @@ Animation:
   m_GameObject: {fileID: 328760856127672839}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -2839,9 +2843,9 @@ Animation:
   m_GameObject: {fileID: 350236687895917410}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3156,9 +3160,9 @@ Animation:
   m_GameObject: {fileID: 395048382799803599}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3274,6 +3278,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3976544034924093165}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6866360494071242922
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3476,9 +3481,9 @@ Animation:
   m_GameObject: {fileID: 448365145757288925}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -3659,9 +3664,9 @@ Animation:
   m_GameObject: {fileID: 474370284208606265}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4027,9 +4032,9 @@ Animation:
   m_GameObject: {fileID: 509612410546348914}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4355,9 +4360,9 @@ Animation:
   m_GameObject: {fileID: 557382913091680728}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4455,9 +4460,9 @@ Animation:
   m_GameObject: {fileID: 565170406151427240}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4555,9 +4560,9 @@ Animation:
   m_GameObject: {fileID: 592011030607949850}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4673,6 +4678,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3964855433699802554}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8634414792073508641
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4875,9 +4881,9 @@ Animation:
   m_GameObject: {fileID: 646796906671668284}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -4975,9 +4981,9 @@ Animation:
   m_GameObject: {fileID: 650078747507024124}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -5198,6 +5204,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6883465763805504079}
+  warFogAnim: {fileID: 0}
 --- !u!61 &9140307769006931106
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5534,9 +5541,9 @@ Animation:
   m_GameObject: {fileID: 781786219439302525}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -5717,9 +5724,9 @@ Animation:
   m_GameObject: {fileID: 814236783729136324}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -5817,9 +5824,9 @@ Animation:
   m_GameObject: {fileID: 851656527590879068}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6038,9 +6045,9 @@ Animation:
   m_GameObject: {fileID: 863179013722010606}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6138,9 +6145,9 @@ Animation:
   m_GameObject: {fileID: 867611797938400259}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6238,9 +6245,9 @@ Animation:
   m_GameObject: {fileID: 875288843241712982}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6338,9 +6345,9 @@ Animation:
   m_GameObject: {fileID: 913259099539677648}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6438,9 +6445,9 @@ Animation:
   m_GameObject: {fileID: 932383538964212548}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6621,9 +6628,9 @@ Animation:
   m_GameObject: {fileID: 974235948940581279}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -6739,6 +6746,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7860763928222037655}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8304739334045293558
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6941,9 +6949,9 @@ Animation:
   m_GameObject: {fileID: 986297824513119641}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7124,9 +7132,9 @@ Animation:
   m_GameObject: {fileID: 1004872898278927064}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7325,6 +7333,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1349093028098022293}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7593568880359510257
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7444,9 +7453,9 @@ Animation:
   m_GameObject: {fileID: 1058631210665663837}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7562,6 +7571,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7818981006632094790}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2240358028718457834
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7681,9 +7691,9 @@ Animation:
   m_GameObject: {fileID: 1069515566986819416}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7864,9 +7874,9 @@ Animation:
   m_GameObject: {fileID: 1111088590014064643}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -7982,6 +7992,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2308695919125080871}
+  warFogAnim: {fileID: 0}
 --- !u!61 &806812687711113335
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8119,6 +8130,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 170459590964073223}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1661087269572825607
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8331,6 +8343,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5404272819105491609}
+  warFogAnim: {fileID: 0}
 --- !u!61 &292866162281024066
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8450,9 +8463,9 @@ Animation:
   m_GameObject: {fileID: 1161848322515104886}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -8701,6 +8714,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1066726400220589058}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5533446582178298171
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8903,9 +8917,9 @@ Animation:
   m_GameObject: {fileID: 1238365125167489130}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9003,9 +9017,9 @@ Animation:
   m_GameObject: {fileID: 1289781596952739571}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9121,6 +9135,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6628907483524283457}
+  warFogAnim: {fileID: 0}
 --- !u!61 &765004644108504191
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9472,9 +9487,9 @@ Animation:
   m_GameObject: {fileID: 1362990009147231947}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9572,9 +9587,9 @@ Animation:
   m_GameObject: {fileID: 1392559461086100318}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9672,9 +9687,9 @@ Animation:
   m_GameObject: {fileID: 1426843738259355013}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -9906,9 +9921,9 @@ Animation:
   m_GameObject: {fileID: 1511723288542292865}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -10024,6 +10039,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2788135348028276952}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3820420488164889563
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10161,6 +10177,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1092782840127520286}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7890229903862637215
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10373,6 +10390,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3761601429433405038}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3578062522091421473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10492,9 +10510,9 @@ Animation:
   m_GameObject: {fileID: 1643474658789165708}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -10610,6 +10628,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4332695372025296244}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8193809731317229032
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10747,6 +10766,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1983711974003475346}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3988675446653325255
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10866,9 +10886,9 @@ Animation:
   m_GameObject: {fileID: 1705836112133477805}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -10966,9 +10986,9 @@ Animation:
   m_GameObject: {fileID: 1734744328950057054}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -11167,6 +11187,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3756842330744855550}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6832216136693157009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11304,6 +11325,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 946727759271367319}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2596931723865012848
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11755,9 +11777,9 @@ Animation:
   m_GameObject: {fileID: 1935099572613575903}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -11855,9 +11877,9 @@ Animation:
   m_GameObject: {fileID: 1939099491349667924}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -12271,9 +12293,9 @@ Animation:
   m_GameObject: {fileID: 1960384611438245873}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -12472,6 +12494,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7516187883266537872}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3900525307837155720
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12742,9 +12765,9 @@ Animation:
   m_GameObject: {fileID: 2117676011791003256}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -12842,9 +12865,9 @@ Animation:
   m_GameObject: {fileID: 2135883003515347677}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -12942,9 +12965,9 @@ Animation:
   m_GameObject: {fileID: 2150694933156038586}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -13042,9 +13065,9 @@ Animation:
   m_GameObject: {fileID: 2168182061344016703}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -13225,9 +13248,9 @@ Animation:
   m_GameObject: {fileID: 2171268798092623074}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -13343,6 +13366,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6321145689659521127}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6933886109634521986
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13537,9 +13561,9 @@ Animation:
   m_GameObject: {fileID: 2235197199539354344}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -13637,9 +13661,9 @@ Animation:
   m_GameObject: {fileID: 2237159610401034332}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -13755,6 +13779,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7410095379795657229}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6582920467826705585
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13892,6 +13917,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5140631907031300448}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1861288082785624644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14094,9 +14120,9 @@ Animation:
   m_GameObject: {fileID: 2305583941694051039}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -14194,9 +14220,9 @@ Animation:
   m_GameObject: {fileID: 2311560871686741425}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -14294,9 +14320,9 @@ Animation:
   m_GameObject: {fileID: 2327765067572156157}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -14412,6 +14438,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4139390784969086922}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1182886646653722126
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14614,9 +14641,9 @@ Animation:
   m_GameObject: {fileID: 2349280923226682502}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -14714,9 +14741,9 @@ Animation:
   m_GameObject: {fileID: 2361102521033729023}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -15084,6 +15111,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4002480445424473311}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5988635734300200595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15203,9 +15231,9 @@ Animation:
   m_GameObject: {fileID: 2482470437682568714}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -15303,9 +15331,9 @@ Animation:
   m_GameObject: {fileID: 2485921086826876207}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -15486,9 +15514,9 @@ Animation:
   m_GameObject: {fileID: 2531364852161560863}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -15816,6 +15844,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1714710072916037598}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4718623607642118801
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16078,9 +16107,9 @@ Animation:
   m_GameObject: {fileID: 2575065268956847560}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -16196,6 +16225,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7814234461974870054}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5389384122407266407
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16315,9 +16345,9 @@ Animation:
   m_GameObject: {fileID: 2597957925146572707}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -16433,6 +16463,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8800779754973908149}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1168024202976870055
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16552,9 +16583,9 @@ Animation:
   m_GameObject: {fileID: 2612752119772296617}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -16818,9 +16849,9 @@ Animation:
   m_GameObject: {fileID: 2632001253872338049}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -16936,6 +16967,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 27477977751979363}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2333034413100439110
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17055,9 +17087,9 @@ Animation:
   m_GameObject: {fileID: 2652597454398237262}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -17155,9 +17187,9 @@ Animation:
   m_GameObject: {fileID: 2653682714359550827}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -17487,9 +17519,9 @@ Animation:
   m_GameObject: {fileID: 2674990141637584390}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -17605,6 +17637,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3772401726762991589}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3952543684022561567
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17724,9 +17757,9 @@ Animation:
   m_GameObject: {fileID: 2692066503062678010}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -17824,9 +17857,9 @@ Animation:
   m_GameObject: {fileID: 2705796133375515112}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -18140,9 +18173,9 @@ Animation:
   m_GameObject: {fileID: 2746192056975333206}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -18258,6 +18291,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7828609098340940246}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4275330578695387836
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18377,9 +18411,9 @@ Animation:
   m_GameObject: {fileID: 2763868041623640354}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -18495,6 +18529,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7051746512130840503}
+  warFogAnim: {fileID: 0}
 --- !u!61 &9181700772780720424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18614,9 +18649,9 @@ Animation:
   m_GameObject: {fileID: 2767647829667504163}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -18890,6 +18925,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8193005488093497324}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3993149006998179792
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19027,6 +19063,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8523822617900765692}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7148802311989067995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19355,9 +19392,9 @@ Animation:
   m_GameObject: {fileID: 2888054049019641934}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -19538,9 +19575,9 @@ Animation:
   m_GameObject: {fileID: 2946741319346132170}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -19972,6 +20009,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4321835555817751348}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8190411078545574687
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20109,6 +20147,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3144842297776420152}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1731719378788454762
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20329,6 +20368,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2615303302063478111}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4516834910680606822
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20448,9 +20488,9 @@ Animation:
   m_GameObject: {fileID: 3174075378156937814}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -20566,6 +20606,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8872573154170573922}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4645740484731897904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20818,9 +20859,9 @@ Animation:
   m_GameObject: {fileID: 3268592257617034245}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -20936,6 +20977,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2470857192055004912}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6953492755403428515
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21055,9 +21097,9 @@ Animation:
   m_GameObject: {fileID: 3312521428795643736}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -21173,6 +21215,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 128722247594653660}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6810182870973311941
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21375,9 +21418,9 @@ Animation:
   m_GameObject: {fileID: 3331499188882974144}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -21475,9 +21518,9 @@ Animation:
   m_GameObject: {fileID: 3374318971296316574}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -21670,6 +21713,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3209886385840184307}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6435341953156786636
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21807,6 +21851,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 771577176568868192}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4045654690886656196
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -21926,9 +21971,9 @@ Animation:
   m_GameObject: {fileID: 3470776218863418561}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -22026,9 +22071,9 @@ Animation:
   m_GameObject: {fileID: 3531002392182592767}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -22126,9 +22171,9 @@ Animation:
   m_GameObject: {fileID: 3545784377220282326}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -22360,9 +22405,9 @@ Animation:
   m_GameObject: {fileID: 3566044615353092553}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -22618,9 +22663,9 @@ Animation:
   m_GameObject: {fileID: 3577762275977940917}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -22856,6 +22901,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7125101892147901344}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2479660598246935159
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -22975,9 +23021,9 @@ Animation:
   m_GameObject: {fileID: 3683773755792401879}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -23075,9 +23121,9 @@ Animation:
   m_GameObject: {fileID: 3691139994835032668}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -23427,6 +23473,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7057277943070538468}
+  warFogAnim: {fileID: 0}
 --- !u!61 &621501111477174015
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23546,9 +23593,9 @@ Animation:
   m_GameObject: {fileID: 3807842015750040801}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -23646,9 +23693,9 @@ Animation:
   m_GameObject: {fileID: 3810608810737820423}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -23839,6 +23886,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8117197360149426558}
+  warFogAnim: {fileID: 0}
 --- !u!61 &665619661242391949
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -23976,6 +24024,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2862290654307583227}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8155902323178620676
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24178,9 +24227,9 @@ Animation:
   m_GameObject: {fileID: 3902294419266865904}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -24371,6 +24420,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4645996556027928848}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4645174391180904076
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24624,9 +24674,9 @@ Animation:
   m_GameObject: {fileID: 4044862005300980244}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -24964,9 +25014,9 @@ Animation:
   m_GameObject: {fileID: 4085894850814830794}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -25341,9 +25391,9 @@ Animation:
   m_GameObject: {fileID: 4100637967813185441}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -25564,6 +25614,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1882001208045461483}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8314250892154072074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25817,9 +25868,9 @@ Animation:
   m_GameObject: {fileID: 4231560160749884851}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -26322,9 +26373,9 @@ Animation:
   m_GameObject: {fileID: 4293519260687200548}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -26422,9 +26473,9 @@ Animation:
   m_GameObject: {fileID: 4294838329248105439}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -26605,9 +26656,9 @@ Animation:
   m_GameObject: {fileID: 4316485865449670450}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -26723,6 +26774,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2487945660920171129}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3689701541864821126
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -26925,9 +26977,9 @@ Animation:
   m_GameObject: {fileID: 4341357413846200227}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -27158,9 +27210,9 @@ Animation:
   m_GameObject: {fileID: 4360659245232556160}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -27641,9 +27693,9 @@ Animation:
   m_GameObject: {fileID: 4492863242558976726}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -27824,9 +27876,9 @@ Animation:
   m_GameObject: {fileID: 4524017185458575481}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -27924,9 +27976,9 @@ Animation:
   m_GameObject: {fileID: 4559778335493553463}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -28024,9 +28076,9 @@ Animation:
   m_GameObject: {fileID: 4577791783412599099}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -28124,9 +28176,9 @@ Animation:
   m_GameObject: {fileID: 4598145392948027785}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -28242,6 +28294,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3430043997847184378}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5831732454736271162
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28634,6 +28687,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2459602112303251774}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6945120174709071579
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28888,9 +28942,9 @@ Animation:
   m_GameObject: {fileID: 4723995130659801701}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -29416,9 +29470,9 @@ Animation:
   m_GameObject: {fileID: 4819124912082403499}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -29792,9 +29846,9 @@ Animation:
   m_GameObject: {fileID: 4881718759162728088}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -29910,6 +29964,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6133110579719811763}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5669129404797869644
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30112,9 +30167,9 @@ Animation:
   m_GameObject: {fileID: 4947420660135386159}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -30295,9 +30350,9 @@ Animation:
   m_GameObject: {fileID: 4978451595341475501}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -30620,9 +30675,9 @@ Animation:
   m_GameObject: {fileID: 5046730581214170645}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -30738,6 +30793,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1901945449843107593}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7086288864776975715
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -30857,9 +30913,9 @@ Animation:
   m_GameObject: {fileID: 5075683164114854537}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -30957,9 +31013,9 @@ Animation:
   m_GameObject: {fileID: 5094850120351890015}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -31274,9 +31330,9 @@ Animation:
   m_GameObject: {fileID: 5188946883964182368}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -31374,9 +31430,9 @@ Animation:
   m_GameObject: {fileID: 5196563362527601593}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -31549,9 +31605,9 @@ Animation:
   m_GameObject: {fileID: 5325981429104788415}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -31667,6 +31723,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 680963905062283220}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2969480231813446151
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31804,6 +31861,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7869634358051382797}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5858607015588807427
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -31923,9 +31981,9 @@ Animation:
   m_GameObject: {fileID: 5421685622840037772}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -32023,9 +32081,9 @@ Animation:
   m_GameObject: {fileID: 5427866668310248030}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -32123,9 +32181,9 @@ Animation:
   m_GameObject: {fileID: 5453495194792275851}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -32223,9 +32281,9 @@ Animation:
   m_GameObject: {fileID: 5458939005751628778}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -32416,6 +32474,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5562186127014159017}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7957252239690094885
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32535,9 +32594,9 @@ Animation:
   m_GameObject: {fileID: 5531069858967732528}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -32902,9 +32961,9 @@ Animation:
   m_GameObject: {fileID: 5623299226263248163}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -33160,9 +33219,9 @@ Animation:
   m_GameObject: {fileID: 5675683191766817849}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -33260,9 +33319,9 @@ Animation:
   m_GameObject: {fileID: 5678858245579018002}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -33527,6 +33586,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8740973273817792611}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3265715883153294065
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33664,6 +33724,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4379901345108343791}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5444981975129291203
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33801,6 +33862,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4450344674656479181}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7010590517542724616
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33916,6 +33978,7 @@ GameObject:
   - component: {fileID: 708409150731705652}
   - component: {fileID: 248799623994488567}
   - component: {fileID: 7624936162625999468}
+  - component: {fileID: 4438330104881141040}
   m_Layer: 0
   m_Name: _GameManager
   m_TagString: Untagged
@@ -34181,6 +34244,7 @@ MonoBehaviour:
   - {fileID: 623162189536433912, guid: 6f3c6fd1ebf150a48bad3d460422fcbc, type: 3}
   - {fileID: 5118986524564824308, guid: 244af67dbbe65a94ebec8e9282d8a5cb, type: 3}
   - {fileID: 5922705436454342450, guid: f04815ee45f18d445bacca13e02e8205, type: 3}
+  neutralTilePrefab: {fileID: 0}
   thisGameTilesList: []
   thisGameRandomTilesList: []
   buildingsList: []
@@ -34209,6 +34273,102 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   placingBuilding: 0
+--- !u!82 &4438330104881141040
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5757095439827241775}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 368d1e64f7a0d304592162ea20264517, type: 2}
+  m_audioClip: {fileID: 8300000, guid: 2ae1dbec7c980f844860b16dfb243d3d, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &5770183375553417175
 GameObject:
   m_ObjectHideFlags: 0
@@ -34395,6 +34555,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1912274953578782651}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8551351063295968916
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34514,9 +34675,9 @@ Animation:
   m_GameObject: {fileID: 5824084877009733546}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -34614,9 +34775,9 @@ Animation:
   m_GameObject: {fileID: 5850114058803655353}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -34732,6 +34893,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6563128611524607656}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7777316359274254116
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -34869,6 +35031,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2936003572518228469}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1028767774818765074
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35067,9 +35230,9 @@ Animation:
   m_GameObject: {fileID: 5961550883890434919}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -35185,6 +35348,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 9091458832460525895}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4817962438309695060
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35387,9 +35551,9 @@ Animation:
   m_GameObject: {fileID: 5989239458614481647}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -35487,9 +35651,9 @@ Animation:
   m_GameObject: {fileID: 6002865386019665792}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -35587,9 +35751,9 @@ Animation:
   m_GameObject: {fileID: 6010164920035290885}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -35705,6 +35869,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2044127302706164194}
+  warFogAnim: {fileID: 0}
 --- !u!61 &9086530581657549452
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -35824,9 +35989,9 @@ Animation:
   m_GameObject: {fileID: 6071741576957128329}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -35999,9 +36164,9 @@ Animation:
   m_GameObject: {fileID: 6147536723766975949}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -36099,9 +36264,9 @@ Animation:
   m_GameObject: {fileID: 6165565719810729729}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -36333,9 +36498,9 @@ Animation:
   m_GameObject: {fileID: 6179362792880576165}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -36572,6 +36737,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 9135843626597287288}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8133033459173522751
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36709,6 +36875,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2115317740876986374}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2063085609872516962
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -36828,9 +36995,9 @@ Animation:
   m_GameObject: {fileID: 6332282185085064600}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -36928,9 +37095,9 @@ Animation:
   m_GameObject: {fileID: 6342801081194389512}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -37295,6 +37462,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6497629139496908833}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7702969639376404010
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -37497,9 +37665,9 @@ Animation:
   m_GameObject: {fileID: 6472691900118199580}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -37597,9 +37765,9 @@ Animation:
   m_GameObject: {fileID: 6482686250377050466}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -37780,9 +37948,9 @@ Animation:
   m_GameObject: {fileID: 6546255554682074882}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -37999,9 +38167,9 @@ Animation:
   m_GameObject: {fileID: 6565418840464593466}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -38099,9 +38267,9 @@ Animation:
   m_GameObject: {fileID: 6577999656693567223}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -38199,9 +38367,9 @@ Animation:
   m_GameObject: {fileID: 6606521586999285251}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -38299,9 +38467,9 @@ Animation:
   m_GameObject: {fileID: 6626528827789029950}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -38399,9 +38567,9 @@ Animation:
   m_GameObject: {fileID: 6629069179180844885}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -38517,6 +38685,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1700480262613973892}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8757136607074463006
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38654,6 +38823,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6024826631758223735}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1470536564095654821
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -38773,9 +38943,9 @@ Animation:
   m_GameObject: {fileID: 6723483327708700103}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -39090,9 +39260,9 @@ Animation:
   m_GameObject: {fileID: 6755270273710838344}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -39568,9 +39738,9 @@ Animation:
   m_GameObject: {fileID: 6828354087066566777}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -39818,9 +39988,9 @@ Animation:
   m_GameObject: {fileID: 6875299213724051144}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -40001,9 +40171,9 @@ Animation:
   m_GameObject: {fileID: 6916139552527658119}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -40101,9 +40271,9 @@ Animation:
   m_GameObject: {fileID: 6937149819512838592}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -40302,6 +40472,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5104962617468353243}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2112052364684562023
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -40421,9 +40592,9 @@ Animation:
   m_GameObject: {fileID: 6980219048100762473}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -40772,6 +40943,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5753710912998611558}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2073973063277872699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41120,9 +41292,9 @@ Animation:
   m_GameObject: {fileID: 7085904034278625280}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -41220,9 +41392,9 @@ Animation:
   m_GameObject: {fileID: 7107735242838050323}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -41395,9 +41567,9 @@ Animation:
   m_GameObject: {fileID: 7138066000121417824}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -41495,9 +41667,9 @@ Animation:
   m_GameObject: {fileID: 7143046660928237984}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -41613,6 +41785,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1326545290341827556}
+  warFogAnim: {fileID: 0}
 --- !u!61 &6812379852595559476
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -41807,9 +41980,9 @@ Animation:
   m_GameObject: {fileID: 7202924194965833152}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -41925,6 +42098,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 381841243758297847}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7828639526139584077
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42062,6 +42236,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5885653263439738528}
+  warFogAnim: {fileID: 0}
 --- !u!61 &391161131135137802
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -42181,9 +42356,9 @@ Animation:
   m_GameObject: {fileID: 7213432565912448413}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -42281,9 +42456,9 @@ Animation:
   m_GameObject: {fileID: 7220480701471961056}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -42419,9 +42594,9 @@ Animation:
   m_GameObject: {fileID: 7244523870513490046}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -42685,9 +42860,9 @@ Animation:
   m_GameObject: {fileID: 7311969335737114296}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -42886,6 +43061,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4203966200816935572}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1701196479921448640
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -43005,9 +43181,9 @@ Animation:
   m_GameObject: {fileID: 7382098998151227364}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -43180,9 +43356,9 @@ Animation:
   m_GameObject: {fileID: 7402431045070601375}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -43280,9 +43456,9 @@ Animation:
   m_GameObject: {fileID: 7412430975899722616}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -43890,6 +44066,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 512085969524707897}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1444864522715927615
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44171,9 +44348,9 @@ Animation:
   m_GameObject: {fileID: 7678427647491245654}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -44354,9 +44531,9 @@ Animation:
   m_GameObject: {fileID: 7702422883785012390}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -44454,9 +44631,9 @@ Animation:
   m_GameObject: {fileID: 7704919184652813841}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -44572,6 +44749,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 3942193443853105565}
+  warFogAnim: {fileID: 0}
 --- !u!61 &180403759744772381
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44709,6 +44887,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 244190537207746329}
+  warFogAnim: {fileID: 0}
 --- !u!61 &9026632010201284603
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -44978,9 +45157,9 @@ Animation:
   m_GameObject: {fileID: 7833779332553872237}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -45346,9 +45525,9 @@ Animation:
   m_GameObject: {fileID: 7844310802268639383}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -45591,9 +45770,9 @@ Animation:
   m_GameObject: {fileID: 7883885400777355148}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -45709,6 +45888,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 9148837786049398584}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7908052730194487348
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -45828,9 +46008,9 @@ Animation:
   m_GameObject: {fileID: 7937744482014417978}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -46682,9 +46862,9 @@ Animation:
   m_GameObject: {fileID: 8053759857756759290}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -46865,9 +47045,9 @@ Animation:
   m_GameObject: {fileID: 8068498032936271816}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -46965,9 +47145,9 @@ Animation:
   m_GameObject: {fileID: 8070677884486239674}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -47083,6 +47263,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4775666831938178618}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8046460275579325825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47202,9 +47383,9 @@ Animation:
   m_GameObject: {fileID: 8072959635546118478}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -47320,6 +47501,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5730398430210388652}
+  warFogAnim: {fileID: 0}
 --- !u!61 &3492938209638434284
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47522,9 +47704,9 @@ Animation:
   m_GameObject: {fileID: 8134977232743737912}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -47705,9 +47887,9 @@ Animation:
   m_GameObject: {fileID: 8188884320985417239}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -47823,6 +48005,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5632571417240662537}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2689705470798635411
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47942,9 +48125,9 @@ Animation:
   m_GameObject: {fileID: 8227086631739796427}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -48042,9 +48225,9 @@ Animation:
   m_GameObject: {fileID: 8239732049716125850}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -48217,9 +48400,9 @@ Animation:
   m_GameObject: {fileID: 8251527987772292469}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -48317,9 +48500,9 @@ Animation:
   m_GameObject: {fileID: 8256937775834722073}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -48492,9 +48675,9 @@ Animation:
   m_GameObject: {fileID: 8291141987695546641}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -48610,6 +48793,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2009911010502250286}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2263243217561883063
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -48830,6 +49014,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 9169146924309689761}
+  warFogAnim: {fileID: 0}
 --- !u!61 &7755949447191757741
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49412,6 +49597,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 6981460404972328565}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5829375167184227253
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -49772,9 +49958,9 @@ Animation:
   m_GameObject: {fileID: 8509858446949055832}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -49955,9 +50141,9 @@ Animation:
   m_GameObject: {fileID: 8535636838688847210}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -50207,6 +50393,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8949545095592902112}
+  warFogAnim: {fileID: 0}
 --- !u!61 &4357266506918720246
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50326,9 +50513,9 @@ Animation:
   m_GameObject: {fileID: 8572576761983994942}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -50426,9 +50613,9 @@ Animation:
   m_GameObject: {fileID: 8580399144456620044}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -50544,6 +50731,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 9116862004966028376}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1996138744446576409
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -50764,6 +50952,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 5750401251997685986}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1817935331866767194
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -51000,9 +51189,9 @@ Animation:
   m_GameObject: {fileID: 8734516993779757520}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -51368,9 +51557,9 @@ Animation:
   m_GameObject: {fileID: 8773625296650249260}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -51468,9 +51657,9 @@ Animation:
   m_GameObject: {fileID: 8791643101778116474}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -51643,9 +51832,9 @@ Animation:
   m_GameObject: {fileID: 8796796257615152192}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -51826,9 +52015,9 @@ Animation:
   m_GameObject: {fileID: 8820878271101110193}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -51944,6 +52133,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 315111722608746007}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8794448943623525946
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52063,9 +52253,9 @@ Animation:
   m_GameObject: {fileID: 8870348180408985997}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -52249,6 +52439,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2957715415767044420}
+  warFogAnim: {fileID: 0}
 --- !u!61 &2743235798268468651
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52386,6 +52577,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 2836354014989771255}
+  warFogAnim: {fileID: 0}
 --- !u!61 &1742835460456725784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52588,9 +52780,9 @@ Animation:
   m_GameObject: {fileID: 8975159376987835314}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -52821,9 +53013,9 @@ Animation:
   m_GameObject: {fileID: 8989519451276764495}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -52939,6 +53131,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 1638829567793779925}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5764043172671727117
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53076,6 +53269,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 8590881209407954806}
+  warFogAnim: {fileID: 0}
 --- !u!61 &898320707902403473
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53278,9 +53472,9 @@ Animation:
   m_GameObject: {fileID: 9016825919530457047}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -53562,6 +53756,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7622386707596131741}
+  warFogAnim: {fileID: 0}
 --- !u!61 &5781802645935956323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -53756,9 +53951,9 @@ Animation:
   m_GameObject: {fileID: 9059566668915883532}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -53939,9 +54134,9 @@ Animation:
   m_GameObject: {fileID: 9141894825296188857}
   m_Enabled: 0
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
@@ -54057,6 +54252,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 4355995586368014539}
+  warFogAnim: {fileID: 0}
 --- !u!61 &8101843129890237115
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -54176,9 +54372,9 @@ Animation:
   m_GameObject: {fileID: 9180106824606570709}
   m_Enabled: 1
   serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  m_Animation: {fileID: 0}
   m_Animations:
-  - {fileID: 7400000, guid: 99cd9e7f93071704ea1b8f1553366e3f, type: 2}
+  - {fileID: 0}
   m_WrapMode: 0
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0

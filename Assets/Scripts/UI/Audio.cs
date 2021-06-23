@@ -5,10 +5,19 @@ using UnityEngine.Audio;
 
 public class Audio : MonoBehaviour
 {
+    // used to play the main theme
     private AudioSource audioSource;
+    // used to add an ambiant level linked to the current fun value
+    // && avoid implementing Wwise just to deal with it
+    private AudioSource audioSourceGameManager;
+
     [SerializeField] AudioClip victoryTheme;
     [SerializeField] AudioClip defeatTheme;
     [SerializeField] AudioClip mainTheme;
+
+    [SerializeField] AudioClip funCap0SFX;
+    [SerializeField] AudioClip funCap1SFX;
+    [SerializeField] AudioClip funCap2SFX;
 
     [SerializeField] AudioClip buttonSound;
     [SerializeField] AudioClip[] gHConstructionSounds;
@@ -23,6 +32,7 @@ public class Audio : MonoBehaviour
     {
         EventsSubscribe();
         audioSource = GetComponent<AudioSource>();
+        audioSourceGameManager = FindObjectOfType<GameManager>().GetComponent<AudioSource>();
     }
     private void StartAudio()
     {
@@ -33,6 +43,21 @@ public class Audio : MonoBehaviour
     {
         float volume = PlayerPrefs.GetFloat("volume");
         audioMixer.SetFloat("volume", volume);
+    }
+    private void PlayNextAmbiantSound()
+    {
+        if (audioSourceGameManager.clip == funCap1SFX)
+        {
+            audioSourceGameManager.clip = funCap2SFX;
+            audioSourceGameManager.Play();
+        }
+        else
+        {
+            audioSourceGameManager.clip = funCap1SFX;
+            audioSourceGameManager.Play();
+        }
+        Debug.Log("NextAmbiantSound");
+        Debug.Log(audioSourceGameManager.isPlaying);
     }
     private void PlayButtonSound()
     {
@@ -89,7 +114,9 @@ public class Audio : MonoBehaviour
         EventHandler.OnError += PlayErrorSound;
         EventHandler.OnStartGame += StartAudio;
         EventHandler.OnButtonClicked += PlayButtonSound;
+        EventHandler.OnNewFunCapReached += PlayNextAmbiantSound;
     }
+
     private void OnDestroy()
     {
         EventHandler.OnEndGame -= PlayEndTheme;
@@ -98,6 +125,7 @@ public class Audio : MonoBehaviour
         EventHandler.OnError -= PlayErrorSound;
         EventHandler.OnStartGame -= StartAudio;
         EventHandler.OnButtonClicked -= PlayButtonSound;
+        EventHandler.OnNewFunCapReached -= PlayNextAmbiantSound;
     }
     #endregion
 }

@@ -17,6 +17,7 @@ public class EventHandler : MonoBehaviour
     public static event Action OnBuildOver;
     public static event Action<BuildingPreset, TileType, Vector2>  OnBuildCompleted;
     public static event Action<ResourceType, int> OnValueChanged;
+    public static event Action OnNewFunCapReached;
     public static event Action<Transform> OnNewTileDiscovered;
 
     public static void StartGame()
@@ -95,5 +96,11 @@ public class EventHandler : MonoBehaviour
         if (OnNewTileDiscovered != null)
             OnNewTileDiscovered(position);
         else Debug.Log("Error with event OnNewTileDiscovered, no subscriber");
+    }
+    public static void NewFunCapReached()
+    {
+        if (OnNewFunCapReached != null)
+            OnNewFunCapReached();
+        else Debug.Log("Error with event OnNewFunCapReached, no subscriber");
     }
 }

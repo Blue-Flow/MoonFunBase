@@ -15,7 +15,7 @@ public class Tile : MonoBehaviour
     public bool isRandomTile = false;
     public bool isDiscovered = false;
     [SerializeField] Animation tileHighlightAnim;
-    //[SerializeField] Animation warFogAnim;
+    [SerializeField] Animation warFogAnim;
 
     // toggles the tile highlight to show where we can place a building
     public void ToggleHighlight (bool toggle)
@@ -29,8 +29,7 @@ public class Tile : MonoBehaviour
     }
     public void DiscoverTile()
     {
-        warFog.SetActive(false);
-        //warFogAnim.Play();
+        warFogAnim.Play();
         if (isRandomTile)
         {
             unknownTileIndicator.SetActive(false);

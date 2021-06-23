@@ -211,6 +211,7 @@ MonoBehaviour:
   isRandomTile: 0
   isDiscovered: 0
   tileHighlightAnim: {fileID: 7367694523815545739}
+  warFogAnim: {fileID: 1977475326084602078}
 --- !u!61 &5028185755893826958
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -347,8 +348,7 @@ GameObject:
   m_Component:
   - component: {fileID: 851166879079849329}
   - component: {fileID: 4274761856186095163}
-  - component: {fileID: 5421477721713781385}
-  - component: {fileID: 826711156692054768}
+  - component: {fileID: 1977475326084602078}
   m_Layer: 6
   m_Name: WarFog
   m_TagString: Untagged
@@ -422,41 +422,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &5421477721713781385
-Animator:
-  serializedVersion: 3
+--- !u!111 &1977475326084602078
+Animation:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9215085536156317014}
-  m_Enabled: 0
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a89499da82b60104990cc460fb34cbb8, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!320 &826711156692054768
-PlayableDirector:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9215085536156317014}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 6387ec491ae31b043b4ce5b811ea68f0, type: 2}
-  m_InitialState: 1
+  m_Animation: {fileID: 7400000, guid: 916309d8cbe00014ba67c300838f790f, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 916309d8cbe00014ba67c300838f790f, type: 2}
   m_WrapMode: 0
-  m_DirectorUpdateMode: 1
-  m_InitialTime: 0
-  m_SceneBindings:
-  - key: {fileID: 1109085465698948095, guid: 6387ec491ae31b043b4ce5b811ea68f0, type: 2}
-    value: {fileID: 5421477721713781385}
-  m_ExposedReferences:
-    m_References: []
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
