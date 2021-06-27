@@ -6,7 +6,6 @@ public class Map : MonoBehaviour
 {
     private float tileSize = 1;
     [SerializeField] List<Tile> generation_TilesList = new List<Tile>();
-    [SerializeField] List<Tile> startTilesList = new List<Tile>();
     [SerializeField] List<Tile> generation_RandomTilesList = new List<Tile>();
     [SerializeField] GameObject mapHolder;
 
